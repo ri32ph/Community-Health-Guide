@@ -126,8 +126,7 @@
       </div>`:''}
       ${issue?`<div class="consult-step consult-results" data-consult-print-area>
         <div class="consult-print-head" aria-hidden="true"><strong>まちの健康・医療案内｜相談先ナビ</strong><span>${esc(issue.label)}</span></div>
-        <div class="selected-concern"><span>選択中</span><strong>${esc(issue.label)}</strong><button type="button" class="consult-pdf-button" data-print-consult>PDFに出力</button></div>
-        <p class="consult-pdf-note">PDFに出力を押すと印刷画面が開きます。「PDFに保存」を選ぶと、現在の検索結果をPDFとして保存できます。</p>
+        <div class="selected-concern"><span>選択中</span><strong>${esc(issue.label)}</strong></div>
         ${steps.length?`<div class="next-step-box"><div class="consult-subhead"><strong>相談したあとにできること</strong><span>全部を一度にする必要はありません。できそうなものからで大丈夫です。</span></div><ul>${steps.map(x=>`<li><label><input type="checkbox"> <span>${esc(x)}</span></label></li>`).join('')}</ul></div>`:''}
         ${(issue.communityResourceTypes||[]).length?`<div class="community-types"><strong>地域で利用できる支援の例</strong><div>${issue.communityResourceTypes.map(x=>`<span>${esc(x)}</span>`).join('')}</div><p class="community-search-help"><b>もう少し詳しく探したいときは</b><br>下の言葉を参考に、<strong>「諫早市 ＋ キーワード」</strong>で検索してみてください。地域で利用できる支援やサービスが見つかることがあります。</p></div>`:''}
         ${toolCards(issue)}
@@ -147,15 +146,6 @@
     if(issue){state.issueId=issue.dataset.issue;state.channel='all';render();mount.querySelector('.consult-results')?.scrollIntoView({behavior:'smooth',block:'nearest'});return;}
     const channel=e.target.closest('[data-channel]');
     if(channel){state.channel=channel.dataset.channel;render();return;}
-    const printBtn=e.target.closest('[data-print-consult]');
-    if(printBtn){
-      document.body.classList.add('consult-printing');
-      const cleanup=()=>document.body.classList.remove('consult-printing');
-      window.addEventListener('afterprint',cleanup,{once:true});
-      window.print();
-      setTimeout(cleanup,1500);
-      return;
-    }
     const dial=e.target.closest('[data-dial-id]');
     if(dial){
       const r=data.quickDials.find(x=>x.id===dial.dataset.dialId);

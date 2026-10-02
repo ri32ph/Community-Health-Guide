@@ -17,6 +17,12 @@
     label();
   });
 
+  document.addEventListener('click',event=>{
+    const printButton=event.target.closest('[data-print-page]');
+    if(!printButton)return;
+    window.print();
+  });
+
   let callDialog;
   function getCallDialog(){
     if(callDialog)return callDialog;
