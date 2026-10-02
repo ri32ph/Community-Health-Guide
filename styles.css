@@ -299,3 +299,55 @@ footer a{color:#fff}
 .professional-search{background:#f6faf9}.professional-intro{max-width:760px;margin:0 0 24px;color:var(--muted)}.pro-purpose-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.pro-purpose{padding:20px;border:1px solid var(--line);border-radius:14px;background:#fff}.pro-purpose h3{margin-top:0;font-size:1.04rem}.pro-purpose p{color:var(--muted);font-size:.88rem}.pro-links{display:flex;flex-direction:column;gap:7px;margin-top:14px}.pro-links a{font-weight:900;font-size:.87rem}.pro-caution{margin-top:18px;padding:13px 15px;border-radius:11px;background:#fff9eb;color:#675c46;font-size:.84rem}
 @media(max-width:900px){.consult-tool-grid,.pro-purpose-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.consult-tool-grid,.pro-purpose-grid{grid-template-columns:1fr}}
+
+
+/* Consultation result PDF / print */
+.consult-print-head{display:none}
+.selected-concern{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.consult-pdf-button{margin-left:auto;min-height:44px;padding:9px 15px;border:1px solid var(--teal);border-radius:10px;background:#fff;color:var(--teal-dark);font:inherit;font-size:.84rem;font-weight:900;cursor:pointer}
+.consult-pdf-button:hover{background:#f0f8f6}
+.consult-pdf-note{margin:9px 0 20px;color:var(--muted);font-size:.78rem;line-height:1.65}
+@media(max-width:650px){.consult-pdf-button{width:100%;margin-left:0}.consult-pdf-note{margin-top:8px}}
+
+@media print{
+  @page{size:A4;margin:14mm}
+  body.consult-printing{background:#fff!important;color:#111!important;font-size:10.5pt}
+  body.consult-printing *{visibility:hidden!important}
+  body.consult-printing [data-consult-print-area],
+  body.consult-printing [data-consult-print-area] *{visibility:visible!important}
+  body.consult-printing [data-consult-print-area]{position:absolute!important;left:0!important;top:0!important;width:100%!important;margin:0!important;padding:0!important;background:#fff!important}
+  body.consult-printing .consult-print-head{display:flex!important;flex-direction:column;gap:3px;padding-bottom:10px;margin-bottom:14px;border-bottom:2px solid #315f56}
+  body.consult-printing .consult-print-head strong{font-size:16pt;color:#234b45}
+  body.consult-printing .consult-print-head span{font-size:12pt;font-weight:700;color:#333}
+  body.consult-printing .consult-pdf-button,
+  body.consult-printing .consult-pdf-note,
+  body.consult-printing .consult-channel-tabs,
+  body.consult-printing .resource-actions,
+  body.consult-printing .tool-open{display:none!important}
+  body.consult-printing .selected-concern{padding:9px 11px!important;margin-bottom:12px!important;border:1px solid #cfdad6!important;border-radius:8px!important;background:#f7faf9!important}
+  body.consult-printing .selected-concern span{font-size:8.5pt!important}
+  body.consult-printing .selected-concern strong{font-size:12pt!important}
+  body.consult-printing .next-step-box,
+  body.consult-printing .community-types,
+  body.consult-printing .consult-tools{break-inside:avoid;margin:0 0 14px!important;padding:11px!important;border:1px solid #d8e0dd!important;border-radius:8px!important;background:#fff!important}
+  body.consult-printing .consult-tool-grid{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important}
+  body.consult-printing .consult-tool-card{break-inside:avoid!important;padding:9px!important;border:1px solid #dde4e1!important;box-shadow:none!important;transform:none!important}
+  body.consult-printing .consult-resource-grid{display:grid!important;grid-template-columns:1fr 1fr!important;gap:9px!important}
+  body.consult-printing .consult-resource{break-inside:avoid!important;padding:10px!important;border:1px solid #d8e0dd!important;border-radius:8px!important;background:#fff!important}
+  body.consult-printing .consult-resource.is-emergency{border:2px solid #a66!important}
+  body.consult-printing .consult-resource h4{font-size:10.5pt!important;margin:.15em 0!important}
+  body.consult-printing .resource-number{font-size:15pt!important}
+  body.consult-printing .resource-operator,
+  body.consult-printing .resource-meta,
+  body.consult-printing .resource-note,
+  body.consult-printing .method-badge,
+  body.consult-printing .source-badge,
+  body.consult-printing .tool-tag{font-size:7.5pt!important}
+  body.consult-printing .consult-resource p,
+  body.consult-printing .consult-tool-card small,
+  body.consult-printing .community-search-help{font-size:8.5pt!important;line-height:1.45!important}
+  body.consult-printing .consult-step-label{margin:13px 0 8px!important;font-size:10.5pt!important}
+  body.consult-printing .consult-step-label>span{width:24px!important;height:24px!important;font-size:8pt!important}
+  body.consult-printing input[type="checkbox"]{visibility:visible!important;appearance:auto!important}
+  body.consult-printing a{color:#111!important;text-decoration:none!important}
+}
