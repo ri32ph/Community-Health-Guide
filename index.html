@@ -10,28 +10,44 @@
   <link rel="stylesheet" href="scenes.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c716b'/%3E%3Cpath d='M27 13h10v14h14v10H37v14H27V37H13V27h14z' fill='white'/%3E%3C/svg%3E">
 </head>
-<body>
+<body class="home-page">
   <a class="skip" href="#main">本文へ移動</a>
   <header><div class="wrap nav">
     <a class="brand" href="index.html"><small>諫早市にお住まいの皆さんへ</small>まちの健康・医療案内</a>
-    <nav class="main-nav" aria-label="主な案内"><a href="emergency.html">救急</a><a href="visit.html">受診</a><a href="medicine.html">薬</a><a href="#local">地域の相談先</a><a href="articles/index.html">健康の記事</a></nav>
-    <div class="tools"><button class="tool text-size" type="button" data-text-size aria-pressed="false">文字を大きく</button><a class="tool local-tool" href="#local">地域の相談先</a></div>
+    <nav class="main-nav" aria-label="主な案内"><a href="emergency.html">救急</a><a href="visit.html">受診</a><a href="medicine.html">薬</a><a href="health.html">健康づくり</a><a href="#local">地域の相談先</a></nav>
+    <div class="tools"><button class="tool text-size" type="button" data-text-size aria-pressed="false">文字を大きく</button><a class="tool local-tool" href="#local">地域の相談先</a><details class="mobile-menu"><summary>メニュー</summary><nav aria-label="スマートフォン用メニュー"><a href="emergency.html">救急</a><a href="visit.html">受診</a><a href="medicine.html">薬</a><a href="health.html">健康づくり</a><a href="#local">地域の相談先</a></nav></details></div>
   </div></header>
 
   <main id="main">
     <section class="hero"><div class="wrap hero-grid">
-      <div class="hero-copy"><div class="urgent urgent-first"><strong>命の危険を感じたら、迷わず119番へ</strong><span>意識がない、呼吸がおかしい、突然の激しい痛み、大きなけがなど。</span><a class="urgent-link" href="emergency.html">119番を呼ぶ目安を見る</a></div><div class="eyebrow">困ったときの案内所</div><h1>病気やけが、<br>薬のことで迷ったときに。</h1><p class="lead">今必要な情報や、地域の相談先を探せます。日頃の健康づくりや、もしものときの備えにもご利用ください。</p>
+      <div class="hero-copy"><div class="eyebrow">諫早市の健康・医療案内</div><h1>「ちょっと聞きたい」を、<br>相談先につなぐ。</h1><p class="lead">まちの健康・医療・介護の相談先を、わかりやすく案内するサイトです。</p><div class="hero-actions"><a class="hero-action primary" href="#situations"><span class="action-icon" aria-hidden="true">⌕</span>こんなときはどこに相談する？</a><a class="hero-action secondary" href="#local"><span class="action-icon" aria-hidden="true">●</span>地域の相談先を探す</a></div>
       </div>
-      <figure class="hero-image"><img src="assets/main-visual.png" alt="子どもから高齢者まで、地域で暮らす人々と医療機関を描いたイラスト" width="1536" height="1024"></figure>
+      <img class="hero-mobile-image" src="assets/hero-wide.png" alt="子どもから高齢者までが暮らす、医療機関のある緑豊かなまちのイラスト" width="1921" height="819">
     </div></section>
 
-    <section class="section section-white"><div class="wrap"><div class="section-head"><div><div class="eyebrow">今、困っている</div><h2>困りごとから探す</h2></div><p>今の状況に近いものを選んでください。どこを見ればよいか分からないときは、救急相談や地域の窓口へ相談できます。</p></div>
-      <div class="cards"><a class="card emergency" href="emergency.html"><span class="card-label">緊急</span><strong>今すぐ助けが必要かもしれない</strong><span>緊急時の対応を見る <b aria-hidden="true">→</b></span></a><a class="card" href="#consult"><span class="card-label">電話相談</span><strong>救急車を呼ぶか迷っている</strong><span>救急相談を確認する <b aria-hidden="true">→</b></span></a><a class="card" href="visit.html"><span class="card-label">受診</span><strong>病院へ行くか迷っている</strong><span>受診の判断を見る <b aria-hidden="true">→</b></span></a><a class="card" href="medicine.html"><span class="card-label">薬</span><strong>薬について困っている</strong><span>薬の情報を見る <b aria-hidden="true">→</b></span></a></div>
-      <figure class="hero-image mobile-main-image"><img src="assets/main-visual.png" alt="子どもから高齢者まで、地域で暮らす人々と医療機関を描いたイラスト" width="1536" height="1024"></figure>
+    <aside class="emergency-ribbon" aria-label="緊急時の案内"><div class="wrap"><strong>命の危険を感じたら、迷わず119番へ</strong><span>意識がない、呼吸がおかしい、突然の激しい痛み、大きなけがなど。</span><a href="emergency.html">119番を呼ぶ目安</a></div></aside>
+
+    <section class="section section-white home-guide" id="guide"><div class="wrap"><div class="centered-heading"><h2>まずは、知りたいことから探す</h2></div>
+      <div class="guide-grid">
+        <a class="guide-card" href="visit.html"><img class="guide-icon" src="assets/icons/01_hospital.png" alt=""><span><strong>病院・診療所を<br>探したい</strong><small>近くの医療機関や診療科を探せます。</small></span></a>
+        <a class="guide-card" href="medicine.html"><img class="guide-icon" src="assets/icons/02_medicine.png" alt=""><span><strong>薬について<br>相談したい</strong><small>薬局や相談窓口をご案内します。</small></span></a>
+        <a class="guide-card" href="#local"><img class="guide-icon" src="assets/icons/03_child.png" alt=""><span><strong>子どものことで<br>相談したい</strong><small>小児科や子育ての相談先をまとめています。</small></span></a>
+        <a class="guide-card" href="#local"><img class="guide-icon" src="assets/icons/04_senior_couple.png" alt=""><span><strong>高齢者・介護について</strong><small>介護や生活の相談先をご案内します。</small></span></a>
+        <a class="guide-card" href="#local"><img class="guide-icon" src="assets/icons/05_heart.png" alt=""><span><strong>こころの相談</strong><small>相談できる窓口をまとめています。</small></span></a>
+        <a class="guide-card" href="#consult"><img class="guide-icon" src="assets/icons/06_night_holiday.png" alt=""><span><strong>夜間・休日に困った</strong><small>急な体調不良の相談先を確認できます。</small></span></a>
+      </div>
     </div></section>
+
+    <section class="section situation-section" id="situations"><div class="wrap"><div class="centered-heading"><h2>こんなときは、どこに相談する？</h2><p>よくある場面から、相談先の目安を紹介します。</p></div><div class="situation-grid">
+      <a href="emergency.html"><img src="assets/icons/07_fever_child.png" alt=""><strong>急に熱が出た</strong></a>
+      <a href="medicine.html"><img src="assets/icons/08_medication_consultation.png" alt=""><strong>薬の飲み方を<br>相談したい</strong></a>
+      <a href="visit.html"><img src="assets/icons/12_doctor.png" alt=""><strong>病院へ行くか<br>迷っている</strong></a>
+      <a href="checkup-qa.html"><img src="assets/icons/10_health_check.png" alt=""><strong>健診結果が<br>気になる</strong></a>
+      <a href="#consult"><img src="assets/icons/11_parent_child.png" alt=""><strong>子どもの体調を<br>相談したい</strong></a>
+    </div></div></section>
 
     <section class="section section-mint" id="consult"><div class="wrap"><div class="section-head"><div><div class="eyebrow">電話で相談</div><h2>呼ぶか迷ったら相談できます</h2></div><p>電話相談は診断や治療をするものではありません。症状が急に悪化した場合や、命の危険を感じる場合は119番へ連絡してください。</p></div>
-      <div class="phone-grid"><article class="phone-card"><h3>救急車を呼ぶか迷うとき</h3><p class="number-display">#7119</p><p><strong>長崎県救急安心センター</strong></p><ul><li>24時間365日</li><li>全年齢が対象</li><li>相談無料・通話料は利用者負担</li></ul><a class="call-action" href="tel:%237119" data-confirm-call data-confirm-title="#7119 に電話しますか？" data-confirm-message="救急車を呼ぶべきか、今すぐ受診すべきか迷ったときの相談窓口です。" data-confirm-alt="明らかな緊急事態では119を利用してください。" aria-label="長崎県救急安心センター、シャープ7119へ電話する">#7119へ電話する</a><p class="notice">つながらない場合：<a href="tel:0958011217">095-801-1217</a></p></article>
+      <div class="phone-grid"><article class="phone-card"><h3>救急車を呼ぶか迷うとき</h3><p class="number-display">#7119</p><p><strong>長崎県救急安心センター</strong></p><ul><li>24時間365日</li><li>全年齢が対象</li><li>相談無料・通話料は利用者負担</li></ul><a class="call-action" href="tel:%237119" data-confirm-call data-confirm-title="#7119 に電話しますか？" data-confirm-message="救急車を呼ぶべきか、今すぐ受診すべきか迷ったときの相談窓口です。" data-confirm-alt="意識がない、呼吸が苦しいなど明らかな緊急時は119を利用してください。" aria-label="長崎県救急安心センター、シャープ7119へ電話する">#7119へ電話する</a><p class="notice">つながらない場合：<a href="tel:0958011217">095-801-1217</a></p></article>
       <article class="phone-card"><h3>子どもの夜間の急病・けが</h3><p class="number-display">#8000</p><p><strong>長崎県子ども医療電話相談</strong></p><p>家庭での対処や、医療機関を受診するか迷ったときに相談できます。</p><a class="call-action" href="tel:%238000" data-confirm-call data-confirm-title="#8000 に電話しますか？" data-confirm-message="子どもの急な病気やけがについて、受診や対処に迷ったときの相談窓口です。" data-confirm-alt="意識がない、呼吸が苦しいなど緊急性が高い場合は119を利用してください。" aria-label="子ども医療電話相談、シャープ8000へ電話する">#8000へ電話する</a><p class="notice">受付時間は公式情報でご確認ください。</p></article></div>
     </div></section>
 
@@ -44,13 +60,19 @@
       <p class="notice">この案内は一般的な情報です。個別の薬については、処方した医療機関または薬を受け取った薬局へご相談ください。</p>
     </div></section>
 
-    <section class="section section-white" id="local"><div class="wrap"><div class="section-head"><div><div class="eyebrow">困りごとから相談先を探す</div><h2>何で迷っていますか？</h2></div><div class="section-visual"><p>制度名や窓口名が分からなくても大丈夫です。今の悩みに近いものを選ぶと、諫早市・長崎県の窓口、電話、Web、SNS・チャット、手話・文字で利用できる公的な相談先を案内します。</p><div class="crop-scene crop-support" role="img" aria-label="家族を支える医師、看護師、介護職を描いたイラスト"></div></div></div>
-      <div class="consultation-intro"><p><strong>相談方法からも選べます。</strong> 地域の窓口だけでなく、電話、インターネット、SNS・チャット、手話・文字による相談を掲載しています。</p><p class="notice">民間・NPOの相談先は、国・自治体など公的機関の公式サイトで案内されているものを掲載対象としています。</p></div>
+    <section class="section section-mint" id="health"><div class="wrap"><div class="section-head"><div><div class="eyebrow">日頃の健康づくり</div><h2>今日からできることを、少しずつ</h2></div><p>食事、体を動かすこと、睡眠、歯と口の健康、健診など、毎日の暮らしに役立つ情報をまとめています。体調や持病に合わせ、無理なく続けられることから始めましょう。</p></div>
+      <div class="wellness-preview"><article><h3>食べる・動く・休む</h3><p>毎日の生活で取り入れやすい健康づくりを確認します。</p></article><article><h3>健診で確かめる</h3><p>諫早市の健診・がん検診や、受診後の相談先を案内します。</p></article><article><h3>こころと体を相談する</h3><p>一人で抱え込まず、地域の専門職へ相談できる窓口を探します。</p></article></div>
+      <p class="section-action"><a class="inline-btn" href="health.html">日頃の健康づくりを見る</a></p>
+    </div></section>
+
+    <section class="section section-white" id="local"><div class="wrap"><div class="section-head"><div><div class="eyebrow">相談先ナビ</div><h2>何に困っているか？から探す</h2></div><div class="section-visual"><p>制度名や窓口名が分からなくても大丈夫です。今の悩みに近いものを選ぶと、諫早市・長崎県の地域窓口、電話、Web、SNS・チャット、手話・文字で利用できる相談先を案内します。</p><div class="crop-scene crop-support" role="img" aria-label="家族を支える医師、看護師、介護職を描いたイラスト"></div></div></div>
+      <div class="consultation-intro"><p><strong>相談先の名前ではなく、「何に困っているか？」から選べます。</strong></p><p>地域の窓口を優先し、国や公的機関の相談サイト、公的機関が公式に案内している相談先も表示します。</p></div>
       <div data-consultation-nav></div>
     </div></section>
+
     <section class="section section-mint"><div class="wrap scene"><div class="preparation-scenes"><div class="crop-scene crop-family" role="img" aria-label="地域を歩く子どもから高齢者までの家族を描いたイラスト"></div><div class="crop-scene crop-town" role="img" aria-label="ベンチから地域の町並みを眺める家族を描いたイラスト"></div></div><div><div class="eyebrow">日頃から備える</div><h2>もしものときに、慌てないために</h2><p>お薬手帳、かかりつけの医療機関、家族の緊急連絡先を確認しておきましょう。持病や使用中の薬も、家族と共有しておくと安心です。</p></div></div></section>
 
-    <section class="section section-white"><div class="wrap"><div class="section-head"><div><div class="eyebrow">更新情報・記事</div><h2>新しい情報をお知らせします</h2></div><p>新しいページ、制度や窓口の変更、日頃から知っておきたい健康・医療情報を掲載します。</p></div><div class="local-grid" data-home-news><article class="local-card"><p>更新情報を読み込んでいます。</p></article></div><p><a class="text-link" href="articles/index.html">更新情報・記事をすべて見る →</a></p></div></section>
+    <section class="section section-white home-updates"><div class="wrap"><div class="section-head"><div><div class="eyebrow">更新情報・記事</div><h2>新しい情報をお知らせします</h2></div><p>新しいページ、制度や窓口の変更、日頃から知っておきたい健康・医療情報を掲載します。</p></div><div class="update-list" data-home-news><p class="update-loading">更新情報を読み込んでいます。</p></div><p class="updates-more"><a class="text-link" href="articles/index.html">更新情報・記事をすべて見る →</a></p></div></section>
     <section class="section trust"><div class="wrap"><div class="section-head"><div><div class="eyebrow" style="color:#8fd8ca">情報の信頼性</div><h2>公的な情報をもとにしています</h2></div><p>厚生労働省、消防庁、PMDA、長崎県、諫早市などが公表する情報を確認しています。制度や受付時間は変わることがあるため、最新情報は各機関の公式ページでご確認ください。</p></div><ul class="trust-list"><li><a href="https://www.city.isahaya.nagasaki.jp/soshiki/24/26597.html" target="_blank" rel="noopener">諫早市：救急医療電話相談 #7119</a></li><li><a href="https://www.city.isahaya.nagasaki.jp/soshiki/24/1128.html" target="_blank" rel="noopener">諫早市：小児救急</a></li><li><a href="https://www.pmda.go.jp/safety/consultation-for-patients/on-drugs/qa/0011.html" target="_blank" rel="noopener">PMDA：市販薬を使うときの注意</a></li><li><a href="https://www.gov-online.go.jp/article/201609/entry-7888.html" target="_blank" rel="noopener">政府広報：救急車の利用法</a></li></ul><p class="updated">情報確認日：2026年9月28日</p></div></section>
   </main>
   <footer><div class="wrap footer-row"><p><strong>まちの健康・医療案内</strong><br>分かりやすく伝え、次の行動と地域の支援につなぎます。</p><p>掲載内容は、個別の診断や治療に代わるものではありません。</p></div></footer>
