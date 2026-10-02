@@ -9,6 +9,43 @@
   const currentIssue=()=>data.issues.find(i=>i.id===state.issueId);
   const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
 
+  const defaultNextSteps={
+    child:['今困っていることを簡単にメモする','園・学校・家庭での様子を整理する','必要に応じて地域の支援やサービスを探す'],
+    elderly:['本人の希望と困っていることを確認する','介護・医療・生活のどこに支援が必要か相談する','地域で使えるサービスや通いの場を探す'],
+    money:['収入・支出・滞納など、分かる範囲で状況を整理する','利用できる制度や支援について相談する','住まい・就労など関連する困りごとも一緒に伝える'],
+    family:['安全を最優先にする','無理に一人で解決せず相談機関につながる','必要に応じて生活・住まい・法律の支援も確認する'],
+    mental:['今のつらさや生活への影響を伝える','一人で抱えず、相談方法を選んでつながる','必要に応じて医療・生活・就労などの支援も確認する'],
+    health:['症状や気になっていることを整理する','受診や相談が必要か確認する','必要に応じて医療機関・薬局などを探す'],
+    disability:['困っている場面と希望する支援を整理する','相談支援や利用できる制度を確認する','自分に合う事業所やサービスを探す'],
+    work:['困っていることと希望する働き方を整理する','就労相談・生活相談につながる','必要に応じて職業訓練や両立支援を探す'],
+    housing:['現在の住まいと期限・支払い状況を整理する','早めに相談窓口へつながる','利用できる住宅・生活支援を確認する'],
+    endoflife:['本人が大切にしたいことを確認する','かかりつけ医やケアマネジャー等に相談する','訪問診療・訪問看護など地域の支援体制を確認する'],
+    legal:['契約書・請求内容・日時など分かる情報を残す','専門の相談窓口に早めに相談する','必要に応じて警察・法律・生活支援につながる']
+  };
+
+  const specialNextSteps={
+    'child-development':['気になっている様子を、いつ・どこで見られるかメモする','園や学校での様子も聞いてみる','発達相談後、必要なら児童発達支援などを探す'],
+    'child-abuse-concern':['子どもの安全を最優先にする','迷う段階でも189などに相談する','差し迫った危険がある場合は110・119を利用する'],
+    'elderly-dementia':['もの忘れや生活上の変化を具体的にメモする','地域包括支援センターや医療機関に相談する','認知症カフェ・介護予防・家族支援などを探す'],
+    'money-living':['今月困っている支払いを整理する','諫早くらしの相談室で利用できる制度を確認する','食支援・就労・住まいの支援も必要なら一緒に相談する'],
+    'family-afraid':['今いる場所が安全か確認する','危険が迫っていれば110、安全を確保できれば相談窓口につながる','避難・住まい・生活費・法律についても必要に応じて相談する'],
+    'family-dv-unsure':['「DVかどうか」を自分で判断しなくても相談できる','怖い・つらいと感じる状況をそのまま相談員に伝える','必要なら安全確保や生活支援について一緒に考える'],
+    'mental-suicide':['今、自分を傷つける危険が差し迫っている場合は119・110など緊急支援につながる','一人にならず、電話・SNS・身近な人など使いやすい方法で相談する','継続して支えてくれる医療・生活支援につながる'],
+    'health-where-to-go':['緊急性が高い症状なら119を利用する','救急車や今すぐの受診を迷うときは#7119を利用する','受診先を探すときは医療情報ネットを利用する'],
+    'endoflife-home-death':['本人がどこでどう過ごしたいか、話せる範囲で確認する','かかりつけ医・訪問看護・ケアマネジャー等に早めに相談する','急変時の連絡先や夜間の対応について事前に確認する'],
+    'endoflife-acp':['本人が大切にしていることを話す','家族・医療・介護職と希望を共有する','気持ちや状況が変わったら何度でも話し直す']
+  };
+
+  const publicTools=[
+    {id:'local-resources',name:'いさはやの地域資源集',description:'地域ごとの生活支援、介護予防、認知症、医療・介護連携などを探せます。',url:'https://isahaya-korei-portal.jp/%E5%9C%B0%E5%9F%9F%E8%B3%87%E6%BA%90%E9%9B%86%E3%82%92%E6%9B%B4%E6%96%B0%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F/',categories:['高齢者・介護','これからの療養・看取り'],tag:'諫早市の地域資源'},
+    {id:'isahaya-map',name:'諫早市デジタルマップ',description:'公共施設などの場所を地図上で確認できます。',url:'https://www.sonicweb-asp.jp/isahaya/',categories:['子ども・子育て','高齢者・介護','お金・生活','家族・パートナー','こころ','健康・医療','障害・発達','仕事','住まい','これからの療養・看取り','契約・法律・犯罪被害'],tag:'場所を確認'},
+    {id:'navi',name:'医療情報ネット（ナビイ）',description:'病院・診療所・歯科・薬局を、場所や診療内容などから検索できます。',url:'https://www.iryou.teikyouseido.mhlw.go.jp/znk-web/juminkanja/S2300/initialize',categories:['健康・医療','高齢者・介護','これからの療養・看取り'],tag:'医療機関・薬局'},
+    {id:'care-search',name:'介護サービス情報公表システム',description:'全国の介護サービス事業所のサービス内容を検索・比較できます。',url:'https://www.mhlw.go.jp/stf/kaigo-kouhyou.html',categories:['高齢者・介護','これからの療養・看取り'],tag:'介護サービス'},
+    {id:'wam',name:'WAM NET 障害福祉サービス等情報検索',description:'障害福祉・児童発達支援などの事業所を地域やサービス種別から検索できます。',url:'https://www.wam.go.jp/sfkohyoout/',categories:['子ども・子育て','障害・発達'],tag:'障害・発達支援'},
+    {id:'kokode',name:'ここdeサーチ',description:'認定こども園、保育所、幼稚園などを地域から探せます。',url:'https://www.wam.go.jp/kokodesearch/ANN010100E00.do',categories:['子ども・子育て'],tag:'保育・こども園'},
+    {id:'ryoritsu',name:'治療と仕事の両立支援ナビ',description:'病気を抱えながら働く人や支援者向けに、相談窓口・支援機関を探せます。',url:'https://chiryoutoshigoto.mhlw.go.jp/',categories:['仕事','健康・医療'],tag:'治療と仕事'}
+  ];
+
   function overlap(issue,res){
     const hay=[res.name,res.description,...(res.keywords||[])].join(' ').toLowerCase();
     return (issue.keywords||[]).reduce((n,k)=>n+(hay.includes(String(k).toLowerCase())?1:0),0);
@@ -62,11 +99,20 @@
     </article>`;
   }
 
+  function nextSteps(issue){return specialNextSteps[issue.id]||defaultNextSteps[issue.categoryId]||[];}
+  function toolsFor(issue){const cat=categoryLabel(issue.categoryId);return publicTools.filter(t=>t.categories.includes(cat));}
+  function toolCards(issue){
+    const tools=toolsFor(issue);
+    if(!tools.length)return '';
+    return `<div class="consult-tools"><div class="consult-subhead"><strong>地域・公的な検索ツールで探す</strong><span>相談したあとに、実際の施設やサービスを探すときに使えます。</span></div><div class="consult-tool-grid">${tools.map(t=>`<a class="consult-tool-card" href="${esc(t.url)}" target="_blank" rel="noopener"><span class="tool-tag">${esc(t.tag)}</span><strong>${esc(t.name)}</strong><small>${esc(t.description)}</small><span class="tool-open">開く ↗</span></a>`).join('')}</div></div>`;
+  }
+
   function render(){
     const cat=state.categoryId;
     const issue=currentIssue();
     const issueList=cat?data.issues.filter(i=>i.categoryId===cat):[];
     const resources=issue?resourcesFor(issue):[];
+    const steps=issue?nextSteps(issue):[];
     mount.innerHTML=`
       <div class="consult-step">
         <p class="consult-step-label"><span>1</span> 何について迷っていますか？</p>
@@ -80,7 +126,9 @@
       </div>`:''}
       ${issue?`<div class="consult-step consult-results">
         <div class="selected-concern"><span>選択中</span><strong>${esc(issue.label)}</strong></div>
-        ${(issue.communityResourceTypes||[]).length?`<div class="community-types"><strong>地域で利用できる支援の例</strong><div>${issue.communityResourceTypes.map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>`:''}
+        ${steps.length?`<div class="next-step-box"><div class="consult-subhead"><strong>相談したあとにできること</strong><span>全部を一度にする必要はありません。できそうなものからで大丈夫です。</span></div><ul>${steps.map(x=>`<li><label><input type="checkbox"> <span>${esc(x)}</span></label></li>`).join('')}</ul></div>`:''}
+        ${(issue.communityResourceTypes||[]).length?`<div class="community-types"><strong>地域で利用できる支援の例</strong><div>${issue.communityResourceTypes.map(x=>`<span>${esc(x)}</span>`).join('')}</div><p class="community-search-help"><b>もう少し詳しく探したいときは</b><br>下の言葉を参考に、<strong>「諫早市 ＋ キーワード」</strong>で検索してみてください。地域で利用できる支援やサービスが見つかることがあります。</p></div>`:''}
+        ${toolCards(issue)}
         <p class="consult-step-label"><span>3</span> 相談方法を選べます</p>
         <div class="consult-channel-tabs" role="group" aria-label="相談方法で絞り込む">
           ${Object.entries(channelLabels).map(([id,label])=>`<button type="button" class="channel-tab ${state.channel===id?'is-active':''}" data-channel="${esc(id)}">${esc(label)}</button>`).join('')}
