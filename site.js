@@ -54,6 +54,48 @@
     dialog.showModal();
   };
 
+
+
+  function renderCivicActions(){
+    const data=window.MACHI_CONSULTATION_DATA;
+    const grid=document.querySelector('[data-civic-actions]');
+    if(!data||!grid||!Array.isArray(data.civicResources))return;
+
+    const heading=document.querySelector('[data-civic-heading]');
+    const meta=data.civicResourcesMeta||{};
+    if(heading){
+      const eyebrow=heading.querySelector('.eyebrow');
+      const title=heading.querySelector('h2');
+      const description=heading.querySelector('p');
+      if(eyebrow&&meta.sectionEyebrow)eyebrow.textContent=meta.sectionEyebrow;
+      if(title&&meta.sectionTitle)title.textContent=meta.sectionTitle;
+      if(description&&meta.sectionDescription)description.textContent=meta.sectionDescription;
+    }
+
+    grid.innerHTML=data.civicResources.map(resource=>{
+      const links=(resource.links||[]).map(link=>{
+        const external=link.external?' target="_blank" rel="noopener"':'';
+        const phone=link.kind==='phone'
+          ? ` data-confirm-call data-confirm-title="${escapeHtml(link.confirmTitle||'電話しますか？')}" data-confirm-message="${escapeHtml(link.confirmMessage||'内容を確認してから電話してください。')}"`
+          : '';
+        return `<a href="${escapeHtml(link.url)}"${external}${phone}>${escapeHtml(link.label)}</a>`;
+      }).join('');
+      const note=resource.note?`<p class="civic-action-note">${escapeHtml(resource.note)}</p>`:'';
+      return `<article class="civic-action-card" data-civic-resource-id="${escapeHtml(resource.id)}"><div class="civic-action-kicker">${escapeHtml(resource.kicker||'')}</div><h3>${escapeHtml(resource.title||resource.name||'')}</h3><p>${escapeHtml(resource.description||'')}</p><div class="civic-action-links">${links}</div>${note}</article>`;
+    }).join('');
+
+    const footnote=document.querySelector('[data-civic-footnote]');
+    if(footnote)footnote.textContent=meta.footnote||'';
+  }
+
+  function escapeHtml(value){
+    return String(value??'').replace(/[&<>\"]/g,ch=>({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'
+    }[ch]));
+  }
+
+  document.addEventListener('DOMContentLoaded',renderCivicActions);
+
   document.addEventListener('click',event=>{
     const link=event.target.closest('a[data-confirm-call],a[href="tel:119"],a[href="tel:110"]');
     if(!link||link.hasAttribute('data-call-confirmed'))return;
