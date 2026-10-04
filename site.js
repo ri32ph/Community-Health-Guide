@@ -94,7 +94,24 @@
     }[ch]));
   }
 
-  document.addEventListener('DOMContentLoaded',renderCivicActions);
+
+  function renderSiteFooter(){
+    const footer=document.querySelector('footer');
+    if(!footer)return;
+    footer.classList.add('site-footer');
+    const path=location.pathname;
+    const prefix=path.includes('/articles/')?'../':'';
+    footer.innerHTML=`<div class="wrap site-footer-grid">
+      <div class="site-footer-brand"><strong>まちの健康・医療案内</strong><p>分かりやすく伝え、次の行動と地域の支援につなぎます。</p><p class="site-footer-note">掲載内容は、個別の診断や治療に代わるものではありません。</p></div>
+      <nav class="footer-sitemap" aria-label="サイトマップ"><h2>サイトマップ</h2><div class="footer-link-columns">
+        <div><h3>探す・確認する</h3><a href="${prefix}index.html">トップ</a><a href="${prefix}visit.html">医療機関を探す</a><a href="${prefix}emergency.html">夜間・休日・救急</a><a href="${prefix}medicine.html">薬について</a><a href="${prefix}health.html">健康・健診</a></div>
+        <div><h3>暮らしの相談</h3><a href="${prefix}child-parenting.html">子ども・子育て</a><a href="${prefix}elderly-care.html">高齢者・介護</a><a href="${prefix}money-life.html">お金・生活</a><a href="${prefix}disability-development.html">障害・発達</a><a href="${prefix}legal-assets.html">契約・法律・財産</a></div>
+        <div><h3>相談先・その他</h3><a class="footer-consult-link" href="${prefix}consultation-list.html"><img src="${prefix}assets/icons/15_community_support.png" alt="">相談先一覧</a><a href="${prefix}after-loss.html">大切な方を亡くされたあと</a><a href="${prefix}index.html#local">困りごとから探す</a><a href="${prefix}articles/index.html">更新情報・記事</a></div>
+      </div></nav>
+    </div><div class="wrap site-footer-bottom"><span>© まちの健康・医療案内</span><a href="${prefix}index.html#reliability">情報の信頼性について</a></div>`;
+  }
+
+  document.addEventListener('DOMContentLoaded',()=>{renderCivicActions();renderSiteFooter();});
 
   document.addEventListener('click',event=>{
     const link=event.target.closest('a[data-confirm-call],a[href="tel:119"],a[href="tel:110"]');

@@ -1,0 +1,30 @@
+{
+  "note": "まちの健康・医療案内 共通アイコン。サイト内で再利用するため保存。",
+  "style": "やわらかな水彩・北欧風、淡いブルー・グリーン・コーラル、植物モチーフ",
+  "icons": {
+    "hospital": "01_hospital.png",
+    "medicine": "02_medicine.png",
+    "child": "03_child.png",
+    "senior": "04_senior_couple.png",
+    "mental": "05_heart.png",
+    "night_holiday": "06_night_holiday.png",
+    "child_fever": "07_fever_child.png",
+    "medication_consultation": "08_medication_consultation.png",
+    "memory": "09_memory_concern.png",
+    "health_check": "10_health_check.png",
+    "parent_child": "11_parent_child.png",
+    "doctor": "12_doctor.png",
+    "pharmacy": "13_pharmacy.png",
+    "public_office": "14_public_office.png",
+    "community_support": "15_community_support.png",
+    "nurse": "16_nurse.png",
+    "pharmacist": "17_pharmacist.png",
+    "elderly_care": "18_elderly_care.png",
+    "family": "19_family.png",
+    "community_town": "20_community_town.png",
+    "ambulance": "21_ambulance.png",
+    "disability": "22_wheelchair.png",
+    "checklist": "23_checklist.png",
+    "health_plants": "24_health_plants.png"
+  }
+}
