@@ -83,3 +83,11 @@
 .bereavement-step-grid strong{display:block;margin-bottom:6px;color:#173f3c}
 .bereavement-step-grid small{display:block;color:var(--muted);font-size:.92rem;line-height:1.65}
 @media(max-width:720px){.bereavement-hero-inner{grid-template-columns:1fr}.bereavement-hero-icon{width:96px;justify-self:start}.bereavement-concern-grid,.bereavement-step-grid{grid-template-columns:1fr}}
+
+
+/* v15: shared detail-page hierarchy */
+.detail-sublead{max-width:48rem;margin:-.35rem 0 1.2rem;color:var(--muted);font-size:1rem;line-height:1.8}
+.detail-choice-section .centered-heading{max-width:780px;margin-inline:auto}
+.detail-choice-section .centered-heading p{max-width:680px;margin-inline:auto;color:var(--muted)}
+.detail-choice-section{border-bottom:1px solid rgba(49,95,86,.06)}
+@media(max-width:700px){.detail-sublead{margin-top:-.15rem}.detail-choice-section{padding-top:34px;padding-bottom:34px}}
