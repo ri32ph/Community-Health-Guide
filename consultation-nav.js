@@ -7,6 +7,7 @@
   const channelLabels={all:'すべて', 'in-person':'地域の窓口',phone:'電話',web:'インターネット',sns:'SNS',chat:'チャット','sign-language':'手話','text-relay':'文字・電話リレー'};
   const categoryLabel=id=>data.categories.find(c=>c.id===id)?.label||'';
   const currentIssue=()=>data.issues.find(i=>i.id===state.issueId);
+  const categoryDetailPages={elderly:{url:'elderly-care.html',label:'高齢者・介護について詳しく見る'},legal:{url:'legal-assets.html',label:'契約・法律・財産について詳しく見る'}};
   const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
 
   const defaultNextSteps={
@@ -123,6 +124,7 @@
       ${cat?`<div class="consult-step">
         <p class="consult-step-label"><span>2</span> 今の悩みに近いものを選んでください</p>
         <div class="consult-issue-grid">${issueList.map(i=>`<button type="button" class="consult-issue ${state.issueId===i.id?'is-active':''}" data-issue="${esc(i.id)}">${esc(i.label)}</button>`).join('')}</div>
+        ${categoryDetailPages[cat]?`<a class="consult-detail-link" href="${esc(categoryDetailPages[cat].url)}">${esc(categoryDetailPages[cat].label)} →</a>`:''}
       </div>`:''}
       ${issue?`<div class="consult-step consult-results" data-consult-print-area>
         <div class="consult-print-head" aria-hidden="true"><strong>まちの健康・医療案内｜相談先ナビ</strong><span>${esc(issue.label)}</span></div>
