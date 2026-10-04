@@ -12,3 +12,38 @@
 .checkup-flow li{position:relative;min-height:76px;display:flex;align-items:center;padding:13px 12px 13px 48px;border-radius:14px;background:#fff;font-weight:800;line-height:1.5}
 .checkup-flow li:before{counter-increment:flow;content:counter(flow);position:absolute;left:12px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#dceee7;color:var(--teal-dark);font-weight:900}
 @media(max-width:700px){.basic-point-grid{grid-template-columns:1fr}.basic-point-grid article{min-height:0;padding:23px 21px}.checkup-flow{padding:21px 18px}.checkup-flow ol{grid-template-columns:1fr}.checkup-flow li{min-height:64px}}
+
+/* 高齢者・介護ページ */
+.elderly-hero{background:linear-gradient(180deg,#eef8f5 0%,#f7fbf7 100%);border-bottom-color:#c9ded8}
+.elderly-hero-inner{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:30px;align-items:center}
+.elderly-hero-icon{width:140px;height:140px;object-fit:contain;justify-self:end;filter:drop-shadow(0 7px 14px rgba(55,92,81,.08))}
+.care-concern-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:26px}
+.care-concern-grid a{display:flex;align-items:center;min-height:82px;padding:18px 19px;border:2px solid var(--line);border-radius:18px;background:#fff;color:var(--teal-dark);font-weight:900;text-decoration:none;line-height:1.55;box-shadow:0 5px 16px rgba(39,73,65,.04)}
+.care-concern-grid a:after{content:'→';margin-left:auto;padding-left:10px;color:var(--teal)}
+.care-emphasis{margin:22px 0 18px;padding:18px 20px;border-left:5px solid var(--teal);border-radius:0 15px 15px 0;background:#fff;color:var(--teal-dark)}
+.care-link-row{margin-top:18px}
+.care-service-flow{display:grid;gap:13px;margin:28px 0 0;padding:0;list-style:none;counter-reset:none}
+.care-service-flow li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:15px;align-items:start;padding:19px 21px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 4px 15px rgba(39,73,65,.035)}
+.care-service-flow li>span{display:flex;width:42px;height:42px;align-items:center;justify-content:center;border-radius:50%;background:#dceee7;color:var(--teal-dark);font-weight:900;font-size:1.04rem}
+.care-service-flow strong{display:block;margin:2px 0 5px;color:var(--teal-dark);font-size:1.08rem}
+.care-service-flow p{margin:0;color:var(--muted)}
+.care-note,.care-search-tip{margin-top:22px;padding:18px 20px;border-radius:16px;background:#fff7df;border:1px solid #ead9aa;color:#5f5848}
+.section-soft-blue{background:#eef7fb}
+.care-two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.care-panel{padding:22px 23px;border:1px solid var(--line);border-radius:20px;background:#fff}
+.care-panel h3{margin-top:0;color:var(--teal-dark)}
+.care-panel.action-panel{background:#f7fbf9}
+.compact-checks{margin-bottom:0}
+.compact-checks li{padding:10px 12px;border-width:1px}
+.care-option-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:23px}
+.care-option-grid article{padding:20px;border:1px solid var(--line);border-radius:17px;background:#fff}
+.care-option-grid strong{display:block;margin-bottom:6px;color:var(--teal-dark);font-size:1.03rem}
+.care-option-grid span{color:var(--muted)}
+.resource-tool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+.resource-tool-grid article{display:flex;flex-direction:column;min-height:245px;padding:22px;border:2px solid #d6e7e1;border-radius:20px;background:#fff}
+.resource-tool-grid article>span{align-self:flex-start;padding:4px 9px;border-radius:999px;background:#e7f3ef;color:var(--teal-dark);font-size:.79rem;font-weight:900}
+.resource-tool-grid h3{margin:.8em 0 .45em;color:var(--teal-dark)}
+.resource-tool-grid p{margin-top:0;color:var(--muted);flex:1}
+.resource-tool-grid a{font-weight:900;color:var(--teal-dark)}
+@media(max-width:800px){.care-concern-grid,.resource-tool-grid{grid-template-columns:1fr 1fr}.elderly-hero-inner{grid-template-columns:1fr 100px}.elderly-hero-icon{width:95px;height:95px}}
+@media(max-width:650px){.elderly-hero-inner{grid-template-columns:1fr}.elderly-hero-icon{justify-self:start;width:82px;height:82px}.care-concern-grid,.care-two-col,.care-option-grid,.resource-tool-grid{grid-template-columns:1fr}.care-service-flow li{grid-template-columns:42px minmax(0,1fr);padding:16px}.care-service-flow li>span{width:36px;height:36px}.resource-tool-grid article{min-height:0}}
