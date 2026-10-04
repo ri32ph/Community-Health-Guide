@@ -8,6 +8,7 @@
   const categoryLabel=id=>data.categories.find(c=>c.id===id)?.label||'';
   const currentIssue=()=>data.issues.find(i=>i.id===state.issueId);
   const categoryDetailPages={elderly:{url:'elderly-care.html',label:'高齢者・介護について詳しく見る'},legal:{url:'legal-assets.html',label:'契約・法律・財産について詳しく見る'}};
+  const issueDetailPages={'endoflife-grief':{url:'after-loss.html',label:'大切な方を亡くされたあとの手続き・相談を見る'}};
   const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
 
   const defaultNextSteps={
@@ -34,7 +35,8 @@
     'mental-suicide':['今、自分を傷つける危険が差し迫っている場合は119・110など緊急支援につながる','一人にならず、電話・SNS・身近な人など使いやすい方法で相談する','継続して支えてくれる医療・生活支援につながる'],
     'health-where-to-go':['緊急性が高い症状なら119を利用する','救急車や今すぐの受診を迷うときは#7119を利用する','受診先を探すときは医療情報ネットを利用する'],
     'endoflife-home-death':['本人がどこでどう過ごしたいか、話せる範囲で確認する','かかりつけ医・訪問看護・ケアマネジャー等に早めに相談する','急変時の連絡先や夜間の対応について事前に確認する'],
-    'endoflife-acp':['本人が大切にしていることを話す','家族・医療・介護職と希望を共有する','気持ちや状況が変わったら何度でも話し直す']
+    'endoflife-acp':['本人が大切にしていることを話す','家族・医療・介護職と希望を共有する','気持ちや状況が変わったら何度でも話し直す'],
+    'endoflife-grief':['今必要な手続きだけを確認する','市役所で該当する保険・年金等の手続きを確認する','相続や名義変更は必要に応じて専門相談を利用する','つらさが続くときはこころの相談先につながる']
   };
 
   const publicTools=[
@@ -129,6 +131,7 @@
       ${issue?`<div class="consult-step consult-results" data-consult-print-area>
         <div class="consult-print-head" aria-hidden="true"><strong>まちの健康・医療案内｜相談先ナビ</strong><span>${esc(issue.label)}</span></div>
         <div class="selected-concern"><span>選択中</span><strong>${esc(issue.label)}</strong></div>
+        ${issueDetailPages[issue.id]?`<a class="consult-detail-link" href="${esc(issueDetailPages[issue.id].url)}">${esc(issueDetailPages[issue.id].label)} →</a>`:''}
         ${steps.length?`<div class="next-step-box"><div class="consult-subhead"><strong>相談したあとにできること</strong><span>全部を一度にする必要はありません。できそうなものからで大丈夫です。</span></div><ul>${steps.map(x=>`<li><label><input type="checkbox"> <span>${esc(x)}</span></label></li>`).join('')}</ul></div>`:''}
         ${(issue.communityResourceTypes||[]).length?`<div class="community-types"><strong>地域で利用できる支援の例</strong><div>${issue.communityResourceTypes.map(x=>`<span>${esc(x)}</span>`).join('')}</div><p class="community-search-help"><b>もう少し詳しく探したいときは</b><br>下の言葉を参考に、<strong>「諫早市 ＋ キーワード」</strong>で検索してみてください。地域で利用できる支援やサービスが見つかることがあります。</p></div>`:''}
         ${toolCards(issue)}

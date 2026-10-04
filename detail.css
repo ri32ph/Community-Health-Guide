@@ -66,3 +66,20 @@
 .legal-note{margin-top:18px;padding:17px 19px;border-radius:14px;background:#f4f7ef;border:1px solid #e0e8d7}
 .consult-detail-link{display:inline-flex;align-items:center;gap:.35em;margin-top:12px;padding:10px 14px;border-radius:999px;background:#eef7f5;color:#145a55;font-weight:700;text-decoration:none;border:1px solid #cfe4df}
 @media(max-width:720px){.legal-hero-inner{grid-template-columns:1fr}.legal-hero-icon{width:100px;justify-self:start}.legal-concern-grid,.legal-route-grid{grid-template-columns:1fr}}
+
+
+/* 大切な方を亡くされたあと */
+.bereavement-hero{background:linear-gradient(180deg,#f1f8f5 0%,#fbfaf5 100%);border-bottom-color:#d5e5df}
+.bereavement-hero-inner{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:32px;align-items:center}
+.bereavement-hero-icon{width:132px;max-width:100%;justify-self:end;filter:drop-shadow(0 8px 18px rgba(35,80,75,.07));opacity:.92}
+.bereavement-concern-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}
+.bereavement-concern-grid a{display:flex;align-items:center;min-height:64px;padding:14px 16px;border:1px solid #d7e7e3;border-radius:16px;background:#fff;color:#153a38;font-weight:700;text-decoration:none;box-shadow:0 5px 16px rgba(28,71,67,.04)}
+.bereavement-concern-grid a::after{content:'›';margin-left:auto;color:#6b9e91;font-size:1.5em}
+.bereavement-note,.bereavement-callout{margin-top:20px;padding:17px 19px;border-radius:15px;background:#f8f5e9;border:1px solid #e8dfc2;color:#4e554f}
+.bereavement-small{margin-top:16px;color:var(--muted);font-size:.94rem}
+.bereavement-step-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.bereavement-step-grid article{padding:20px;border:1px solid #d9e8e5;border-radius:18px;background:#fff}
+.bereavement-step-grid article>span{display:flex;width:36px;height:36px;align-items:center;justify-content:center;margin-bottom:12px;border-radius:50%;background:#e4f1ed;color:#205f58;font-weight:900}
+.bereavement-step-grid strong{display:block;margin-bottom:6px;color:#173f3c}
+.bereavement-step-grid small{display:block;color:var(--muted);font-size:.92rem;line-height:1.65}
+@media(max-width:720px){.bereavement-hero-inner{grid-template-columns:1fr}.bereavement-hero-icon{width:96px;justify-self:start}.bereavement-concern-grid,.bereavement-step-grid{grid-template-columns:1fr}}
