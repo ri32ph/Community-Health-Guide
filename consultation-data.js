@@ -52,8 +52,13 @@ window.MACHI_CONSULTATION_DATA = {
     },
     {
       "id": "legal",
-      "label": "契約・法律・犯罪被害",
+      "label": "契約・法律・財産",
       "icon": "法"
+    },
+    {
+      "id": "crime",
+      "label": "犯罪・被害",
+      "icon": "守"
     }
   ],
   "issues": [
@@ -1309,30 +1314,183 @@ window.MACHI_CONSULTATION_DATA = {
     {
       "id": "legal-consumer",
       "categoryId": "legal",
-      "label": "契約・通販・定期購入を解約したい",
+      "label": "契約・通販・定期購入で困っている",
       "keywords": [
         "契約",
         "通販",
         "定期購入",
-        "解約"
+        "解約",
+        "訪問販売",
+        "悪質商法",
+        "消費者トラブル"
       ],
       "firstContactIds": [
         "isahaya-consumer"
       ],
       "communityResourceTypes": [
         "消費生活相談",
-        "消費者ホットライン188"
+        "消費者ホットライン188",
+        "必要に応じ法律相談"
       ],
       "urgency": "normal"
     },
     {
-      "id": "legal-scam",
+      "id": "legal-debt",
       "categoryId": "legal",
-      "label": "詐欺かもしれない・お金を請求されている",
+      "label": "借金・支払い・家計を整理したい",
+      "keywords": [
+        "借金",
+        "多重債務",
+        "返済",
+        "支払い",
+        "家計",
+        "ローン",
+        "滞納",
+        "生活費"
+      ],
+      "firstContactIds": [
+        "isahaya-kurashi",
+        "isahaya-civic"
+      ],
+      "communityResourceTypes": [
+        "家計改善支援",
+        "生活困窮相談",
+        "法律相談",
+        "司法書士・弁護士等"
+      ],
+      "urgency": "priority"
+    },
+    {
+      "id": "legal-inheritance",
+      "categoryId": "legal",
+      "label": "相続・遺言について相談したい",
+      "keywords": [
+        "相続",
+        "遺言",
+        "遺産",
+        "遺産分割",
+        "相続人",
+        "財産を残す",
+        "終活"
+      ],
+      "firstContactIds": [
+        "isahaya-civic"
+      ],
+      "communityResourceTypes": [
+        "法律相談",
+        "法テラス等",
+        "弁護士",
+        "司法書士"
+      ],
+      "urgency": "normal"
+    },
+    {
+      "id": "legal-asset-management",
+      "categoryId": "legal",
+      "label": "お金や財産の管理が心配",
+      "keywords": [
+        "財産管理",
+        "通帳",
+        "支払い",
+        "認知症",
+        "判断能力",
+        "お金の管理",
+        "権利擁護"
+      ],
+      "firstContactIds": [
+        "isahaya-houkatsu",
+        "isahaya-civic"
+      ],
+      "communityResourceTypes": [
+        "地域包括支援センター",
+        "権利擁護相談",
+        "社会福祉協議会等",
+        "専門職相談"
+      ],
+      "urgency": "normal"
+    },
+    {
+      "id": "legal-guardianship",
+      "categoryId": "legal",
+      "label": "成年後見制度について知りたい",
+      "keywords": [
+        "成年後見",
+        "任意後見",
+        "法定後見",
+        "判断能力",
+        "財産管理",
+        "権利擁護"
+      ],
+      "firstContactIds": [
+        "isahaya-houkatsu",
+        "isahaya-civic"
+      ],
+      "communityResourceTypes": [
+        "成年後見相談",
+        "権利擁護相談",
+        "家庭裁判所",
+        "弁護士・司法書士等"
+      ],
+      "urgency": "normal",
+      "note": "制度をいきなり選ぶのではなく、まず困っていることを整理してから必要な支援を検討します。"
+    },
+    {
+      "id": "legal-divorce",
+      "categoryId": "legal",
+      "label": "離婚・養育費・財産分与について相談したい",
+      "keywords": [
+        "離婚",
+        "養育費",
+        "財産分与",
+        "親権",
+        "別居",
+        "婚姻費用",
+        "法律相談"
+      ],
+      "firstContactIds": [
+        "isahaya-women",
+        "isahaya-civic"
+      ],
+      "communityResourceTypes": [
+        "女性相談",
+        "法律相談",
+        "法テラス等",
+        "ひとり親支援"
+      ],
+      "urgency": "normal",
+      "note": "暴力や脅迫など安全上の問題がある場合は、安全確保を優先します。"
+    },
+    {
+      "id": "legal-unknown",
+      "categoryId": "legal",
+      "label": "法律や財産のことを、どこに相談すればよいか分からない",
+      "keywords": [
+        "法律",
+        "財産",
+        "相談先",
+        "分からない",
+        "困りごと",
+        "専門家"
+      ],
+      "firstContactIds": [
+        "isahaya-civic"
+      ],
+      "communityResourceTypes": [
+        "市民相談",
+        "法律相談",
+        "専門機関へのつなぎ"
+      ],
+      "urgency": "normal"
+    },
+    {
+      "id": "crime-scam",
+      "categoryId": "crime",
+      "label": "詐欺かもしれない・不審な請求がある",
       "keywords": [
         "詐欺",
         "架空請求",
         "特殊詐欺",
+        "不審な請求",
         "悪質商法"
       ],
       "firstContactIds": [
@@ -1341,59 +1499,67 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "communityResourceTypes": [
         "消費生活相談",
-        "警察相談"
+        "警察相談",
+        "消費者ホットライン188"
       ],
       "urgency": "priority"
     },
     {
-      "id": "legal-family",
-      "categoryId": "legal",
-      "label": "離婚・養育費・相続など法律の相談をしたい",
+      "id": "crime-stalker",
+      "categoryId": "crime",
+      "label": "つきまとい・監視・しつこい連絡が怖い",
       "keywords": [
-        "法律",
-        "相続",
-        "離婚",
-        "養育費"
+        "ストーカー",
+        "つきまとい",
+        "監視",
+        "GPS",
+        "しつこい連絡",
+        "脅迫"
       ],
       "firstContactIds": [
-        "isahaya-civic"
+        "nagasaki-police"
       ],
       "communityResourceTypes": [
-        "法律相談",
-        "専門相談"
+        "警察相談",
+        "被害者支援",
+        "安全確保支援"
       ],
-      "urgency": "normal"
+      "urgency": "urgent",
+      "note": "今すぐ危険が迫っている場合は110。"
     },
     {
-      "id": "legal-crime",
-      "categoryId": "legal",
-      "label": "犯罪や暴力の被害にあった",
+      "id": "crime-violence",
+      "categoryId": "crime",
+      "label": "暴力・脅迫などの被害にあっている",
       "keywords": [
-        "犯罪被害",
         "暴力",
+        "脅迫",
+        "犯罪被害",
         "被害者",
+        "怖い",
         "警察"
       ],
       "firstContactIds": [
         "nagasaki-police"
       ],
       "communityResourceTypes": [
-        "犯罪被害者支援",
         "警察相談",
+        "犯罪被害者支援",
         "法律・心理支援"
       ],
       "urgency": "urgent",
-      "note": "事件・事故が進行中など緊急時は110。"
+      "note": "事件が進行中など緊急時は110。"
     },
     {
-      "id": "legal-sexual",
-      "categoryId": "legal",
-      "label": "性被害について誰かに相談したい",
+      "id": "crime-sexual",
+      "categoryId": "crime",
+      "label": "性被害・性暴力について相談したい",
       "keywords": [
         "性被害",
         "性暴力",
         "不同意",
-        "痴漢"
+        "痴漢",
+        "性犯罪"
       ],
       "firstContactIds": [
         "nagasaki-sexual-violence",
@@ -1408,23 +1574,25 @@ window.MACHI_CONSULTATION_DATA = {
       "urgency": "urgent"
     },
     {
-      "id": "legal-unknown",
-      "categoryId": "legal",
-      "label": "どこに相談すればよいのか分からない",
+      "id": "crime-police-unsure",
+      "categoryId": "crime",
+      "label": "警察に相談した方がよいか迷っている",
       "keywords": [
-        "相談先",
-        "分からない",
-        "困りごと",
-        "複数"
+        "警察",
+        "相談",
+        "事件",
+        "犯罪",
+        "被害",
+        "迷う"
       ],
       "firstContactIds": [
-        "isahaya-civic"
+        "nagasaki-police"
       ],
       "communityResourceTypes": [
-        "一般相談",
-        "専門機関へのつなぎ"
+        "警察相談専用電話#9110",
+        "犯罪被害者支援"
       ],
-      "urgency": "normal"
+      "urgency": "priority"
     }
   ],
   "contacts": [
@@ -1584,7 +1752,8 @@ window.MACHI_CONSULTATION_DATA = {
       "categories": [
         "高齢者・介護",
         "住まい",
-        "これからの療養・看取り"
+        "これからの療養・看取り",
+        "契約・法律・財産"
       ],
       "keywords": [
         "介護",
@@ -1628,7 +1797,11 @@ window.MACHI_CONSULTATION_DATA = {
         "不安",
         "終末期",
         "地域包括支援センター",
-        "退院支援"
+        "退院支援",
+        "成年後見",
+        "財産管理",
+        "権利擁護",
+        "判断能力"
       ]
     },
     {
@@ -1647,7 +1820,8 @@ window.MACHI_CONSULTATION_DATA = {
       "categories": [
         "お金・生活",
         "仕事",
-        "住まい"
+        "住まい",
+        "契約・法律・財産"
       ],
       "keywords": [
         "生活費",
@@ -1705,7 +1879,8 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "categories": [
         "家族・パートナー",
-        "住まい"
+        "住まい",
+        "契約・法律・財産"
       ],
       "keywords": [
         "DV",
@@ -1729,7 +1904,8 @@ window.MACHI_CONSULTATION_DATA = {
         "安全",
         "女性相談",
         "デートDV",
-        "パートナー"
+        "パートナー",
+        "財産分与"
       ]
     },
     {
@@ -1925,7 +2101,8 @@ window.MACHI_CONSULTATION_DATA = {
         "phone"
       ],
       "categories": [
-        "契約・法律・犯罪被害"
+        "契約・法律・財産",
+        "犯罪・被害"
       ],
       "keywords": [
         "契約",
@@ -1957,7 +2134,7 @@ window.MACHI_CONSULTATION_DATA = {
         "家族・パートナー",
         "健康・医療",
         "仕事",
-        "契約・法律・犯罪被害"
+        "契約・法律・財産"
       ],
       "keywords": [
         "不登校",
@@ -1995,7 +2172,11 @@ window.MACHI_CONSULTATION_DATA = {
         "相談先が分からない",
         "どこに相談",
         "一般相談",
-        "法律相談"
+        "法律相談",
+        "遺言",
+        "成年後見",
+        "財産管理",
+        "財産分与"
       ]
     },
     {
@@ -2030,7 +2211,12 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "categories": [
         "家族・パートナー",
-        "契約・法律・犯罪被害"
+        "犯罪・被害"
+      ],
+      "keywords": [
+        "性被害",
+        "性暴力",
+        "性犯罪"
       ]
     },
     {
@@ -2050,7 +2236,14 @@ window.MACHI_CONSULTATION_DATA = {
         "高齢者・介護",
         "家族・パートナー",
         "住まい",
-        "契約・法律・犯罪被害"
+        "犯罪・被害"
+      ],
+      "keywords": [
+        "犯罪被害",
+        "ストーカー",
+        "脅迫",
+        "暴力",
+        "詐欺"
       ]
     }
   ],
@@ -2220,7 +2413,7 @@ window.MACHI_CONSULTATION_DATA = {
       "description": "性犯罪・性暴力被害者のためのワンストップ支援センターやチャット相談等を案内している。",
       "categories": [
         "家族・パートナー",
-        "契約・法律・犯罪被害"
+        "犯罪・被害"
       ],
       "keywords": [
         "性被害",
@@ -2310,7 +2503,7 @@ window.MACHI_CONSULTATION_DATA = {
       "sourceType": "government",
       "description": "契約、悪質商法、定期購入、製品・サービスのトラブルなどについて、最寄りの消費生活相談窓口につながる。",
       "categories": [
-        "契約・法律・犯罪被害",
+        "契約・法律・財産",
         "お金・生活"
       ],
       "keywords": [
@@ -2344,7 +2537,8 @@ window.MACHI_CONSULTATION_DATA = {
         "家族・パートナー",
         "仕事",
         "子ども・子育て",
-        "契約・法律・犯罪被害"
+        "契約・法律・財産",
+        "犯罪・被害"
       ],
       "keywords": [
         "人権",
@@ -2461,6 +2655,30 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "officialUrl": "https://talkme.jp/",
       "sourceTrust": "officially-listed"
+    },
+    {
+      "id": "houterasu",
+      "name": "法テラス（日本司法支援センター）",
+      "operator": "日本司法支援センター（法テラス）",
+      "sourceType": "government",
+      "description": "借金、相続、離婚、金銭トラブルなど、法的な困りごとについて相談先や制度を案内する公的な総合案内所。",
+      "categories": [
+        "契約・法律・財産"
+      ],
+      "keywords": [
+        "法律相談",
+        "相続",
+        "遺言",
+        "成年後見",
+        "借金",
+        "多重債務",
+        "離婚",
+        "養育費",
+        "財産分与"
+      ],
+      "url": "https://www.houterasu.or.jp/",
+      "verifiedBy": "法務省所管・日本司法支援センター",
+      "sourceUrl": "https://www.houterasu.or.jp/"
     }
   ],
   "quickDials": [
@@ -2504,7 +2722,7 @@ window.MACHI_CONSULTATION_DATA = {
       "organization": "警察",
       "description": "事件・事故・暴力など、直ちに警察官の対応が必要なとき。",
       "categories": [
-        "契約・法律・犯罪被害",
+        "犯罪・被害",
         "家族・パートナー",
         "緊急"
       ],
@@ -2704,7 +2922,7 @@ window.MACHI_CONSULTATION_DATA = {
       "organization": "消費者庁",
       "description": "契約、通販、定期購入、悪質商法などの消費者トラブルを最寄りの相談窓口につなぐ。",
       "categories": [
-        "契約・法律・犯罪被害",
+        "契約・法律・財産",
         "お金・生活"
       ],
       "keywords": [
@@ -2770,7 +2988,7 @@ window.MACHI_CONSULTATION_DATA = {
       "description": "性犯罪・性暴力被害について、最寄りのワンストップ支援センターにつながる。",
       "categories": [
         "家族・パートナー",
-        "契約・法律・犯罪被害"
+        "犯罪・被害"
       ],
       "keywords": [
         "性被害",
@@ -2800,7 +3018,7 @@ window.MACHI_CONSULTATION_DATA = {
       "organization": "警察庁・都道府県警察",
       "description": "性犯罪・性暴力被害について、発信地域を管轄する都道府県警察の相談窓口につながる。",
       "categories": [
-        "契約・法律・犯罪被害",
+        "犯罪・被害",
         "家族・パートナー"
       ],
       "keywords": [
@@ -2830,7 +3048,7 @@ window.MACHI_CONSULTATION_DATA = {
       "organization": "警察庁・都道府県警察",
       "description": "ストーカー、DV、悪質商法など、緊急ではない警察への相談全般。",
       "categories": [
-        "契約・法律・犯罪被害",
+        "犯罪・被害",
         "家族・パートナー"
       ],
       "keywords": [
@@ -2871,7 +3089,8 @@ window.MACHI_CONSULTATION_DATA = {
         "仕事",
         "住まい",
         "これからの療養・看取り",
-        "契約・法律・犯罪被害"
+        "契約・法律・財産",
+        "犯罪・被害"
       ],
       "keywords": [
         "手話",

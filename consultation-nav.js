@@ -38,7 +38,7 @@
 
   const publicTools=[
     {id:'local-resources',name:'いさはやの地域資源集',description:'地域ごとの生活支援、介護予防、認知症、医療・介護連携などを探せます。',url:'https://isahaya-korei-portal.jp/%E5%9C%B0%E5%9F%9F%E8%B3%87%E6%BA%90%E9%9B%86%E3%82%92%E6%9B%B4%E6%96%B0%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F/',categories:['高齢者・介護','これからの療養・看取り'],tag:'諫早市の地域資源'},
-    {id:'isahaya-map',name:'諫早市デジタルマップ',description:'公共施設などの場所を地図上で確認できます。',url:'https://www.sonicweb-asp.jp/isahaya/',categories:['子ども・子育て','高齢者・介護','お金・生活','家族・パートナー','こころ','健康・医療','障害・発達','仕事','住まい','これからの療養・看取り','契約・法律・犯罪被害'],tag:'場所を確認'},
+    {id:'isahaya-map',name:'諫早市デジタルマップ',description:'公共施設などの場所を地図上で確認できます。',url:'https://www.sonicweb-asp.jp/isahaya/',categories:['子ども・子育て','高齢者・介護','お金・生活','家族・パートナー','こころ','健康・医療','障害・発達','仕事','住まい','これからの療養・看取り','契約・法律・財産','犯罪・被害'],tag:'場所を確認'},
     {id:'navi',name:'医療情報ネット（ナビイ）',description:'病院・診療所・歯科・薬局を、場所や診療内容などから検索できます。',url:'https://www.iryou.teikyouseido.mhlw.go.jp/znk-web/juminkanja/S2300/initialize',categories:['健康・医療','高齢者・介護','これからの療養・看取り'],tag:'医療機関・薬局'},
     {id:'care-search',name:'介護サービス情報公表システム',description:'全国の介護サービス事業所のサービス内容を検索・比較できます。',url:'https://www.mhlw.go.jp/stf/kaigo-kouhyou.html',categories:['高齢者・介護','これからの療養・看取り'],tag:'介護サービス'},
     {id:'wam',name:'WAM NET 障害福祉サービス等情報検索',description:'障害福祉・児童発達支援などの事業所を地域やサービス種別から検索できます。',url:'https://www.wam.go.jp/sfkohyoout/',categories:['子ども・子育て','障害・発達'],tag:'障害・発達支援'},
