@@ -7,7 +7,7 @@
   const channelLabels={all:'すべて', 'in-person':'地域の窓口',phone:'電話',web:'インターネット',sns:'SNS',chat:'チャット','sign-language':'手話','text-relay':'文字・電話リレー'};
   const categoryLabel=id=>data.categories.find(c=>c.id===id)?.label||'';
   const currentIssue=()=>data.issues.find(i=>i.id===state.issueId);
-  const categoryDetailPages={child:{url:'child-parenting.html',label:'子ども・子育てについて詳しく見る'},elderly:{url:'elderly-care.html',label:'高齢者・介護について詳しく見る'},legal:{url:'legal-assets.html',label:'契約・法律・財産について詳しく見る'}};
+  const categoryDetailPages={child:{url:'child-parenting.html',label:'子ども・子育てについて詳しく見る'},elderly:{url:'elderly-care.html',label:'高齢者・介護について詳しく見る'},disability:{url:'disability-development.html',label:'障害・発達について詳しく見る'},legal:{url:'legal-assets.html',label:'契約・法律・財産について詳しく見る'}};
   const issueDetailPages={'endoflife-grief':{url:'after-loss.html',label:'大切な方を亡くされたあとの手続き・相談を見る'}};
   const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
 
