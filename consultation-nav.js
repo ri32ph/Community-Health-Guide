@@ -127,7 +127,7 @@
     const steps=issue?nextSteps(issue):[];
     mount.innerHTML=`
       <div class="consult-step">
-        <p class="consult-step-label"><span>1</span> 何について迷っていますか？</p>
+        <p class="consult-step-label"><span>1</span> 目的別に探す</p>
         <div class="consult-category-grid">
           ${data.categories.map(c=>`<button type="button" class="consult-category ${cat===c.id?'is-active':''}" data-category="${esc(c.id)}"><span class="category-mark">${esc(c.icon)}</span><span>${esc(c.label)}</span></button>`).join('')}
         </div>
