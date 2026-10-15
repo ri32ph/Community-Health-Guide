@@ -7,8 +7,11 @@
   const channelLabels={all:'すべて', 'in-person':'地域の窓口',phone:'電話',web:'インターネット',sns:'SNS',chat:'チャット','sign-language':'手話','text-relay':'文字・電話リレー'};
   const categoryLabel=id=>data.categories.find(c=>c.id===id)?.label||'';
   const currentIssue=()=>data.issues.find(i=>i.id===state.issueId);
-  const categoryDetailPages={child:{url:'child-parenting.html',label:'子ども・子育てについて詳しく見る'},elderly:{url:'elderly-care.html',label:'高齢者・介護について詳しく見る'},money:{url:'money-life.html',label:'お金・生活について詳しく見る'},disability:{url:'disability-development.html',label:'障害・発達について詳しく見る'},legal:{url:'legal-assets.html',label:'契約・法律・財産について詳しく見る'}};
-  const issueDetailPages={'endoflife-grief':{url:'after-loss.html',label:'大切な方を亡くされたあとの手続き・相談を見る'}};
+  const categoryDetailPages={medical:{url:'health.html',label:'健康・医療について詳しく見る'},pregnancy:{url:'child-parenting.html',label:'妊娠・子育ての地域情報を見る'},child:{url:'child-parenting.html',label:'子ども・子育てについて詳しく見る'},elderly:{url:'elderly-care.html',label:'高齢者・介護について詳しく見る'},'disability-work':{url:'disability-development.html',label:'障害・発達について詳しく見る'},'life-money':{url:'money-life.html',label:'暮らし・お金について詳しく見る'},safety:{url:'legal-assets.html',label:'法律・財産について詳しく見る'}};
+  const issueDetailPages={'mental-bereavement':{url:'after-loss.html',label:'大切な方を亡くされたあとの手続き・相談を見る'},'pregnancy-emergency-contraception':{url:'emergency-contraception.html',label:'緊急避妊薬の入手方法と諫早市内の取扱先を見る'}};
+  const resourceCategoryAliases={
+    medical:['健康・医療'],mental:['こころ'],pregnancy:['子ども・子育て','健康・医療','家族・パートナー'],child:['子ども・子育て'],elderly:['高齢者・介護','これからの療養・看取り'],'disability-work':['障害・発達','仕事'],'life-money':['お金・生活','住まい'],safety:['家族・パートナー','契約・法律・財産','犯罪・被害']
+  };
   const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
 
   const defaultNextSteps={
@@ -24,6 +27,11 @@
     endoflife:['本人が大切にしたいことを確認する','かかりつけ医やケアマネジャー等に相談する','訪問診療・訪問看護など地域の支援体制を確認する'],
     legal:['契約書・請求内容・日時など分かる情報を残す','専門の相談窓口に早めに相談する','必要に応じて警察・法律・生活支援につながる']
   };
+  defaultNextSteps.medical=defaultNextSteps.health;
+  defaultNextSteps.pregnancy=['今の状況と最後の月経、気になる症状を整理する','医療機関や相談窓口に早めに相談する','必要に応じて今後のことを一緒に考える'];
+  defaultNextSteps['disability-work']=['困っている場面と希望する働き方を整理する','障害・就労・生活の相談先につながる','利用できる制度や支援を確認する'];
+  defaultNextSteps['life-money']=defaultNextSteps.money;
+  defaultNextSteps.safety=['今いる場所の安全を確認する','記録や資料を安全に残す','状況に合う警察・法律・人権・生活支援につながる'];
 
   const specialNextSteps={
     'child-development':['気になっている様子を、いつ・どこで見られるかメモする','園や学校での様子も聞いてみる','発達相談後、必要なら児童発達支援などを探す'],
@@ -61,7 +69,8 @@
       const methodOk=state.channel==='all'||(r.channels||[]).includes(state.channel);
       if(!methodOk)return false;
       if(direct.has(r.id))return true;
-      if(!(r.categories||[]).includes(cat))return false;
+      const aliases=resourceCategoryAliases[issue.categoryId]||[cat];
+      if(!(r.categories||[]).some(category=>aliases.includes(category)))return false;
       if(r.type==='dial') return overlap(issue,r)>0 || issue.urgency==='urgent';
       return true;
     }).map(r=>{
@@ -103,7 +112,7 @@
   }
 
   function nextSteps(issue){return specialNextSteps[issue.id]||defaultNextSteps[issue.categoryId]||[];}
-  function toolsFor(issue){const cat=categoryLabel(issue.categoryId);return publicTools.filter(t=>t.categories.includes(cat));}
+  function toolsFor(issue){const cat=categoryLabel(issue.categoryId);const aliases=resourceCategoryAliases[issue.categoryId]||[cat];return publicTools.filter(t=>t.categories.some(category=>aliases.includes(category)));}
   function toolCards(issue){
     const tools=toolsFor(issue);
     if(!tools.length)return '';

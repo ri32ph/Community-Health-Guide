@@ -8,17 +8,14 @@
   <title>まちの健康・医療案内｜諫早市</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="scenes.css">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c716b'/%3E%3Cpath d='M27 13h10v14h14v10H37v14H27V37H13V27h14z' fill='white'/%3E%3C/svg%3E">
 </head>
 <body class="home-page">
   <a class="skip" href="#main">本文へ移動</a>
   <header><div class="wrap nav">
     <a class="brand" href="index.html"><small>諫早市にお住まいの皆さんへ</small>まちの健康・医療案内</a>
     <nav class="main-nav" aria-label="主な案内"><a href="emergency.html">救急</a><a href="visit.html">受診</a><a href="medicine.html">薬</a><a href="health.html">健康づくり</a><a href="#local">地域の相談先</a></nav>
-    <div class="tools"><button class="tool text-size" type="button" data-text-size aria-pressed="false">文字を大きく</button><button class="tool print-tool" type="button" data-print-page aria-label="このページを印刷またはPDFに保存">印刷・PDF</button><a class="tool local-tool" href="#local">地域の相談先</a><details class="mobile-menu"><summary>メニュー</summary><nav aria-label="スマートフォン用メニュー"><a href="emergency.html">救急</a><a href="visit.html">受診</a><a href="medicine.html">薬</a><a href="health.html">健康づくり</a><a href="#local">地域の相談先</a></nav></details></div>
+    <div class="tools"><button class="tool text-size" type="button" data-text-size aria-pressed="false">文字を大きく</button><a class="tool local-tool" href="#local">地域の相談先</a><details class="mobile-menu"><summary>メニュー</summary><nav aria-label="スマートフォン用メニュー"><a href="emergency.html">救急</a><a href="visit.html">受診</a><a href="medicine.html">薬</a><a href="health.html">健康づくり</a><a href="#local">地域の相談先</a></nav></details></div>
   </div></header>
 
   <main id="main">
@@ -34,54 +31,51 @@
       <div class="guide-grid">
         <a class="guide-card" href="visit.html"><img class="guide-icon" src="assets/icons/01_hospital.png" alt=""><span><strong>病院・診療所を<br>探したい</strong><small>近くの医療機関や診療科を探せます。</small></span></a>
         <a class="guide-card" href="medicine.html"><img class="guide-icon" src="assets/icons/02_medicine.png" alt=""><span><strong>薬について<br>相談したい</strong><small>薬局や相談窓口をご案内します。</small></span></a>
-        <a class="guide-card" href="child-parenting.html"><img class="guide-icon" src="assets/icons/03_child.png" alt=""><span><strong>子ども・子育てについて</strong><small>妊娠・育児、発達、学校生活などの相談先をご案内します。</small></span></a>
-        <a class="guide-card" href="elderly-care.html"><img class="guide-icon" src="assets/icons/04_senior_couple.png" alt=""><span><strong>高齢者・介護について</strong><small>介護サービスの始め方や、もの忘れ・家族介護の相談先をご案内します。</small></span></a>
+        <a class="guide-card" href="#local"><img class="guide-icon" src="assets/icons/03_child.png" alt=""><span><strong>子どものことで<br>相談したい</strong><small>小児科や子育ての相談先をまとめています。</small></span></a>
+        <a class="guide-card" href="#local"><img class="guide-icon" src="assets/icons/04_senior_couple.png" alt=""><span><strong>高齢者・介護について</strong><small>介護や生活の相談先をご案内します。</small></span></a>
         <a class="guide-card" href="#local"><img class="guide-icon" src="assets/icons/05_heart.png" alt=""><span><strong>こころの相談</strong><small>相談できる窓口をまとめています。</small></span></a>
         <a class="guide-card" href="#consult"><img class="guide-icon" src="assets/icons/06_night_holiday.png" alt=""><span><strong>夜間・休日に困った</strong><small>急な体調不良の相談先を確認できます。</small></span></a>
       </div>
     </div></section>
 
-    <section class="section civic-actions" id="city-actions"><div class="wrap">
-      <div class="centered-heading" data-civic-heading><div class="eyebrow">市の情報・手続き</div><h2>知りたいこと・したいことから</h2><p>相談先だけでなく、問い合わせ、情報の受け取り、手続き、防災情報まで、次の行動につながる入口をまとめています。</p></div>
-      <div class="civic-action-grid" data-civic-actions></div>
-      <p class="civic-action-footnote" data-civic-footnote></p>
+    <section class="section section-white"><div class="wrap"><div class="centered-heading"><h2>目的から調べる</h2><p>方法を知り、探し方を確認して、諫早市内の該当先を見つけられます。</p></div><div class="guide-grid"><a class="guide-card" href="quit-smoking.html"><img class="guide-icon" src="assets/icons/17_pharmacist.png" alt=""><span><strong>禁煙したい</strong><small>禁煙外来と市販薬、諫早市内の医療機関を案内します。</small></span></a><a class="guide-card" href="emergency-contraception.html"><img class="guide-icon" src="assets/icons/02_medicine.png" alt=""><span><strong>緊急避妊薬を探したい</strong><small>医療機関と取扱薬局を、早く確認できます。</small></span></a></div></div></section>
+
+    <section class="section situation-section" id="situations"><div class="wrap"><div class="centered-heading"><h2>こんなときは、どこに相談する？</h2><p>よくある場面から、相談先の目安を紹介します。</p></div><div class="situation-grid">
+      <a href="emergency.html"><img src="assets/icons/07_fever_child.png" alt=""><strong>急に熱が出た</strong></a>
+      <a href="medicine.html"><img src="assets/icons/08_medication_consultation.png" alt=""><strong>薬の飲み方を<br>相談したい</strong></a>
+      <a href="visit.html"><img src="assets/icons/12_doctor.png" alt=""><strong>病院へ行くか<br>迷っている</strong></a>
+      <a href="checkup-qa.html"><img src="assets/icons/10_health_check.png" alt=""><strong>健診結果が<br>気になる</strong></a>
+      <a href="#consult"><img src="assets/icons/11_parent_child.png" alt=""><strong>子どもの体調を<br>相談したい</strong></a>
+    </div></div></section>
+
+    <section class="section section-mint" id="consult"><div class="wrap"><div class="section-head"><div><div class="eyebrow">電話で相談</div><h2>呼ぶか迷ったら相談できます</h2></div><p>電話相談は診断や治療をするものではありません。症状が急に悪化した場合や、命の危険を感じる場合は119番へ連絡してください。</p></div>
+      <div class="phone-grid"><article class="phone-card"><h3>救急車を呼ぶか迷うとき</h3><p class="number-display">#7119</p><p><strong>長崎県救急安心センター</strong></p><ul><li>24時間365日</li><li>全年齢が対象</li><li>相談無料・通話料は利用者負担</li></ul><a class="call-action" href="tel:%237119" aria-label="長崎県救急安心センター、シャープ7119へ電話する">#7119へ電話する</a><p class="notice">つながらない場合：<a href="tel:0958011217">095-801-1217</a></p></article>
+      <article class="phone-card"><h3>子どもの夜間の急病・けが</h3><p class="number-display">#8000</p><p><strong>長崎県子ども医療電話相談</strong></p><p>家庭での対処や、医療機関を受診するか迷ったときに相談できます。</p><a class="call-action" href="tel:%238000" aria-label="子ども医療電話相談、シャープ8000へ電話する">#8000へ電話する</a><p class="notice">受付時間は公式情報でご確認ください。</p></article></div>
     </div></section>
 
-    <section class="section home-next" id="situations"><div class="wrap">
-      <div class="centered-heading"><div class="eyebrow">次にしたいこと</div><h2>目的からすぐに進めます</h2><p>詳しい説明は各ページにまとめ、トップページでは入口を分かりやすくしています。</p></div>
-      <div class="home-next-grid">
-        <a class="home-next-card urgent" href="emergency.html"><img src="assets/icons/21_ambulance.png" alt=""><span><strong>急な体調不良・救急</strong><small>119番の目安、#7119・#8000など</small></span></a>
-        <a class="home-next-card" href="visit.html"><img src="assets/icons/12_doctor.png" alt=""><span><strong>受診先を探す</strong><small>休日当番医、医療機関の検索</small></span></a>
-        <a class="home-next-card" href="medicine.html"><img src="assets/icons/02_medicine.png" alt=""><span><strong>薬について確認する</strong><small>飲み忘れ、使い間違い、飲み合わせ</small></span></a>
-        <a class="home-next-card" href="health.html"><img src="assets/icons/24_health_plants.png" alt=""><span><strong>健康づくり・健診</strong><small>毎日の健康づくり、健診後の相談</small></span></a>
-      </div>
-      <div class="quick-call-strip" id="consult"><div><strong>電話で相談したいとき</strong><span>救急車を呼ぶか迷うときは #7119、子どもの夜間の急病・けがは #8000。</span></div><div class="quick-call-actions"><a href="tel:%237119" data-confirm-call data-confirm-title="#7119 に電話しますか？" data-confirm-message="救急車を呼ぶべきか、今すぐ受診すべきか迷ったときの相談窓口です。" data-confirm-alt="意識がない、呼吸が苦しいなど明らかな緊急時は119を利用してください。">#7119</a><a href="tel:%238000" data-confirm-call data-confirm-title="#8000 に電話しますか？" data-confirm-message="子どもの急な病気やけがについて、受診や対処に迷ったときの相談窓口です。" data-confirm-alt="意識がない、呼吸が苦しいなど緊急性が高い場合は119を利用してください。">#8000</a></div></div>
+    <section class="section section-white" id="care"><div class="wrap"><div class="section-head"><div><div class="eyebrow">受診先を探す</div><h2>今日、診てもらえる場所</h2></div><div class="section-visual"><p>診療時間や受付状況は変わることがあります。受診前に、必ず医療機関へ電話で確認してください。</p><div class="crop-scene crop-hospital" role="img" aria-label="地域の病院と、医療や介護を受ける住民を描いたイラスト"></div></div></div>
+      <div class="local-grid"><article class="local-card"><h3>休日当番医</h3><p>諫早市が案内する、その日の休日当番医を確認します。</p><a class="text-link" href="https://www.city.isahaya.nagasaki.jp/soshiki/24/23973.html" target="_blank" rel="noopener">諫早市の最新情報を見る ↗</a></article><article class="local-card"><h3>医療機関を検索する</h3><p>診療日、診療科、対応できる治療などから探せます。</p><a class="text-link" href="https://www.iryou.teikyouseido.mhlw.go.jp/" target="_blank" rel="noopener">医療情報ネットを開く ↗</a></article><article class="local-card"><h3>子どもの夜間診療</h3><p>中学生までの内科的な急病に対応。来院前に電話が必要です。</p><a class="text-link" href="tel:0957221380">諫早市こども準夜診療センター<br>0957-22-1380</a></article></div>
     </div></section>
 
-    <section class="section section-white" id="local"><div class="wrap"><div class="section-head"><div><div class="eyebrow">相談先ナビ</div><h2>何に困っているか？から探す</h2></div><div class="section-visual"><p>制度名や窓口名が分からなくても大丈夫です。今の悩みに近いものを選ぶと、諫早市・長崎県の地域窓口、電話、Web、SNS・チャット、手話・文字で利用できる相談先を案内します。</p><div class="crop-scene crop-support" role="img" aria-label="家族を支える医師、看護師、介護職を描いたイラスト"></div></div></div>
-      <div class="consultation-intro"><p><strong>相談先の名前ではなく、「何に困っているか？」から選べます。</strong></p><p>地域の窓口を優先し、国や公的機関の相談サイト、公的機関が公式に案内している相談先も表示します。</p></div>
-      <div data-consultation-nav></div>
+    <section class="section section-sky" id="medicine"><div class="wrap"><div class="section-head"><div><div class="eyebrow">薬のこと</div><h2>薬は、確認して使う</h2></div><p>薬によって対応が異なります。自己判断で量を増減したり、ほかの人へ渡したりせず、薬の説明や薬袋を確認してください。</p></div>
+      <div class="topic-grid"><article class="topic"><h3>薬を飲み忘れた</h3><p>自己判断で2回分を一度に使わず、薬ごとの指示を確認します。</p></article><article class="topic"><h3>間違えて使った</h3><p>薬の名前、量、使った時刻を確認し、薬剤師や医療機関へ相談します。</p></article><article class="topic"><h3>体調が変わった</h3><p>息苦しさ、顔やのどの腫れ、意識の異常があれば119番へ。</p></article><article class="topic"><h3>飲み合わせが心配</h3><p>市販薬やサプリメントも含め、使用中のものを薬剤師へ伝えます。</p></article></div>
+      <p class="notice">この案内は一般的な情報です。個別の薬については、処方した医療機関または薬を受け取った薬局へご相談ください。</p>
     </div></section>
 
-    <section class="section professional-search" id="professionals"><div class="wrap">
-      <div class="section-head"><div><div class="eyebrow">医療・介護・福祉職の方へ</div><h2>地域連携先を探す</h2></div><p>「何につなぎたいか？」から、公的な検索システムや地域資源へ移動できます。現在の受入状況や個別対応の可否は、各事業所へ直接ご確認ください。</p></div>
-      <p class="professional-intro">住民向けの「困りごとから探す」とは別に、専門職が連携先を探すための入口です。公的データベースと諫早市の地域情報を中心に掲載しています。</p>
-      <div class="pro-purpose-grid">
-        <article class="pro-purpose"><h3>医療・在宅療養につなぐ</h3><p>病院・診療所・歯科・薬局、在宅療養に関わる医療資源を探します。</p><div class="pro-links"><a href="https://www.iryou.teikyouseido.mhlw.go.jp/znk-web/juminkanja/S2300/initialize" target="_blank" rel="noopener">医療情報ネット（ナビイ） ↗</a><a href="https://isahaya-korei-portal.jp/%E5%9C%B0%E5%9F%9F%E8%B3%87%E6%BA%90%E9%9B%86%E3%82%92%E6%9B%B4%E6%96%B0%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F/" target="_blank" rel="noopener">いさはやの地域資源集 ↗</a></div></article>
-        <article class="pro-purpose"><h3>介護サービスにつなぐ</h3><p>訪問・通所・短期入所・施設など、介護サービス事業所を探します。</p><div class="pro-links"><a href="https://www.mhlw.go.jp/stf/kaigo-kouhyou.html" target="_blank" rel="noopener">介護サービス情報公表システム ↗</a><a href="https://www.sonicweb-asp.jp/isahaya/" target="_blank" rel="noopener">諫早市デジタルマップ ↗</a></div></article>
-        <article class="pro-purpose"><h3>障害・発達支援につなぐ</h3><p>相談支援、就労支援、児童発達支援、放課後等デイサービスなどを探します。</p><div class="pro-links"><a href="https://www.wam.go.jp/sfkohyoout/" target="_blank" rel="noopener">WAM NET 障害福祉サービス等情報検索 ↗</a></div></article>
-        <article class="pro-purpose"><h3>子ども・保育につなぐ</h3><p>保育所・認定こども園等や、子どもの発達・福祉サービスを探します。</p><div class="pro-links"><a href="https://www.wam.go.jp/kokodesearch/ANN010100E00.do" target="_blank" rel="noopener">ここdeサーチ ↗</a><a href="https://www.wam.go.jp/sfkohyoout/" target="_blank" rel="noopener">障害福祉サービス等情報検索 ↗</a></div></article>
-        <article class="pro-purpose"><h3>治療と仕事の両立につなぐ</h3><p>病気を抱えて働く人や、支援する医療機関・企業向けの支援機関を探します。</p><div class="pro-links"><a href="https://chiryoutoshigoto.mhlw.go.jp/" target="_blank" rel="noopener">治療と仕事の両立支援ナビ ↗</a></div></article>
-        <article class="pro-purpose"><h3>地域の活動・生活支援につなぐ</h3><p>介護保険サービスだけでなく、通いの場、生活支援、認知症支援など地域資源を探します。</p><div class="pro-links"><a href="https://isahaya-korei-portal.jp/%E5%9C%B0%E5%9F%9F%E8%B3%87%E6%BA%90%E9%9B%86%E3%82%92%E6%9B%B4%E6%96%B0%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F/" target="_blank" rel="noopener">いさはやの地域資源集 ↗</a><a href="https://www.sonicweb-asp.jp/isahaya/" target="_blank" rel="noopener">諫早市デジタルマップ ↗</a></div></article>
-      </div>
-      <p class="pro-caution"><strong>専門職の方へ：</strong>公表情報は連携先を探すための手がかりです。空き状況、新規受入、看取り・医療処置・送迎等の個別対応は変わるため、利用前に各事業所へ直接ご確認ください。</p>
+    <section class="section section-mint" id="health"><div class="wrap"><div class="section-head"><div><div class="eyebrow">日頃の健康づくり</div><h2>今日からできることを、少しずつ</h2></div><p>食事、体を動かすこと、睡眠、歯と口の健康、健診など、毎日の暮らしに役立つ情報をまとめています。体調や持病に合わせ、無理なく続けられることから始めましょう。</p></div>
+      <div class="wellness-preview"><article><h3>食べる・動く・休む</h3><p>毎日の生活で取り入れやすい健康づくりを確認します。</p></article><article><h3>健診で確かめる</h3><p>諫早市の健診・がん検診や、受診後の相談先を案内します。</p></article><article><h3>こころと体を相談する</h3><p>一人で抱え込まず、地域の専門職へ相談できる窓口を探します。</p></article></div>
+      <p class="section-action"><a class="inline-btn" href="health.html">日頃の健康づくりを見る</a></p>
+    </div></section>
+
+    <section class="section section-white" id="local"><div class="wrap"><div class="section-head"><div><div class="eyebrow">諫早市の相談先</div><h2>地域の窓口につながる</h2></div><div class="section-visual"><p>健康、こころ、高齢者や介護について、諫早市の専門職へ相談できます。</p><div class="crop-scene crop-support" role="img" aria-label="家族を支える医師、看護師、介護職を描いたイラスト"></div></div></div>
+      <div class="local-grid"><article class="local-card icon-card"><img src="assets/icons/16_nurse.png" alt=""><h3>健康相談</h3><p>生活習慣病、栄養、禁煙、口の健康などを、保健師や管理栄養士へ相談できます。</p><a class="text-link" href="https://www.city.isahaya.nagasaki.jp/soshiki/24/1111.html" target="_blank" rel="noopener">地域別の窓口を見る ↗</a></article><article class="local-card icon-card"><img src="assets/icons/05_heart.png" alt=""><h3>こころの健康相談</h3><p>こころの不調、依存症、ひきこもりなどを、本人や家族が相談できます。</p><a class="text-link" href="https://www.city.isahaya.nagasaki.jp/soshiki/24/1113.html" target="_blank" rel="noopener">相談内容と受付時間を見る ↗</a></article><article class="local-card icon-card"><img src="assets/icons/15_community_support.png" alt=""><h3>高齢者・介護</h3><p>介護、福祉、健康、医療、認知症などを地域包括支援センターへ相談できます。</p><a class="text-link" href="https://www.city.isahaya.nagasaki.jp/soshiki/25/32228.html" target="_blank" rel="noopener">町名から担当窓口を探す ↗</a></article></div>
     </div></section>
 
     <section class="section section-mint"><div class="wrap scene"><div class="preparation-scenes"><div class="crop-scene crop-family" role="img" aria-label="地域を歩く子どもから高齢者までの家族を描いたイラスト"></div><div class="crop-scene crop-town" role="img" aria-label="ベンチから地域の町並みを眺める家族を描いたイラスト"></div></div><div><div class="eyebrow">日頃から備える</div><h2>もしものときに、慌てないために</h2><p>お薬手帳、かかりつけの医療機関、家族の緊急連絡先を確認しておきましょう。持病や使用中の薬も、家族と共有しておくと安心です。</p></div></div></section>
 
     <section class="section section-white home-updates"><div class="wrap"><div class="section-head"><div><div class="eyebrow">更新情報・記事</div><h2>新しい情報をお知らせします</h2></div><p>新しいページ、制度や窓口の変更、日頃から知っておきたい健康・医療情報を掲載します。</p></div><div class="update-list" data-home-news><p class="update-loading">更新情報を読み込んでいます。</p></div><p class="updates-more"><a class="text-link" href="articles/index.html">更新情報・記事をすべて見る →</a></p></div></section>
-    <section class="section trust" id="reliability"><div class="wrap"><div class="section-head"><div><div class="eyebrow" style="color:#8fd8ca">情報の信頼性</div><h2>公的な情報をもとにしています</h2></div><p>厚生労働省、消防庁、PMDA、長崎県、諫早市などが公表する情報を確認しています。制度や受付時間は変わることがあるため、最新情報は各機関の公式ページでご確認ください。</p></div><ul class="trust-list"><li><a href="https://www.city.isahaya.nagasaki.jp/soshiki/24/26597.html" target="_blank" rel="noopener">諫早市：救急医療電話相談 #7119</a></li><li><a href="https://www.city.isahaya.nagasaki.jp/soshiki/24/1128.html" target="_blank" rel="noopener">諫早市：小児救急</a></li><li><a href="https://www.pmda.go.jp/safety/consultation-for-patients/on-drugs/qa/0011.html" target="_blank" rel="noopener">PMDA：市販薬を使うときの注意</a></li><li><a href="https://www.gov-online.go.jp/article/201609/entry-7888.html" target="_blank" rel="noopener">政府広報：救急車の利用法</a></li></ul><p class="updated">情報確認日：2026年9月28日</p></div></section>
+    <section class="section trust"><div class="wrap"><div class="section-head"><div><div class="eyebrow" style="color:#8fd8ca">情報の信頼性</div><h2>公的な情報をもとにしています</h2></div><p>厚生労働省、消防庁、PMDA、長崎県、諫早市などが公表する情報を確認しています。制度や受付時間は変わることがあるため、最新情報は各機関の公式ページでご確認ください。</p></div><ul class="trust-list"><li><a href="https://www.city.isahaya.nagasaki.jp/soshiki/24/26597.html" target="_blank" rel="noopener">諫早市：救急医療電話相談 #7119</a></li><li><a href="https://www.city.isahaya.nagasaki.jp/soshiki/24/1128.html" target="_blank" rel="noopener">諫早市：小児救急</a></li><li><a href="https://www.pmda.go.jp/safety/consultation-for-patients/on-drugs/qa/0011.html" target="_blank" rel="noopener">PMDA：市販薬を使うときの注意</a></li><li><a href="https://www.gov-online.go.jp/article/201609/entry-7888.html" target="_blank" rel="noopener">政府広報：救急車の利用法</a></li></ul><p class="updated">情報確認日：2026年9月28日</p></div></section>
   </main>
   <footer><div class="wrap footer-row"><p><strong>まちの健康・医療案内</strong><br>分かりやすく伝え、次の行動と地域の支援につなぎます。</p><p>掲載内容は、個別の診断や治療に代わるものではありません。</p></div></footer>
-  <script src="site.js"></script><script src="consultation-data.js"></script><script src="consultation-nav.js"></script><script src="home-news.js"></script>
+  <script src="site.js"></script><script src="home-news.js"></script>
 </body></html>

@@ -7,7 +7,10 @@
   const count=document.querySelector('[data-consult-count]');
   let active='all';
   const iconMap={
-    '子ども・子育て':'assets/icons/11_parent_child.png','高齢者・介護':'assets/icons/18_elderly_care.png','お金・生活':'assets/icons/23_checklist.png','家族・パートナー':'assets/icons/19_family.png','こころ':'assets/icons/05_heart.png','健康・医療':'assets/icons/10_health_check.png','障害・発達':'assets/icons/22_wheelchair.png','仕事':'assets/icons/15_community_support.png','住まい':'assets/icons/20_community_town.png','これからの療養・看取り':'assets/icons/16_nurse.png','契約・法律・財産':'assets/icons/23_checklist.png','犯罪・被害':'assets/icons/14_public_office.png'
+    '子ども・子育て':'assets/icons/11_parent_child.png','高齢者・介護':'assets/icons/18_elderly_care.png','お金・生活':'assets/icons/23_checklist.png','家族・パートナー':'assets/icons/19_family.png','こころ':'assets/icons/05_heart.png','健康・医療':'assets/icons/10_health_check.png','障害・発達':'assets/icons/22_wheelchair.png','仕事':'assets/icons/15_community_support.png','住まい':'assets/icons/20_community_town.png','これからの療養・看取り':'assets/icons/16_nurse.png','契約・法律・財産':'assets/icons/23_checklist.png','犯罪・被害':'assets/icons/14_public_office.png','医療・薬・健康':'assets/icons/10_health_check.png','こころ・依存症':'assets/icons/05_heart.png','妊娠・性の健康':'assets/icons/11_parent_child.png','障害・仕事':'assets/icons/22_wheelchair.png','暮らし・お金':'assets/icons/23_checklist.png','安全・人権・法律':'assets/icons/14_public_office.png'
+  };
+  const categoryAliases={
+    '医療・薬・健康':['健康・医療'],'こころ・依存症':['こころ'],'妊娠・性の健康':['子ども・子育て','健康・医療','家族・パートナー'],'子ども・子育て':['子ども・子育て'],'高齢者・介護':['高齢者・介護','これからの療養・看取り'],'障害・仕事':['障害・発達','仕事'],'暮らし・お金':['お金・生活','住まい'],'安全・人権・法律':['家族・パートナー','契約・法律・財産','犯罪・被害']
   };
   const esc=v=>String(v??'').replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const categories=['all',...data.categories.map(c=>c.label)];
@@ -29,7 +32,8 @@
   function render(){
     const q=(search?.value||'').trim().toLowerCase();
     const items=data.contacts.filter(c=>{
-      const catOk=active==='all'||(c.categories||[]).includes(active);
+      const aliases=categoryAliases[active]||[active];
+      const catOk=active==='all'||(c.categories||[]).some(category=>aliases.includes(category));
       const hay=[c.name,c.description,c.area,c.phone,c.hours,...(c.categories||[]),...(c.keywords||[])].join(' ').toLowerCase();
       return catOk&&(!q||hay.includes(q));
     });
