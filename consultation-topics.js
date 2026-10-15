@@ -37,7 +37,7 @@
     topic('medical','health-checkup','健診結果の見方や生活改善について相談したい'),
     topic('medical','health-prevention','健診・がん検診・予防について知りたい'),
     topic('medical','health-swallowing','食事や飲み込みが難しくなった',{from:'health-nutrition',keywords:['食事','嚥下','飲み込み','むせ','栄養'],urgency:'priority',note:'突然飲み込めない、呼吸が苦しい、意識がおかしい場合は緊急対応を優先する。徐々に食べにくくなった場合は医療・歯科・栄養・介護の相談先を案内する。'}),
-    topic('medical','health-smoking','禁煙したい',{from:'health-prevention',keywords:['禁煙','たばこ','禁煙外来','禁煙補助薬'],firstContactIds:['isahaya-health','isahaya-health-promotion']}),
+    topic('medical','health-smoking','禁煙したい',{from:'health-prevention',keywords:['禁煙','たばこ','禁煙外来','禁煙補助薬','ニコチンガム','ニコチンパッチ'],firstContactIds:['isahaya-health','isahaya-health-promotion'],communityResourceTypes:['禁煙外来','かかりつけ薬局・薬剤師','健康サポート薬局','OTC医薬品を扱う薬局'],note:'禁煙補助薬の市販薬を取り扱う薬局の公開一覧はないため、まずはかかりつけ薬局・薬剤師へ相談する。健康サポート薬局やOTC医薬品の取扱品目数も、相談先を探す際の参考にできる。'}),
     topic('medical','health-difficult-disease','難病の治療や生活について相談したい',{from:'health-medical-safety',keywords:['難病','治療','療養','生活'],firstContactIds:['isahaya-health-promotion']}),
     topic('medical','health-medical-safety','医療機関での対応や医療について相談したい'),
     topic('medical','family-missing','家族と連絡が取れない・安否が心配',{from:'elderly-wandering',keywords:['安否','行方不明','連絡が取れない','事故'],urgency:'urgent',firstContactIds:['nagasaki-police'],note:'事故や事件、緊急の行方不明が疑われる場合は110。一般的な家族関係の相談とは分けて案内する。'}),

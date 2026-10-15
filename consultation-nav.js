@@ -8,7 +8,7 @@
   const categoryLabel=id=>data.categories.find(c=>c.id===id)?.label||'';
   const currentIssue=()=>data.issues.find(i=>i.id===state.issueId);
   const categoryDetailPages={medical:{url:'health.html',label:'健康・医療について詳しく見る'},pregnancy:{url:'child-parenting.html',label:'妊娠・子育ての地域情報を見る'},child:{url:'child-parenting.html',label:'子ども・子育てについて詳しく見る'},elderly:{url:'elderly-care.html',label:'高齢者・介護について詳しく見る'},'disability-work':{url:'disability-development.html',label:'障害・発達について詳しく見る'},'life-money':{url:'money-life.html',label:'暮らし・お金について詳しく見る'},safety:{url:'legal-assets.html',label:'法律・財産について詳しく見る'}};
-  const issueDetailPages={'mental-bereavement':{url:'after-loss.html',label:'大切な方を亡くされたあとの手続き・相談を見る'},'pregnancy-emergency-contraception':{url:'emergency-contraception.html',label:'緊急避妊薬の入手方法と諫早市内の取扱先を見る'}};
+  const issueDetailPages={'health-smoking':{url:'smoking-cessation.html',label:'禁煙の方法と相談先・薬局の探し方を見る'},'mental-bereavement':{url:'after-loss.html',label:'大切な方を亡くされたあとの手続き・相談を見る'},'pregnancy-emergency-contraception':{url:'emergency-contraception.html',label:'緊急避妊薬の入手方法と諫早市内の取扱先を見る'}};
   const resourceCategoryAliases={
     medical:['健康・医療'],mental:['こころ'],pregnancy:['子ども・子育て','健康・医療','家族・パートナー'],child:['子ども・子育て'],elderly:['高齢者・介護','これからの療養・看取り'],'disability-work':['障害・発達','仕事'],'life-money':['お金・生活','住まい'],safety:['家族・パートナー','契約・法律・財産','犯罪・被害']
   };
@@ -42,6 +42,7 @@
     'family-dv-unsure':['「DVかどうか」を自分で判断しなくても相談できる','怖い・つらいと感じる状況をそのまま相談員に伝える','必要なら安全確保や生活支援について一緒に考える'],
     'mental-suicide':['今、自分を傷つける危険が差し迫っている場合は119・110など緊急支援につながる','一人にならず、電話・SNS・身近な人など使いやすい方法で相談する','継続して支えてくれる医療・生活支援につながる'],
     'health-where-to-go':['緊急性が高い症状なら119を利用する','救急車や今すぐの受診を迷うときは#7119を利用する','受診先を探すときは医療情報ネットを利用する'],
+    'health-smoking':['自分に合う禁煙方法を医師・薬剤師などに相談する','市販薬を希望する場合は、かかりつけ薬局や健康サポート薬局から探す','来店前に、禁煙補助薬の在庫と相談できる薬剤師がいるか電話で確認する'],
     'endoflife-home-death':['本人がどこでどう過ごしたいか、話せる範囲で確認する','かかりつけ医・訪問看護・ケアマネジャー等に早めに相談する','急変時の連絡先や夜間の対応について事前に確認する'],
     'endoflife-acp':['本人が大切にしていることを話す','家族・医療・介護職と希望を共有する','気持ちや状況が変わったら何度でも話し直す'],
     'endoflife-grief':['今必要な手続きだけを確認する','市役所で該当する保険・年金等の手続きを確認する','相続や名義変更は必要に応じて専門相談を利用する','つらさが続くときはこころの相談先につながる']
