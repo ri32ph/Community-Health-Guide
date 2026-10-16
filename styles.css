@@ -549,3 +549,7 @@ footer a{color:#fff}
  body.print-consultation-only .consult-print-source p{margin:1mm 0!important;overflow-wrap:anywhere}
  body.print-consultation-only .consult-print-official{display:block!important;font-size:8.5pt!important;line-height:1.4!important;margin:2mm 0 0!important;overflow-wrap:anywhere;color:#333!important}
 }
+
+/* Resource-level verification metadata */
+.consult-verified{margin:10px 0 3px;font-size:.78rem;color:var(--muted);line-height:1.5}
+@media print{body.print-consultation-only .consult-verified{font-size:9pt!important;color:#333!important;display:block!important;break-inside:avoid}}
