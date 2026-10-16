@@ -129,6 +129,26 @@
     return `<div class="consult-tools"><div class="consult-subhead"><strong>地域・公的な検索ツールで探す</strong><span>相談したあとに、実際の施設やサービスを探すときに使えます。</span></div><div class="consult-tool-grid">${tools.map(t=>`<a class="consult-tool-card" href="${esc(t.url)}" target="_blank" rel="noopener"><span class="tool-tag">${esc(t.tag)}</span><strong>${esc(t.name)}</strong><small>${esc(t.description)}</small><span class="tool-open">開く ↗</span></a>`).join('')}</div></div>`;
   }
 
+  // Display-only subheadings; issue IDs and their consultation destinations are unchanged.
+  const subgroupRules={
+    medical:[['受診・医療の相談',['health-where-to-go','health-night-holiday','health-difficult-disease','health-medical-safety','family-missing']],['薬・健診・健康づくり',['health-medication','health-checkup','health-prevention','health-smoking','health-swallowing']]],
+    mental:[['こころの不調・つらさ',['mental-depressed','mental-sleep','mental-hikikomori','mental-suicide','mental-bereavement']],['依存症の相談',['mental-addiction','mental-alcohol']]],
+    pregnancy:[['妊娠・出産',['pregnancy-check','pregnancy-unexpected','pregnancy-birth','pregnancy-fertility']],['避妊・性の健康',['pregnancy-emergency-contraception','sexual-health-sti','sexual-health-contraception']]],
+    child:[['育児・発達・居場所',['child-parenting-anxiety','child-development','child-group-life','child-place','child-young-carer']],['学校・健康・安全',['child-school','child-health','child-abuse-concern']]],
+    elderly:[['介護・生活・認知症',['elderly-care-start','elderly-dementia','elderly-alone','elderly-caregiver','elderly-frail','elderly-wandering','elderly-driving']],['在宅療養・人生の最終段階',['endoflife-homecare','endoflife-acp']]],
+    'disability-work':[['障害・発達・相談方法',['disability-service','disability-adult-development','disability-child-service','accessibility-contact']],['仕事・働き方',['work-find','work-disability','work-leave']]],
+    'life-money':[['生活費・家計・借金',['money-living','money-debt','money-medical','money-family','money-food']],['住まい',['money-rent','housing-public']]],
+    safety:[['暴力・被害・安全',['family-afraid','family-sexual-violence','child-safety-report','crime-stalker','crime-scam']],['契約・人権・法律',['legal-consumer','human-rights']]]
+  };
+  function issueSections(cat,items){
+    const rules=subgroupRules[cat]||[];
+    const seen=new Set();
+    const sections=rules.map(([title,ids])=>({title,issues:ids.map(id=>items.find(i=>i.id===id)).filter(Boolean).filter(i=>{if(seen.has(i.id))return false;seen.add(i.id);return true})})).filter(section=>section.issues.length);
+    const remaining=items.filter(i=>!seen.has(i.id));
+    if(remaining.length)sections.push({title:'その他の相談',issues:remaining});
+    return sections.map(section=>`<div class="consult-issue-section"><h3 class="consult-issue-heading">${esc(section.title)}</h3><div class="consult-issue-grid">${section.issues.map(i=>`<button type="button" class="consult-issue ${state.issueId===i.id?'is-active':''}" data-issue="${esc(i.id)}">${esc(i.label)}</button>`).join('')}</div></div>`).join('');
+  }
+
   function render(){
     const cat=state.categoryId;
     const issue=currentIssue();
@@ -146,7 +166,7 @@
       </div>
       ${cat?`<div class="consult-step">
         <p class="consult-step-label"><span>2</span> 今の悩みに近いものを選んでください</p>
-        <div class="consult-issue-grid">${issueList.length ? issueList.map(i=>`<button type="button" class="consult-issue ${state.issueId===i.id?'is-active':''}" data-issue="${esc(i.id)}">${esc(i.label)}</button>`).join('') : '<p class="consult-empty">相談内容を表示できません。ページを更新してください。</p>'}</div>
+        <div class="consult-issue-sections">${issueList.length ? issueSections(cat,issueList) : '<p class="consult-empty">相談内容を表示できません。ページを更新してください。</p>'}</div>
         ${group&&group.members.length===1&&categoryDetailPages[cat]?`<a class="consult-detail-link" href="${esc(categoryDetailPages[cat].url)}">${esc(categoryDetailPages[cat].label)} →</a>`:''}
       </div>`:''}
       ${issue?`<div class="consult-step consult-results" data-consult-print-area>
