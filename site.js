@@ -108,7 +108,7 @@
         <div><h3>暮らしの相談</h3><a href="${prefix}child-parenting.html">子ども・子育て</a><a href="${prefix}elderly-care.html">高齢者・介護</a><a href="${prefix}money-life.html">お金・生活</a><a href="${prefix}disability-development.html">障害・発達</a><a href="${prefix}legal-assets.html">契約・法律・財産</a></div>
         <div><h3>相談先・その他</h3><a class="footer-consult-link" href="${prefix}consultation-list.html"><img src="${prefix}assets/icons/15_community_support.png" alt="">相談先一覧</a><a href="${prefix}quick-dials.html">全国共通番号・短縮ダイヤル</a><a href="${prefix}after-loss.html">大切な方を亡くされたあと</a><a href="${prefix}index.html#local">困りごとから探す</a><a href="${prefix}articles/index.html">更新情報・記事</a></div>
       </div></nav>
-    </div><div class="wrap site-footer-bottom"><span>© まちの健康・医療案内</span><a href="${prefix}index.html#reliability">情報の信頼性について</a></div>`;
+    </div><div class="wrap site-footer-bottom"><span>© まちの健康・医療案内</span><span class="footer-meta-links"><a href="${prefix}about.html">このページについて</a><a href="${prefix}index.html#reliability">情報の信頼性について</a></span></div>`;
   }
 
   document.addEventListener('DOMContentLoaded',()=>{renderCivicActions();renderSiteFooter();});
