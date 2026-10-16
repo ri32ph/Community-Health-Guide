@@ -1,31 +1,265 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#0c716b">
-  <meta name="description" content="禁煙の方法、医療機関での相談、市販の禁煙補助薬、諫早市周辺で相談できる薬局の探し方を案内します。">
-  <title>禁煙したい｜まちの健康・医療案内</title>
-  <link rel="icon" href="assets/favicon-32x32.png">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="detail.css">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <meta content="#0c716b" name="theme-color"/>
+    <meta content="禁煙の方法、医療機関での相談、市販の禁煙補助薬、諫早市周辺で相談できる薬局の探し方を案内します。" name="description"/>
+    <title>禁煙したい｜まちの健康・医療案内</title>
+    <link href="assets/favicon-32x32.png" rel="icon"/>
+    <link href="styles.css" rel="stylesheet"/>
+    <link href="detail.css" rel="stylesheet"/>
+    <style>
+    /* 禁煙補助薬の購入方法と薬局相談の案内 */
+    .smoking-buy-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        margin: 1.4rem 0
+    }
+
+    .smoking-buy-card {
+        background: #fffdf8;
+        border: 1px solid #cbded9;
+        border-radius: 14px;
+        padding: 1.2rem;
+        min-width: 0
+    }
+
+    .smoking-buy-card h3 {
+        margin: 0 0 .7rem;
+        color: #154e4b;
+        font-size: 1.15rem
+    }
+
+    .smoking-buy-card p {
+        margin: .5rem 0;
+        line-height: 1.8
+    }
+
+    .smoking-buy-small {
+        font-size: .9rem;
+        color: #4a6061;
+        line-height: 1.7
+    }
+
+    .smoking-pharmacy-consult {
+        background: #fffaf1;
+        border: 1px solid #ecdcc9;
+        border-left: 5px solid #df8474;
+        border-radius: 14px;
+        padding: 1.3rem 1.4rem;
+        margin: 1.3rem 0
+    }
+
+    .smoking-pharmacy-consult h3 {
+        margin: 0 0 .8rem;
+        color: #153f49;
+        font-size: 1.15rem
+    }
+
+    .smoking-pharmacy-consult p {
+        line-height: 1.8
+    }
+
+    .smoking-pharmacy-emphasis {
+        font-weight: 700;
+        color: #154e4b;
+        font-size: 1.06rem
+    }
+
+    .smoking-buy-caution {
+        font-size: .94rem;
+        line-height: 1.8;
+        padding: 1rem 1.1rem;
+        border-radius: 10px;
+        background: #f2f6f6
+    }
+
+    .smoking-search-heading {
+        margin-top: 2rem
+    }
+
+    @media (max-width: 680px) {
+        .smoking-buy-grid {
+            grid-template-columns:1fr
+        }
+
+        .smoking-pharmacy-consult {
+            padding: 1.1rem
+        }
+    }
+    </style>
 </head>
 <body>
-  <a class="skip" href="#main">本文へ移動</a>
-  <header><div class="wrap nav"><a class="brand" href="index.html"><span>まちの健康・医療案内</span><small>諫早市の暮らしに役立つ情報</small></a><div class="tools"><button class="tool" type="button" data-text-size>文字を大きく</button><button class="tool print-tool" type="button" data-print-page>印刷・PDF</button></div></div></header>
-  <main id="main">
-    <div class="narrow breadcrumb"><a href="index.html">トップページ</a> ／ <a href="health.html">日頃の健康づくり</a> ／ 禁煙したい</div>
-    <section class="page-hero smoking-hero"><div class="narrow"><p class="detail-kicker">医療・薬・健康</p><h1>禁煙したい</h1><p class="lead">「たばこをやめてみようかな」と思ったときが、始めどきです。一人で頑張りすぎず、医療機関や薬剤師の力も借りながら、自分に合う方法を見つけていきましょう。</p><div class="purpose-jump"><a href="#how">禁煙の方法</a><a href="#otc">薬局の探し方</a><a href="#support">相談先</a></div></div></section>
-
-    <section class="section section-white" id="how"><div class="narrow"><p class="detail-kicker">1　仕組みを知る</p><h2>医療機関と市販薬の方法があります</h2><div class="smoking-method-grid"><article><h3>医療機関で相談する</h3><p>禁煙外来などで、喫煙状況や健康状態を確認し、禁煙の進め方を相談します。一定の条件を満たす場合は、健康保険による禁煙治療の対象になることがあります。</p></article><article><h3>市販の禁煙補助薬を使う</h3><p>薬局・薬店では、一般用医薬品のニコチンガムやニコチンパッチを購入できる場合があります。持病、妊娠・授乳、使用中の薬がある人などは、購入前に薬剤師へ相談してください。</p></article></div><p class="stock-note"><strong>どちらがよいか迷う場合</strong>まず、かかりつけ医・かかりつけ薬剤師、または身近な薬局へ相談してください。喫煙本数や健康状態によって、適する方法が異なります。</p></div></section>
-
-    <section class="section section-mint" id="otc"><div class="narrow"><p class="detail-kicker">2　対象の薬局を調べる</p><h2>禁煙補助薬の市販薬を探すには</h2><p class="pharmacy-gentle-intro">禁煙補助薬の市販薬を取り扱う薬局の一覧は、現在公開されていません。まずは、いつも利用している薬局や薬剤師にご相談ください。参考として、健康サポート薬局や、OTC医薬品の取扱品目数が多い薬局から相談してみるのもよいでしょう。</p><div class="pharmacy-route-grid"><article class="pharmacy-route"><h3>かかりつけ薬局・薬剤師</h3><p>いつも利用している薬局なら、普段の薬や体調のことも含めて相談できます。</p></article><article class="pharmacy-route"><h3>健康サポート薬局</h3><p>薬のことだけでなく、健康づくりについても気軽に相談できる薬局です。</p></article><article class="pharmacy-route"><h3>OTCの取扱品目数が多い薬局</h3><p>市販薬を多く扱う薬局を、相談先を探すときの参考にできます。</p></article></div><div class="search-steps"><h3>医療情報ネット（ナビイ）で探す</h3><ol><li>都道府県を「長崎県」、市区町村を「諫早市」にして薬局を探します。</li><li>「健康サポート薬局」や、各薬局の「要指導医薬品・一般用医薬品の取扱品目数」を参考にします。</li><li>相談したい薬局が見つかったら、禁煙補助薬について電話でたずねてみましょう。</li></ol><p><a class="button-link" href="https://www.iryou.teikyouseido.mhlw.go.jp/znk-web/juminkanja/S2350/initialize" target="_blank" rel="noopener">薬局を条件から探す（医療情報ネット）↗</a></p></div><div class="support-search-note"><h3>禁煙を相談できる薬剤師から探す方法もあります</h3><p>日本禁煙学会薬剤師委員会の「禁煙支援薬局・薬店ナビ」では、地域で禁煙を相談できる薬局・薬剤師を検索できます。掲載されている薬局・薬剤師はまだ限られるため、ほかの探し方とあわせてご利用ください。</p><p><a href="https://phkinen.jp/" target="_blank" rel="noopener">禁煙支援薬局・薬店ナビを見る ↗</a></p></div></div></section>
-
-    <section class="section section-white" id="support"><div class="narrow"><p class="detail-kicker">3　諫早市で相談する</p><h2>禁煙を続けるための相談先</h2><p>諫早市の健康相談では、保健師や管理栄養士などに生活習慣や禁煙について相談できます。診察や薬の販売ではありませんが、取り組み方を一緒に考える相談先になります。</p><div class="contact-strip"><div><strong>諫早市の健康相談</strong><br>地域ごとの相談窓口と日程を確認できます。</div><a class="inline-btn" href="https://www.city.isahaya.nagasaki.jp/soshiki/24/1111.html" target="_blank" rel="noopener">相談先を見る ↗</a></div><div class="back-links"><a href="index.html#local">相談先ナビへ戻る</a><a href="health.html">日頃の健康づくりへ戻る</a></div></div></section>
-
-    <section class="section trust"><div class="narrow"><div class="eyebrow" style="color:#8fd8ca">情報源</div><h2>公的な情報を確認しています</h2><ul class="source-list"><li><a href="https://kennet.mhlw.go.jp/information/information/tobacco/t-06-006.html" target="_blank" rel="noopener">厚生労働省「禁煙のおくすりってどんなもの？」</a></li><li><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iyakuhin/kinoujouhou/index.html" target="_blank" rel="noopener">厚生労働省「薬局機能情報提供制度」</a></li><li><a href="https://www.pref.nagasaki.jp/doc/page-719691.html" target="_blank" rel="noopener">長崎県「薬局機能情報制度」</a></li></ul><p class="updated">情報確認日：2026年10月16日</p><p class="source-note">掲載内容は、個別の診断や治療に代わるものではありません。制度、取扱い、在庫は変わることがあります。</p></div></section>
-  </main>
-  <footer><div class="wrap footer-row"><p><strong>まちの健康・医療案内</strong></p><p>薬の使用前には、説明書を読み、必要に応じて医師・薬剤師へ相談してください。</p></div></footer>
-  <script src="site.js"></script>
+    <a class="skip" href="#main">本文へ移動</a>
+    <header>
+        <div class="wrap nav">
+            <a class="brand" href="index.html">
+                <span>まちの健康・医療案内</span>
+                <small>諫早市の暮らしに役立つ情報</small>
+            </a>
+            <div class="tools">
+                <button class="tool" data-text-size="" type="button">文字を大きく</button>
+                <button class="tool print-tool" data-print-page="" type="button">印刷・PDF</button>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <div class="narrow breadcrumb">
+            <a href="index.html">トップページ</a>
+             ／ 
+            <a href="health.html">日頃の健康づくり</a>
+             ／ 禁煙したい
+        </div>
+        <section class="page-hero smoking-hero">
+            <div class="narrow">
+                <p class="detail-kicker">医療・薬・健康</p>
+                <h1>禁煙したい</h1>
+                <p class="lead">「たばこをやめてみようかな」と思ったときが、始めどきです。一人で頑張りすぎず、医療機関や薬剤師の力も借りながら、自分に合う方法を見つけていきましょう。</p>
+                <div class="purpose-jump">
+                    <a href="#how">禁煙の方法</a>
+                    <a href="#otc">購入方法・薬局の探し方</a>
+                    <a href="#support">相談先</a>
+                </div>
+            </div>
+        </section>
+        <section class="section section-white" id="how">
+            <div class="narrow">
+                <p class="detail-kicker">1　仕組みを知る</p>
+                <h2>医療機関と市販薬の方法があります</h2>
+                <div class="smoking-method-grid">
+                    <article>
+                        <h3>医療機関で相談する</h3>
+                        <p>禁煙外来などで、喫煙状況や健康状態を確認し、禁煙の進め方を相談します。一定の条件を満たす場合は、健康保険による禁煙治療の対象になることがあります。</p>
+                    </article>
+                    <article>
+                        <h3>市販の禁煙補助薬を使う</h3>
+                        <p>薬局・薬店では、一般用医薬品のニコチンガムやニコチンパッチを購入できる場合があります。持病、妊娠・授乳、使用中の薬がある人などは、購入前に薬剤師へ相談してください。</p>
+                    </article>
+                </div>
+                <p class="stock-note">
+                    <strong>どちらがよいか迷う場合</strong>
+                    まず、かかりつけ医・かかりつけ薬剤師、または身近な薬局へ相談してください。喫煙本数や健康状態によって、適する方法が異なります。
+                </p>
+            </div>
+        </section>
+        <section class="section section-mint" id="otc">
+            <div class="narrow">
+                <p class="detail-kicker">2　購入方法と薬局の探し方</p>
+                <h2>禁煙補助薬はどこで買える？</h2>
+                <p class="pharmacy-gentle-intro">市販の禁煙補助薬は、地域の薬局・薬店のほか、許可を受けた薬局・薬店のインターネット販売サイトでも購入できます。購入方法に迷う場合や、薬を買う予定がない場合も、まずは身近なかかりつけ薬局にご相談ください。</p>
+                <div aria-label="市販の禁煙補助薬の購入方法" class="smoking-buy-grid">
+                    <article class="smoking-buy-card">
+                        <h3>薬局・薬店で探す</h3>
+                        <p>ニコチンガムやニコチンパッチについて、薬剤師などに相談しながら選べます。取り扱い・在庫は店舗ごとに異なるため、来店前の確認がおすすめです。</p>
+                    </article>
+                    <article class="smoking-buy-card">
+                        <h3>インターネットで購入する</h3>
+                        <p>一般用医薬品のニコチンガム・ニコチンパッチは、医薬品販売の許可を受けた薬局・薬店の販売サイトからも購入できます。</p>
+                        <p>第1類医薬品のニコチンパッチは、購入に際して薬剤師からの情報提供など所定の手続きが必要です。</p>
+                        <p class="smoking-buy-small">検索のヒント：「ニコチンガム 通販」「ニコチンパッチ 第1類医薬品」</p>
+                    </article>
+                </div>
+                <div class="smoking-pharmacy-consult" role="note">
+                    <h3>禁煙のこと、地域のかかりつけ薬局でも相談できます</h3>
+                    <p>「何から始めたらいい？」「補助薬はどれを選ぶ？」「以前うまく続かなかった」――そんなときも、いつもの薬局で相談してみましょう。</p>
+                    <p>薬剤師は、禁煙補助薬の選び方・使い方や禁煙中の困りごとについて相談に応じ、必要に応じて禁煙外来などの医療機関を案内できます。</p>
+                    <p class="smoking-pharmacy-emphasis">薬を買う予定がなくても、まずは相談から。</p>
+                    <p class="smoking-buy-small">※禁煙相談への対応状況は薬局ごとに異なります。事前に確認してください。</p>
+                </div>
+                <p class="smoking-buy-caution">禁煙補助薬は誰にでも適するわけではありません。持病がある方、妊娠・授乳中の方、ほかの薬を使用している方などは、購入前に医師・薬剤師に相談してください。使用上の注意を確認し、使用中は喫煙しないでください。</p>
+                <h3 class="smoking-search-heading">地域で相談できる薬局を探す</h3>
+                <div class="pharmacy-route-grid">
+                    <article class="pharmacy-route">
+                        <h3>かかりつけ薬局・薬剤師</h3>
+                        <p>いつも利用している薬局なら、普段の薬や体調のことも含めて相談できます。</p>
+                    </article>
+                    <article class="pharmacy-route">
+                        <h3>健康サポート薬局</h3>
+                        <p>薬のことだけでなく、健康づくりについても気軽に相談できる薬局です。</p>
+                    </article>
+                    <article class="pharmacy-route">
+                        <h3>OTCの取扱品目数が多い薬局</h3>
+                        <p>市販薬を多く扱う薬局を、相談先を探すときの参考にできます。</p>
+                    </article>
+                </div>
+                <div class="search-steps">
+                    <h3>医療情報ネット（ナビイ）で探す</h3>
+                    <ol>
+                        <li>都道府県を「長崎県」、市区町村を「諫早市」にして薬局を探します。</li>
+                        <li>「健康サポート薬局」や、各薬局の「要指導医薬品・一般用医薬品の取扱品目数」を参考にします。</li>
+                        <li>相談したい薬局が見つかったら、禁煙補助薬について電話でたずねてみましょう。</li>
+                    </ol>
+                    <p>
+                        <a class="button-link" href="https://www.iryou.teikyouseido.mhlw.go.jp/znk-web/juminkanja/S2350/initialize" rel="noopener" target="_blank">薬局を条件から探す（医療情報ネット）↗</a>
+                    </p>
+                </div>
+                <div class="support-search-note">
+                    <h3>禁煙を相談できる薬剤師から探す方法もあります</h3>
+                    <p>日本禁煙学会薬剤師委員会の「禁煙支援薬局・薬店ナビ」では、地域で禁煙を相談できる薬局・薬剤師を検索できます。掲載されている薬局・薬剤師はまだ限られるため、ほかの探し方とあわせてご利用ください。</p>
+                    <p>
+                        <a href="https://phkinen.jp/" rel="noopener" target="_blank">禁煙支援薬局・薬店ナビを見る ↗</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="section section-white" id="support">
+            <div class="narrow">
+                <p class="detail-kicker">3　諫早市で相談する</p>
+                <h2>禁煙を続けるための相談先</h2>
+                <p>諫早市の健康相談では、保健師や管理栄養士などに生活習慣や禁煙について相談できます。診察や薬の販売ではありませんが、取り組み方を一緒に考える相談先になります。</p>
+                <div class="contact-strip">
+                    <div>
+                        <strong>諫早市の健康相談</strong>
+                        <br/>
+                        地域ごとの相談窓口と日程を確認できます。
+                    </div>
+                    <a class="inline-btn" href="https://www.city.isahaya.nagasaki.jp/soshiki/24/1111.html" rel="noopener" target="_blank">相談先を見る ↗</a>
+                </div>
+                <div class="back-links">
+                    <a href="index.html#local">相談先ナビへ戻る</a>
+                    <a href="health.html">日頃の健康づくりへ戻る</a>
+                </div>
+            </div>
+        </section>
+        <section class="section trust">
+            <div class="narrow">
+                <div class="eyebrow" style="color:#8fd8ca">情報源</div>
+                <h2>公的な情報を確認しています</h2>
+                <ul class="source-list">
+                    <li>
+                        <a href="https://kennet.mhlw.go.jp/information/information/tobacco/t-06-006.html" rel="noopener" target="_blank">厚生労働省「禁煙のおくすりってどんなもの？」</a>
+                    </li>
+                    <li>
+                        <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iyakuhin/kinoujouhou/index.html" rel="noopener" target="_blank">厚生労働省「薬局機能情報提供制度」</a>
+                    </li>
+                    <li>
+                        <a href="https://www.pref.nagasaki.jp/doc/page-719691.html" rel="noopener" target="_blank">長崎県「薬局機能情報制度」</a>
+                    </li>
+                    <li>
+                        <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000082514.html" rel="noopener" target="_blank">厚生労働省「医薬品の販売制度」</a>
+                    </li>
+                    <li>
+                        <a href="https://www.mhlw.go.jp/stf/web_magazine/closeup/20.html" rel="noopener" target="_blank">厚生労働省「2026年5月施行の医薬品販売制度の改正内容」</a>
+                    </li>
+                    <li>
+                        <a href="https://www.info.pmda.go.jp/osearch/PackinsSearch?cboEffect=250010&amp;start=1" rel="noopener" target="_blank">PMDA「一般用医薬品の禁煙補助剤・添付文書検索」</a>
+                    </li>
+                </ul>
+                <p class="updated">情報確認日：2026年10月16日</p>
+                <p class="source-note">掲載内容は、個別の診断や治療に代わるものではありません。制度、取扱い、在庫は変わることがあります。</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap footer-row">
+            <p>
+                <strong>まちの健康・医療案内</strong>
+            </p>
+            <p>薬の使用前には、説明書を読み、必要に応じて医師・薬剤師へ相談してください。</p>
+        </div>
+    </footer>
+    <script src="site.js"></script>
 </body>
 </html>
