@@ -470,3 +470,12 @@ footer a{color:#fff}
 .consult-practical dt{font-weight:800;color:var(--teal-dark)}
 .consult-practical dd{margin:0;overflow-wrap:anywhere}
 @media(max-width:520px){.consult-practical>div{grid-template-columns:1fr;gap:1px}}
+
+/* Clear priority contact and expandable related results */
+.consult-result-heading{font-size:1.12rem;margin:22px 0 12px;color:var(--teal-dark)}
+.consult-related{margin-top:20px;border:1px solid var(--line);border-radius:15px;background:#f8fbf8;padding:12px 16px}
+.consult-related summary{cursor:pointer;min-height:44px;display:list-item;align-content:center;font-weight:800;color:var(--teal-dark);padding:6px}
+.consult-related[open] summary{margin-bottom:10px}
+.consult-related-hint{color:var(--muted);font-size:.9rem;margin:0 0 15px}
+.consult-related>.consult-resource-grid{margin-top:10px}
+@media print{.consult-related{display:block!important}.consult-related>.consult-resource-grid{display:grid!important}}
