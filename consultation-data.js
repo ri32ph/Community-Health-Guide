@@ -1973,7 +1973,7 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "長崎県",
       "description": "こころの健康、精神障害、ひきこもり等の専門相談。",
       "phone": "095-846-5115",
-      "officialUrl": "https://www.pref.nagasaki.jp/sodan/soshiki/fukusihokenbu/",
+      "officialUrl": "https://www.pref.nagasaki.jp/bunrui/hukushi-hoken/fukushi/shakaifukushi/hikikomori-gosodanmadoguchi/hikikomoricenter/body.html",
       "type": "local",
       "channels": [
         "in-person",
@@ -1982,7 +1982,9 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "categories": [
         "こころ"
-      ]
+      ],
+      "availability": "ひきこもり相談：月〜金曜 9:00〜17:45（祝日・年末年始を除く）",
+      "note": "095-846-5115はひきこもり地域支援センター（精神保健福祉課）の電話。諫早市内では県央保健所（0957-26-3306）でもひきこもり相談を受け付けています。こころの健康相談の受付条件は別途ご確認ください。"
     },
     {
       "id": "isahaya-health",
@@ -2254,7 +2256,8 @@ window.MACHI_CONSULTATION_DATA = {
         "脅迫",
         "暴力",
         "詐欺"
-      ]
+      ],
+      "note": "緊急の事件・事故は110。#9110または095-823-9110で相談でき、執務時間外は当直員が応対します。通話料は利用者負担です。"
     }
   ],
   "publicResources": [
@@ -2813,7 +2816,7 @@ window.MACHI_CONSULTATION_DATA = {
         "休日"
       ],
       "area": "長崎県",
-      "availability": "平日・土曜 18:00〜翌8:00／日曜・祝日等 24時間",
+      "availability": "月〜土曜 18:00〜翌8:00／日曜・祝日・年末年始（12/29〜1/3）8:00〜翌8:00",
       "fee": "相談料無料・通話料は利用者負担",
       "urgency": "priority",
       "officialUrl": "https://www.pref.nagasaki.jp/bunrui/hukushi-hoken/hoken-iryo/iryokankeigaiyo/kensaku-iryo/body.html",
@@ -2826,7 +2829,7 @@ window.MACHI_CONSULTATION_DATA = {
         "phone"
       ],
       "sourceTrust": "government",
-      "note": "「#8000」がつながらない場合は095-822-3308へ。緊急性が高い場合は119番を利用してください。"
+      "note": "対象はおおむね15歳未満の子どもの保護者等。#8000がつながらない場合は095-822-3308へ。緊急時は119。"
     },
     {
       "id": "child-abuse-189",
@@ -3107,7 +3110,7 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "area": "全国",
       "urgency": "normal",
-      "officialUrl": "https://www.npa.go.jp/hanzaihigai/portal/search/madoguchi/04/index.html",
+      "officialUrl": "https://www.police.pref.nagasaki.jp/police/sodan/anzen-sodan/",
       "confirmBeforeCall": true,
       "confirmTitle": "#9110 に電話しますか？",
       "confirmMessage": "緊急ではない警察相談の全国共通番号です。",
@@ -3116,7 +3119,8 @@ window.MACHI_CONSULTATION_DATA = {
       "channels": [
         "phone"
       ],
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "note": "長崎県内では095-823-9110でも相談できます。執務時間外は当直員が応対します。通話料がかかります。緊急の事件・事故は110。"
     }
   ],
   "accessibilityResources": [
