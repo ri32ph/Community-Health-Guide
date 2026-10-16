@@ -31,8 +31,8 @@
 
   const issues=[
     // 医療・薬・健康（10）
-    topic('medical','health-where-to-go','病院へ行くか迷っている',{note:'呼吸が苦しい、意識がおかしい、突然の激しい痛みなど、生命の危険がある場合は119。判断に迷う場合は#7119を案内する。'}),
-    topic('medical','health-night-holiday','夜間・休日に診てもらいたい',{from:'health-where-to-go',keywords:['夜間','休日','救急','当番医'],urgency:'priority',note:'重い症状や生命の危険がある場合は119。受診の判断に迷う場合は#7119、受診先を探す場合は休日当番医や医療情報ネットを案内する。'}),
+    topic('medical','health-where-to-go','病院へ行くか迷っている',{note:'呼吸が苦しい、意識がおかしい、突然の激しい痛みなど、生命の危険がある場合は119。救急車や受診を迷う場合は#7119（つながらない場合は095-801-1217）を案内する。',firstContactIds:['nagasaki-7119']}),
+    topic('medical','health-night-holiday','夜間・休日に診てもらいたい',{from:'health-where-to-go',keywords:['夜間','休日','救急','当番医'],urgency:'priority',firstContactIds:['nagasaki-7119'],note:'重い症状や生命の危険がある場合は119。受診の判断に迷う場合は#7119、受診先を探す場合は休日当番医や医療情報ネットを案内する。'}),
     topic('medical','health-medication','薬の飲み方・副作用・飲み合わせが心配'),
     topic('medical','health-checkup','健診結果の見方や生活改善について相談したい'),
     topic('medical','health-prevention','健診・がん検診・予防について知りたい'),
@@ -53,7 +53,7 @@
 
     // 妊娠・性の健康（7）
     topic('pregnancy','pregnancy-check','妊娠しているか確認したい',{from:'health-where-to-go',keywords:['妊娠','妊娠検査','生理','産婦人科'],urgency:'priority',firstContactIds:['isahaya-health-promotion'],note:'妊娠の確認や受診、これからのことについて相談できる。強い腹痛、失神、大量出血がある場合は速やかな受診を案内する。'}),
-    topic('pregnancy','pregnancy-emergency-contraception','緊急避妊薬を探したい',{from:'health-medication',keywords:['緊急避妊薬','アフターピル','避妊','薬局'],urgency:'urgent',firstContactIds:['isahaya-health-promotion'],note:'できるだけ早く入手・服用できるよう、医療機関または販売可能な薬局を案内する。来院・来店前に在庫と対応可能な医師・薬剤師を電話で確認する。'}),
+    topic('pregnancy','pregnancy-emergency-contraception','緊急避妊薬を探したい',{from:'health-medication',keywords:['緊急避妊薬','アフターピル','避妊','薬局'],urgency:'urgent',firstContactIds:[],note:'できるだけ早く入手・服用できるよう、厚生労働省の販売可能薬局一覧や医療機関を確認する。来院・来店前に在庫と対応可能な医師・薬剤師を電話で確認する。'}),
     topic('pregnancy','pregnancy-unexpected','予期しない妊娠について相談したい',{from:'health-where-to-go',keywords:['予期しない妊娠','妊娠相談','産婦人科'],firstContactIds:['isahaya-health-promotion']}),
     topic('pregnancy','pregnancy-birth','妊娠・出産について相談したい',{from:'child-parenting-anxiety',keywords:['妊娠','出産','妊婦健診','母子手帳'],firstContactIds:['isahaya-sukusuku']}),
     topic('pregnancy','pregnancy-fertility','不妊・不育について相談したい',{from:'health-medical-safety',keywords:['不妊','不育','妊活','治療'],firstContactIds:['isahaya-health-promotion']}),
@@ -68,7 +68,7 @@
     topic('child','child-abuse-concern','子どもへの虐待が心配',{note:'自分の子育てへの不安は子育て相談へつなぐ。虐待が疑われる子どもの保護は189、差し迫った危険がある場合は110を案内する。'}),
     topic('child','child-place','親子で過ごせる場所・つながりがほしい'),
     topic('child','child-young-carer','家族の世話や介護をしていて大変',{from:'disability-family-rest',keywords:['ヤングケアラー','家族の世話','介護','学校','仕事'],firstContactIds:['nagasaki-support-center','isahaya-civic']}),
-    topic('child','child-health','子どもの病気や体調が心配',{from:'health-where-to-go',keywords:['子ども','発熱','体調','小児科'],urgency:'priority',firstContactIds:['isahaya-health-promotion']}),
+    topic('child','child-health','子どもの病気や体調が心配',{from:'health-where-to-go',keywords:['子ども','発熱','体調','小児科'],urgency:'priority',firstContactIds:['nagasaki-8000','nagasaki-7119']}),
 
     // 高齢者・介護（9）
     topic('elderly','elderly-care-start','親や家族の介護について相談したい'),
@@ -100,9 +100,9 @@
     topic('life-money','housing-public','市営住宅について知りたい'),
 
     // 安全・人権・法律（7）
-    topic('safety','family-afraid','家族やパートナーから暴力を受けている',{urgency:'urgent',note:'加害者に閲覧を知られる危険がある。安全な端末・連絡方法を選び、危険が迫っている場合は110を優先する。'}),
-    topic('safety','family-sexual-violence','性暴力の被害について相談したい',{urgency:'urgent',note:'被害直後は安全確保と医療を優先する。時間が経ってからでも相談できる。長崎県のサポートながさき、全国共通番号#8891を案内する。'}),
-    topic('safety','child-safety-report','虐待が疑われる子どもの安全を守りたい',{from:'child-abuse-concern',urgency:'urgent',note:'迷う段階でも189へ相談できる。子どもに差し迫った危険がある場合は110。'}),
+    topic('safety','family-afraid','家族やパートナーから暴力を受けている',{urgency:'urgent',firstContactIds:['isahaya-women','dv-8008'],note:'加害者に閲覧を知られる危険がある。安全な端末・連絡方法を選び、危険が迫っている場合は110を優先する。'}),
+    topic('safety','family-sexual-violence','性暴力の被害について相談したい',{urgency:'urgent',firstContactIds:['nagasaki-sexual-violence','sexual-violence-8891'],note:'被害直後は安全確保と医療を優先する。時間が経ってからでも相談できる。長崎県のサポートながさき、全国共通番号#8891を案内する。'}),
+    topic('safety','child-safety-report','虐待が疑われる子どもの安全を守りたい',{from:'child-abuse-concern',urgency:'urgent',firstContactIds:['child-abuse-189'],note:'迷う段階でも189へ相談できる。子どもに差し迫った危険がある場合は110。'}),
     topic('safety','crime-stalker','つきまとい・監視・しつこい連絡が怖い'),
     topic('safety','legal-consumer','契約・通販・定期購入で困っている'),
     topic('safety','crime-scam','詐欺かもしれない・不審な請求がある'),
