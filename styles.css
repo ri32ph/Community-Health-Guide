@@ -423,3 +423,33 @@ footer a{color:#fff}
 .professional-entry-link{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 22px;border-radius:12px;background:var(--teal-dark);color:#fff;font-weight:800;text-decoration:none}
 .professional-entry-link:hover{background:var(--teal);text-decoration:underline}
 @media(max-width:760px){.professional-landing .section-head{display:block}.professional-entry-link{width:100%;text-align:center}}
+
+/* Usability pass: consistent tap targets and unmistakable selection states */
+.consult-category,.consult-issue,.channel-tab{min-height:52px;transition:background-color .15s,border-color .15s,box-shadow .15s}
+.consult-category.is-active,.consult-issue.is-active{background:#dff2e9;border-color:#07564f;box-shadow:inset 0 0 0 1px #07564f}
+.consult-category.is-active .category-mark{background:#07564f;color:#fff}
+.consult-category.is-active::after,.consult-issue.is-active::after{content:"✓";margin-left:auto;font-weight:900;color:#07564f}
+.consult-issue.is-active{display:flex;align-items:center;gap:8px}
+.channel-tab.is-active{box-shadow:inset 0 0 0 1px #fff}
+.consult-category:focus-visible,.consult-issue:focus-visible,.channel-tab:focus-visible{outline:4px solid #efb643;outline-offset:3px}
+@media(max-width:760px){
+ .home-page .guide-card{min-height:112px;gap:12px;padding:16px}
+ .home-page .guide-icon{width:60px;height:60px}
+ .consult-category{min-height:68px;padding:12px;gap:10px}
+ .consult-issue{min-height:56px;padding:14px 15px}
+ .consult-issue-heading{font-size:1.04rem;margin-bottom:12px}
+ .consult-channel-tabs{gap:8px}
+ .channel-tab{min-height:48px}
+}
+@media(max-width:420px){
+ .home-page .guide-card{grid-template-columns:52px minmax(0,1fr);gap:11px}
+ .home-page .guide-icon{width:52px;height:52px}
+ .home-page .guide-card strong{font-size:.98rem}
+ .consult-category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .consult-category{min-width:0;min-height:82px;flex-direction:column;align-items:flex-start}
+ .consult-category .category-mark{width:34px;height:34px}
+ .consult-category.is-active::after{position:absolute;align-self:flex-end}
+}
+@media(prefers-reduced-motion:reduce){
+ .consult-category,.consult-issue,.channel-tab{transition:none}
+}
