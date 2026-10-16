@@ -1645,7 +1645,7 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "note": "相談内容により事前予約が必要です。来所前に0957-46-5276へお問い合わせください。",
       "reservationStatus": "相談内容により事前予約が必要",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "isahaya-disability",
@@ -1701,7 +1701,7 @@ window.MACHI_CONSULTATION_DATA = {
       "receptionHours": "平日 9:00〜16:30（2027年3月まで試行）",
       "telephoneHours": "平日 8:30〜17:15",
       "audience": "身体・知的・精神障害のある人、障害児と保護者など",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "isahaya-workwork",
@@ -1746,7 +1746,7 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "audience": "働きたいが不安がある人、就労支援サービスを探している人など",
       "note": "WORK・WORKナビ自体は独立した相談窓口ではありません。掲載されている相談機関を選び、各機関の連絡方法・利用条件を確認してください。",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "isahaya-houkatsu",
@@ -1879,7 +1879,8 @@ window.MACHI_CONSULTATION_DATA = {
       "availability": "月〜金曜 8:30〜17:00（祝日・年末年始を除く）",
       "note": "生活費・仕事・家賃・家計など、生活全般の困りごとを相談できます。所在地：諫早市東小路町11-1 塩塚ビル102。",
       "audience": "仕事・家賃・生活費など、生活全般に困っている人",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16",
+      "consultationHours": "平日 8:30〜17:00（祝日・年末年始除く）"
     },
     {
       "id": "isahaya-women",
@@ -1929,7 +1930,7 @@ window.MACHI_CONSULTATION_DATA = {
       "audience": "DV・デートDV、結婚・離婚などに悩む女性",
       "reservationStatus": "電話相談は予約不要。面接相談は事前に電話予約",
       "consultationHours": "平日・第2土曜・第4日曜 9:00〜16:00（年末年始除く）",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "isahaya-mental",
@@ -1986,7 +1987,7 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "audience": "こころの悩み・不安を抱える本人と家族など",
       "consultationHours": "平日8:30〜17:00（祝日・年末年始除く）",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "nagasaki-mental",
@@ -2043,8 +2044,9 @@ window.MACHI_CONSULTATION_DATA = {
         "女性の健康",
         "禁煙"
       ],
-      "audience": "おおむね40歳以上の人",
-      "verifiedAt": null
+      "audience": "おおむね40歳以上（市の健康相談ページによる）",
+      "verifiedAt": "2026-10-16",
+      "note": "地域により問い合わせ先が異なります。公式ページの地域別問い合わせ先をご確認ください。"
     },
     {
       "id": "isahaya-health-promotion",
