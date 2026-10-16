@@ -115,7 +115,7 @@
       r.consultationHours?['専門相談',r.consultationHours]:null
     ].filter(Boolean);
     if(r.availability){
-      const kind=r.type==='dial'?'電話受付':(r.channels||[]).includes('chat')&&!(r.channels||[]).includes('in-person')?'チャット・SNSの受付':'相談・サービスの受付';
+      const kind=r.availability==='全国共通'?'利用範囲':r.type==='dial'?'電話受付':(r.channels||[]).includes('chat')&&!(r.channels||[]).includes('in-person')?'チャット・SNSの受付':'相談・サービスの受付';
       hours.push([kind,r.availability]);
     }
     const meta=hours.map(([label,value])=>`<span class="consult-hour-item"><strong>${esc(label)}</strong> ${esc(value)}</span>`).join('')+(r.fee?`<span class="consult-hour-item"><strong>費用</strong> ${esc(r.fee)}</span>`:'');
