@@ -1642,7 +1642,8 @@ window.MACHI_CONSULTATION_DATA = {
         "発達相談",
         "5歳児相談",
         "発達支援教室"
-      ]
+      ],
+      "note": "相談内容により事前予約が必要です。来所前に0957-46-5276へお問い合わせください。"
     },
     {
       "id": "isahaya-disability",
@@ -2217,7 +2218,9 @@ window.MACHI_CONSULTATION_DATA = {
         "性被害",
         "性暴力",
         "性犯罪"
-      ]
+      ],
+      "availability": "月〜金曜日 9:00〜17:00（祝日・年末年始を除く）。時間外はコールセンターが対応。",
+      "note": "電話は#8891。LINEでも相談受付あり。LINEでの相談への対応は業務時間内に電話で行われます。"
     },
     {
       "id": "nagasaki-police",
@@ -2815,7 +2818,8 @@ window.MACHI_CONSULTATION_DATA = {
       "channels": [
         "phone"
       ],
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "note": "「#8000」がつながらない場合は095-822-3308へ。緊急性が高い場合は119番を利用してください。"
     },
     {
       "id": "child-abuse-189",
@@ -2986,18 +2990,32 @@ window.MACHI_CONSULTATION_DATA = {
       "name": "女性相談支援センター全国共通短縮ダイヤル",
       "organization": "厚生労働省・都道府県",
       "description": "さまざまな困難を抱える女性の相談を、発信地域の女性相談支援センターにつなぐ全国共通番号。",
-      "categories": ["家族・パートナー", "お金・生活", "住まい"],
-      "keywords": ["女性", "困難", "DV", "生活", "住まい", "支援"],
+      "categories": [
+        "家族・パートナー",
+        "お金・生活",
+        "住まい"
+      ],
+      "keywords": [
+        "女性",
+        "困難",
+        "DV",
+        "生活",
+        "住まい",
+        "支援"
+      ],
       "area": "全国",
       "urgency": "priority",
-      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_40477.html",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_40452.html",
       "confirmBeforeCall": true,
       "confirmTitle": "#8778 に電話しますか？",
       "confirmMessage": "さまざまな困難を抱える女性の相談を、発信地域の女性相談支援センターにつなぐ全国共通番号です。",
       "emergencyAlternative": "今すぐ危険が迫っている場合は110を利用してください。",
       "type": "dial",
-      "channels": ["phone"],
-      "sourceTrust": "government"
+      "channels": [
+        "phone"
+      ],
+      "sourceTrust": "government",
+      "note": "通話料は利用者負担です。回線によって#8778が利用できない場合は、都道府県の女性相談支援センターへ直接お問い合わせください。"
     },
     {
       "id": "sexual-violence-8891",
