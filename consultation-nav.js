@@ -118,6 +118,13 @@
       const kind=r.availability==='全国共通'?'利用範囲':r.type==='dial'?'電話受付':(r.channels||[]).includes('chat')&&!(r.channels||[]).includes('in-person')?'チャット・SNSの受付':'相談・サービスの受付';
       hours.push([kind,r.availability]);
     }
+    const methodNames={phone:'電話',web:'Web',sns:'SNS',chat:'チャット','in-person':'来所・対面','sign-language':'手話','text-relay':'文字・電話リレー'};
+    const methods=[...new Set((r.channels||[]).map(c=>methodNames[c]).filter(Boolean))].join('・');
+    const practical=[
+      methods?['相談方法',methods]:null,
+      r.audience?['相談できる人',r.audience]:null,
+      r.reservationStatus?['予約',r.reservationStatus]:null
+    ].filter(Boolean);
     const meta=hours.map(([label,value])=>`<span class="consult-hour-item"><strong>${esc(label)}</strong> ${esc(value)}</span>`).join('')+(r.fee?`<span class="consult-hour-item"><strong>費用</strong> ${esc(r.fee)}</span>`:'');
     return `<article class="consult-resource ${r.type==='dial'&&r.urgency==='emergency'?'is-emergency':''}">
       <div class="resource-top">${preferred?'<span class="source-badge preferred-contact">この相談の優先窓口</span>':'<span class="source-badge related-contact">関連する相談先</span>'}${sourceBadge(r)}${channelBadges(r)}</div>
@@ -125,6 +132,7 @@
       ${operator?`<p class="resource-operator">${esc(operator)}</p>`:''}
       <p>${esc(r.description||'')}</p>${phone}
       ${meta?`<p class="resource-meta">${meta}</p>`:''}
+      ${practical.length?`<dl class="consult-practical">${practical.map(([label,value])=>`<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>`:''}
       <div class="resource-actions">${call}<a class="resource-official" href="${esc(url)}" target="_blank" rel="noopener">公式情報を見る ↗</a></div>
       ${r.note?`<p class="resource-note">${esc(r.note)}</p>`:''}
     </article>`;
