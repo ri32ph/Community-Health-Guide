@@ -508,7 +508,7 @@ footer a{color:#fff}
  body.print-consultation-only header,
  body.print-consultation-only footer,
  body.print-consultation-only main> :not(#local),
- body.print-consultation-only #local> :not(.wrap),
+ body.print-consultation-only #local>.wrap> :not([data-consultation-nav]),
  body.print-consultation-only .consult-step:not(.consult-results),
  body.print-consultation-only .consult-fallback{display:none!important}
  body.print-consultation-only .consult-results{display:block!important;padding:0!important;margin:0!important;border:0!important}
