@@ -1650,7 +1650,7 @@ window.MACHI_CONSULTATION_DATA = {
       "id": "isahaya-disability",
       "name": "諫早市 障害福祉課",
       "area": "諫早市",
-      "description": "障害福祉サービス、障害児支援、相談支援、就労支援等の制度相談。",
+      "description": "障害福祉サービス、障害者手帳、障害児支援などの制度・手続きを案内。",
       "phone": "0957-22-1500",
       "officialUrl": "https://www.city.isahaya.nagasaki.jp/soshiki/16/index.html",
       "type": "local",
@@ -1696,19 +1696,19 @@ window.MACHI_CONSULTATION_DATA = {
         "障害福祉サービス",
         "就労支援"
       ],
-      "note": "諫早市役所の対象窓口。来庁受付と電話対応の時間は異なります。個別相談・予約の実施日時は公式ページで確認してください。",
+      "note": "諫早市役所の対象窓口は2026年10月1日から来庁受付が平日9:00〜16:30（2027年3月まで試行）。電話対応8:30〜17:15。障害福祉サービスの申請は本庁障害福祉課と各支所の担当窓口で受け付けます。サービスの内容や手続きは事前に確認してください。",
       "receptionHours": "平日 9:00〜16:30（2027年3月まで試行）",
-      "telephoneHours": "平日 8:30〜17:15"
+      "telephoneHours": "平日 8:30〜17:15",
+      "audience": "身体・知的・精神障害のある人、障害児と保護者など"
     },
     {
       "id": "isahaya-workwork",
-      "name": "諫早市 WORK・WORK（ワク・ワク）ナビ",
+      "name": "諫早市 WORK・WORKナビ（就労支援情報案内）",
       "area": "諫早市",
-      "description": "働くことに不安がある人向け。ハローワーク、障害者就業・生活支援、若者サポートステーション、発達障害者支援等への案内。",
+      "description": "働くことに不安がある人向けに、ハローワークや障害者就業・生活支援センターなどの相談先と就労支援制度を紹介する案内ページです。",
       "officialUrl": "https://www.city.isahaya.nagasaki.jp/soshiki/16/22436.html",
       "type": "local",
       "channels": [
-        "in-person",
         "web"
       ],
       "categories": [
@@ -1741,14 +1741,16 @@ window.MACHI_CONSULTATION_DATA = {
         "就労相談",
         "障害者就労",
         "若者就労"
-      ]
+      ],
+      "audience": "働きたいが不安がある人、就労支援サービスを探している人など",
+      "note": "WORK・WORKナビ自体は独立した相談窓口ではありません。掲載されている相談機関を選び、各機関の連絡方法・利用条件を確認してください。"
     },
     {
       "id": "isahaya-houkatsu",
       "name": "諫早市 地域包括支援センター",
       "area": "諫早市",
-      "description": "高齢者の介護・福祉・健康・医療・認知症など生活全般の総合相談。",
-      "officialUrl": "https://www.city.isahaya.nagasaki.jp/soshiki/26/index.html",
+      "description": "介護・福祉・健康・医療などを相談できる、高齢者の総合相談窓口。住所地によって担当センターが異なります。",
+      "officialUrl": "https://www.city.isahaya.nagasaki.jp/soshiki/25/32228.html",
       "type": "local",
       "channels": [
         "in-person",
@@ -1807,7 +1809,9 @@ window.MACHI_CONSULTATION_DATA = {
         "財産管理",
         "権利擁護",
         "判断能力"
-      ]
+      ],
+      "audience": "諫早市内の高齢者とその家族など",
+      "note": "諫早市内には中央部0957-27-0730、北部0957-25-7030、西部0957-43-3330、南部0957-35-2887、東部0957-32-6556の5センターがあります。担当する町名は公式ページで確認してください。予約の要否は利用前に各センターへ確認してください。"
     },
     {
       "id": "isahaya-kurashi",
