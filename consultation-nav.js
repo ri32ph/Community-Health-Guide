@@ -146,7 +146,7 @@
     const sections=rules.map(([title,ids])=>({title,issues:ids.map(id=>items.find(i=>i.id===id)).filter(Boolean).filter(i=>{if(seen.has(i.id))return false;seen.add(i.id);return true})})).filter(section=>section.issues.length);
     const remaining=items.filter(i=>!seen.has(i.id));
     if(remaining.length)sections.push({title:'その他の相談',issues:remaining});
-    return sections.map(section=>`<div class="consult-issue-section"><h3 class="consult-issue-heading">${esc(section.title)}</h3><div class="consult-issue-grid">${section.issues.map(i=>`<button type="button" class="consult-issue ${state.issueId===i.id?'is-active':''}" data-issue="${esc(i.id)}">${esc(i.label)}</button>`).join('')}</div></div>`).join('');
+    return sections.map(section=>`<div class="consult-issue-section"><h3 class="consult-issue-heading">${esc(section.title)}</h3><div class="consult-issue-grid">${section.issues.map(i=>`<button type="button" class="consult-issue ${state.issueId===i.id?'is-active':''}" aria-pressed="${state.issueId===i.id}" data-issue="${esc(i.id)}">${esc(i.label)}</button>`).join('')}</div></div>`).join('');
   }
 
   function render(){
@@ -161,7 +161,7 @@
       <div class="consult-step">
         <p class="consult-step-label"><span>1</span> 目的別に探す</p>
         <div class="consult-category-grid">
-          ${displayGroups.map(c=>`<button type="button" class="consult-category ${cat===c.id?'is-active':''}" data-category="${esc(c.id)}"><span class="category-mark">${esc(c.icon)}</span><span>${esc(c.label)}</span></button>`).join('')}
+          ${displayGroups.map(c=>`<button type="button" class="consult-category ${cat===c.id?'is-active':''}" aria-pressed="${cat===c.id}" data-category="${esc(c.id)}"><span class="category-mark">${esc(c.icon)}</span><span>${esc(c.label)}</span></button>`).join('')}
         </div>
       </div>
       ${cat?`<div class="consult-step">
@@ -178,7 +178,7 @@
         ${toolCards(issue)}
         <p class="consult-step-label"><span>3</span> 相談方法を選べます</p>
         <div class="consult-channel-tabs" role="group" aria-label="相談方法で絞り込む">
-          ${Object.entries(channelLabels).map(([id,label])=>`<button type="button" class="channel-tab ${state.channel===id?'is-active':''}" data-channel="${esc(id)}">${esc(label)}</button>`).join('')}
+          ${Object.entries(channelLabels).map(([id,label])=>`<button type="button" class="channel-tab ${state.channel===id?'is-active':''}" aria-pressed="${state.channel===id}" data-channel="${esc(id)}">${esc(label)}</button>`).join('')}
         </div>
         <div class="consult-resource-grid">${resources.length?resources.map(resourceCard).join(''):'<p class="consult-empty">この方法で表示できる相談先は現在登録していません。別の相談方法を選んでください。</p>'}</div>
       </div>`:''}
