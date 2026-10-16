@@ -2388,10 +2388,10 @@ window.MACHI_CONSULTATION_DATA = {
     },
     {
       "id": "gender-dv",
-      "name": "DV相談ナビ・DV相談＋",
+      "name": "DV相談ナビ・DV相談プラス",
       "operator": "内閣府 男女共同参画局",
       "sourceType": "government",
-      "description": "配偶者やパートナーからの暴力について、最寄りの支援センターや24時間の電話・チャット相談につながる。",
+      "description": "DV相談ナビ#8008は最寄りの支援センターへ接続。DV相談プラスは24時間の電話相談とチャット相談に対応（メール相談は終了）。",
       "categories": [
         "家族・パートナー",
         "住まい"
@@ -2416,7 +2416,8 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "area": "全国",
       "officialUrl": "https://www.gender.go.jp/policy/no_violence/dv_navi/index.html",
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "note": "チャットは10言語の外国語相談にも対応。受付時間などは公式ページで確認してください。"
     },
     {
       "id": "gender-sexual-violence",
@@ -2435,9 +2436,9 @@ window.MACHI_CONSULTATION_DATA = {
         "犯罪被害",
         "ワンストップ"
       ],
-      "url": "https://www.gender.go.jp/policy/no_violence/no_violence_act/",
+      "url": "https://www.gender.go.jp/policy/no_violence/seibouryoku/consult.html",
       "verifiedBy": "内閣府 男女共同参画局",
-      "sourceUrl": "https://www.gender.go.jp/policy/no_violence/no_violence_act/",
+      "sourceUrl": "https://www.gender.go.jp/policy/no_violence/seibouryoku/consult.html",
       "phone": "#8891",
       "type": "public",
       "channels": [
@@ -2445,8 +2446,9 @@ window.MACHI_CONSULTATION_DATA = {
         "chat"
       ],
       "area": "全国",
-      "officialUrl": "https://www.gender.go.jp/policy/no_violence/no_violence_act/",
-      "sourceTrust": "government"
+      "officialUrl": "https://www.gender.go.jp/policy/no_violence/seibouryoku/consult.html",
+      "sourceTrust": "government",
+      "note": "電話相談#8891のほか、チャット相談Cure timeなどの案内は内閣府の公式情報を確認してください。"
     },
     {
       "id": "mhlw-kokoro-no-mimi",
@@ -2594,7 +2596,7 @@ window.MACHI_CONSULTATION_DATA = {
       "verifiedBy": "厚生労働省「まもろうよ こころ」",
       "sourceUrl": "https://www.mhlw.go.jp/mamorouyokokoro/soudan/sns/",
       "audience": "年齢・性別を問わず",
-      "note": "民間/NPO。厚生労働省の公式相談先一覧に掲載されていることを根拠として収載。",
+      "note": "厚生労働省のSNS相談一覧に掲載。最新の相談時間と相談入口は公式サイトで確認してください。",
       "type": "public",
       "channels": [
         "web",
@@ -2604,7 +2606,8 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "area": "全国",
       "officialUrl": "https://yorisoi-chat.jp/",
-      "sourceTrust": "officially-listed"
+      "sourceTrust": "officially-listed",
+      "availability": "月・金 6:00〜22:30、その他の曜日 8:00〜22:30（受付は22:00まで）"
     },
     {
       "id": "tms-kokoro-hotchat",
@@ -2627,7 +2630,7 @@ window.MACHI_CONSULTATION_DATA = {
       "verifiedBy": "厚生労働省「まもろうよ こころ」",
       "sourceUrl": "https://www.mhlw.go.jp/mamorouyokokoro/soudan/sns/",
       "audience": "年齢・性別を問わず",
-      "note": "民間/NPO。厚生労働省の公式相談先一覧に掲載されていることを根拠として収載。",
+      "note": "LINE・Facebook・ウェブチャットに対応。最新の受付時間と相談方法は公式サイトで確認してください。",
       "type": "public",
       "channels": [
         "web",
@@ -2636,7 +2639,8 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "area": "全国",
       "officialUrl": "https://www.npo-tms.or.jp/public/kokoro_hotchat/",
-      "sourceTrust": "officially-listed"
+      "sourceTrust": "officially-listed",
+      "availability": "毎日 7:00〜23:50（受付は23:00まで）"
     },
     {
       "id": "anata-no-ibasho",
@@ -2659,7 +2663,7 @@ window.MACHI_CONSULTATION_DATA = {
       "url": "https://talkme.jp/",
       "verifiedBy": "厚生労働省",
       "sourceUrl": "https://www.mhlw.go.jp/mamorouyokokoro/soudan/sns/",
-      "note": "民間/NPO。厚生労働省が相談支援団体として公式情報で案内しているものを収載。",
+      "note": "年齢・性別を問わず、無料・匿名で利用できるチャット相談。混雑時の対応状況は公式サイトで確認してください。",
       "type": "public",
       "channels": [
         "web",
@@ -2667,7 +2671,8 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "area": "全国",
       "officialUrl": "https://talkme.jp/",
-      "sourceTrust": "officially-listed"
+      "sourceTrust": "officially-listed",
+      "availability": "24時間365日"
     },
     {
       "id": "houterasu",
@@ -2863,7 +2868,8 @@ window.MACHI_CONSULTATION_DATA = {
       "channels": [
         "phone"
       ],
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "note": "虐待かもしれないと思った段階で相談・通告できます。匿名での相談も可能です。一部のIP電話等では利用できません。生命に差し迫った危険がある場合は110・119。"
     },
     {
       "id": "child-consultation-189783",
@@ -2893,7 +2899,8 @@ window.MACHI_CONSULTATION_DATA = {
       "channels": [
         "phone"
       ],
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "note": "育児や子どもの福祉に関する相談用。虐待の通告・相談は189を利用してください。一部のIP電話等では利用できません。"
     },
     {
       "id": "child-sos-24h",
@@ -2991,7 +2998,8 @@ window.MACHI_CONSULTATION_DATA = {
       "channels": [
         "phone"
       ],
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "note": "相談できるのは接続先機関の受付時間内。通話料がかかり、一部の回線では利用できません。電話での相談が難しい場合はDV相談プラスのチャット相談も確認してください。"
     },
     {
       "id": "women-support-8778",
@@ -3048,7 +3056,7 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "area": "全国",
       "urgency": "priority",
-      "officialUrl": "https://www.gender.go.jp/policy/no_violence/no_violence_act/",
+      "officialUrl": "https://www.gender.go.jp/policy/no_violence/seibouryoku/consult.html",
       "confirmBeforeCall": true,
       "confirmTitle": "#8891 に電話しますか？",
       "confirmMessage": "性犯罪・性暴力被害について、最寄りのワンストップ支援センターにつながります。",
@@ -3057,7 +3065,8 @@ window.MACHI_CONSULTATION_DATA = {
       "channels": [
         "phone"
       ],
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "note": "通話料無料。一部のIP電話等では利用できません。NTTひかり電話では0120-8891-77を利用できます。"
     },
     {
       "id": "police-sexual-crime-8103",
