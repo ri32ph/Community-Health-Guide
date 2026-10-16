@@ -137,7 +137,12 @@
     const cat=state.categoryId;
     const issue=currentIssue();
     const group=groupFor(cat);
-    const issueList=group ? data.issues.filter(i => group.members.some(member => String(i.categoryId || '').trim() === member)) : [];
+    const issueList=group ? data.issues.filter(i => {
+      const category=String(i.categoryId ?? '').trim();
+      const issueId=String(i.id ?? '').trim();
+      // Preserve legacy issue IDs and support older data payloads without categoryId.
+      return group.members.includes(category) || (!category && group.members.some(member => issueId.startsWith(member+'-')));
+    }) : [];
     if(group && issueList.length === 0) console.error('[consultation-nav] No matching issues for group:', cat, 'data category ids:', [...new Set(data.issues.map(i=>i.categoryId))]);
     const resources=issue?resourcesFor(issue):[];
     const steps=issue?nextSteps(issue):[];
