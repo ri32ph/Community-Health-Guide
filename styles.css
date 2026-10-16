@@ -453,3 +453,7 @@ footer a{color:#fff}
 @media(prefers-reduced-motion:reduce){
  .consult-category,.consult-issue,.channel-tab{transition:none}
 }
+
+/* Make recommended contacts distinct from broad related-directory matches */
+.source-badge.preferred-contact{background:#ddf2e6;color:#07564f;border:1px solid #7dbea3;font-weight:900}
+.source-badge.related-contact{background:#f2f4f6;color:#475569;border:1px solid #d6dce2}
