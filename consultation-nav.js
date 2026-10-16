@@ -126,7 +126,7 @@
       r.audience?['相談できる人',r.audience]:null,
       r.reservationStatus?['予約',r.reservationStatus]:null
     ].filter(Boolean);
-    const verifiedDate=(typeof r.verifiedAt==='string'&&/^\\d{4}-\\d{2}-\\d{2}$/.test(r.verifiedAt)&&!Number.isNaN(Date.parse(r.verifiedAt)))?r.verifiedAt:null;
+    const verifiedDate=(typeof r.verifiedAt==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(r.verifiedAt)&&!Number.isNaN(Date.parse(r.verifiedAt)))?r.verifiedAt:null;
     const verificationText=verifiedDate?'情報最終確認：'+verifiedDate.replace(/-/g,'/'):'情報最終確認：未登録';
     const meta=hours.map(([label,value])=>`<span class="consult-hour-item"><strong>${esc(label)}</strong> ${esc(value)}</span>`).join('')+(r.fee?`<span class="consult-hour-item"><strong>費用</strong> ${esc(r.fee)}</span>`:'');
     return `<article class="consult-resource ${r.type==='dial'&&r.urgency==='emergency'?'is-emergency':''}">
