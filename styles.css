@@ -457,3 +457,9 @@ footer a{color:#fff}
 /* Make recommended contacts distinct from broad related-directory matches */
 .source-badge.preferred-contact{background:#ddf2e6;color:#07564f;border:1px solid #7dbea3;font-weight:900}
 .source-badge.related-contact{background:#f2f4f6;color:#475569;border:1px solid #d6dce2}
+
+/* Clearly distinguish different kinds of consultation hours */
+.consult-resource .resource-meta{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:flex-start}
+.consult-hour-item{display:inline-flex;align-items:baseline;flex-wrap:wrap;gap:5px;line-height:1.65;max-width:100%}
+.consult-hour-item strong{font-weight:800;white-space:nowrap;color:var(--teal-dark)}
+@media(max-width:760px){.consult-resource .resource-meta{flex-direction:column;align-items:stretch}.consult-hour-item{display:block}}
