@@ -553,3 +553,8 @@ footer a{color:#fff}
 /* Resource-level verification metadata */
 .consult-verified{margin:10px 0 3px;font-size:.78rem;color:var(--muted);line-height:1.5}
 @media print{body.print-consultation-only .consult-verified{font-size:9pt!important;color:#333!important;display:block!important;break-inside:avoid}}
+
+/* Footer About and reliability links */
+.site-footer-bottom .footer-meta-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px}
+.site-footer-bottom .footer-meta-links a{min-height:36px;display:inline-flex;align-items:center}
+@media(max-width:540px){.site-footer-bottom{flex-wrap:wrap}.site-footer-bottom .footer-meta-links{width:100%;gap:6px 18px}}
