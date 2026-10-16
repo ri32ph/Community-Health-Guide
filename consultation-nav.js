@@ -192,6 +192,7 @@
       ${issue?`<div class="consult-step consult-results" data-consult-print-area>
         <div class="consult-print-head" aria-hidden="true"><strong>まちの健康・医療案内｜相談先ナビ</strong><span>${esc(issue.label)}</span></div>
         <div class="selected-concern"><span>選択中</span><strong>${esc(issue.label)}</strong></div>
+        <button type="button" class="consult-print-result" data-print-consultation aria-label="この相談結果を印刷またはPDFに保存">この相談結果を印刷・PDF保存</button>
         ${issueDetailPages[issue.id]?`<a class="consult-detail-link" href="${esc(issueDetailPages[issue.id].url)}">${esc(issueDetailPages[issue.id].label)} →</a>`:''}
         ${issue.id==='pregnancy-emergency-contraception'?'<div class="next-step-box"><strong>販売・調剤できる薬局を確認する</strong><p>緊急避妊薬は取り扱う薬局・対応可能な薬剤師が限られます。来店前に在庫と対応状況を電話で確認してください。</p><a class="consult-detail-link" href="https://www.mhlw.go.jp/stf/kinnkyuuhininnyaku.html" target="_blank" rel="noopener">厚生労働省：緊急避妊薬の販売可能薬局一覧を見る ↗</a></div>':''}
         ${['health-where-to-go','health-night-holiday'].includes(issue.id)?'<p class="resource-note">#7119に接続できない場合は 095-801-1217。生命の危険がある場合は119へ。</p>':''}
@@ -229,6 +230,14 @@
     if(issue){state.issueId=issue.dataset.issue;state.channel='all';render();mount.querySelector('.consult-results')?.scrollIntoView({behavior:'smooth',block:'nearest'});return;}
     const channel=e.target.closest('[data-channel]');
     if(channel){state.channel=channel.dataset.channel;render();return;}
+    const print=e.target.closest('[data-print-consultation]');
+    if(print){
+      document.body.classList.add('print-consultation-only');
+      try{window.print();}finally{
+        // Keep print rules active until the system print dialog has finished.
+      }
+      return;
+    }
     const localCall=e.target.closest('[data-local-call]');
     if(localCall){
       const resource=allResources().find(r=>r.id===localCall.dataset.localCall);
@@ -250,5 +259,6 @@
       if(r&&window.openCallConfirm)window.openCallConfirm(r);
     }
   });
+  window.addEventListener('afterprint',()=>document.body.classList.remove('print-consultation-only'));
   render();
 })();
