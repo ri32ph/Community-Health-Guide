@@ -1,7 +1,7 @@
 // Vercel Serverless Function. Requires UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN.
 const CHOICES = 7;
-const countsKey = 'machicare:cep:counts:v1';
-const voteKeyPrefix = 'machicare:cep:voted:v1:';
+const countsKey = 'machicare:cep:counts:v2';
+const voteKeyPrefix = 'machicare:cep:voted:v2:';
 const script = `local ok=redis.call('SET',KEYS[1],'1','NX','EX',31536000); if not ok then return 0 end; redis.call('HINCRBY',KEYS[2],ARGV[1],1); return 1`;
 async function command(args) {
   // Vercel integrations may expose KV_* instead of UPSTASH_* variables.
