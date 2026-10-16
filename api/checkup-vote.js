@@ -4,12 +4,12 @@ const countsKey = 'machicare:cep:counts:v1';
 const voteKeyPrefix = 'machicare:cep:voted:v1:';
 const script = `local ok=redis.call('SET',KEYS[1],'1','NX','EX',31536000); if not ok then return 0 end; redis.call('HINCRBY',KEYS[2],ARGV[1],1); return 1`;
 async function command(args) {
-  const url=process.env.UPSTASH_REDIS_REST_URL;
-  const token=process.env.UPSTASH_REDIS_REST_TOKEN;
-  if(!url||!token)throw Error('Redis is not configured');
+  const url=process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL;
+  const token=process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN;
+  if(!url||!token)throw Error('Redis configuration missing (check variable names and deployment)');
   const r=await fetch(url,{method:'POST',headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json'},body:JSON.stringify(args),cache:'no-store'});
-  if(!r.ok)throw Error('Redis failed');
-  const data=await r.json();if(data.error)throw Error('Redis failed');return data.result;
+  if(!r.ok)throw Error(`Redis HTTP error: ${r.status}`);
+  const data=await r.json();if(data.error)throw Error('Redis returned command error');return data.result;
 }
 export default async function handler(req,res){
   res.setHeader('Cache-Control','no-store');res.setHeader('Content-Type','application/json; charset=utf-8');res.setHeader('X-Content-Type-Options','nosniff');
@@ -28,5 +28,5 @@ export default async function handler(req,res){
       return res.status(200).json({ok:true});
     }
     res.setHeader('Allow','GET, POST');return res.status(405).json({error:'Unsupported method'});
-  }catch(e){return res.status(503).json({error:'一時的に利用できない'});}
+  }catch(e){console.error('[checkup-vote] Request failed:', e instanceof Error ? e.message : 'Unknown error');return res.status(503).json({error:'一時的に利用できない'});}
 }
