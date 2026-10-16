@@ -2856,7 +2856,7 @@ window.MACHI_CONSULTATION_DATA = {
         "phone"
       ],
       "sourceTrust": "government",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "nagasaki-8000",
@@ -2930,7 +2930,7 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "sourceTrust": "government",
       "note": "虐待かもしれないと思った段階で相談・通告できます。匿名での相談も可能です。一部のIP電話等では利用できません。生命に差し迫った危険がある場合は110・119。",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "child-consultation-189783",
@@ -2962,7 +2962,7 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "sourceTrust": "government",
       "note": "育児や子どもの福祉に関する相談用。虐待の通告・相談は189を利用してください。一部のIP電話等では利用できません。",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "child-sos-24h",
@@ -3029,7 +3029,7 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "sourceTrust": "government",
       "note": "局番なし188で最寄りの消費生活相談窓口に案内されます。諫早市の相談窓口は0957-22-3113（平日）です。",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "dv-8008",
@@ -3064,7 +3064,7 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "sourceTrust": "government",
       "note": "相談できるのは接続先機関の受付時間内。通話料がかかり、一部の回線では利用できません。電話での相談が難しい場合はDV相談プラスのチャット相談も確認してください。",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "women-support-8778",
@@ -3133,7 +3133,7 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "sourceTrust": "government",
       "note": "通話料無料。一部のIP電話等では利用できません。NTTひかり電話では0120-8891-77を利用できます。",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "police-sexual-crime-8103",
