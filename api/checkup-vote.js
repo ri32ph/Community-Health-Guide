@@ -4,10 +4,20 @@ const countsKey = 'machicare:cep:counts:v1';
 const voteKeyPrefix = 'machicare:cep:voted:v1:';
 const script = `local ok=redis.call('SET',KEYS[1],'1','NX','EX',31536000); if not ok then return 0 end; redis.call('HINCRBY',KEYS[2],ARGV[1],1); return 1`;
 async function command(args) {
-  const url=process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL;
-  const token=process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN;
+  // Vercel integrations may expose KV_* instead of UPSTASH_* variables.
+  // Strip accidental wrapping quotation marks from manually copied values.
+  const clean = value => String(value || '').trim().replace(/^["']+|["']+$/g, '').trim();
+  const url=clean(process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL);
+  const token=clean(process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN);
   if(!url||!token)throw Error('Redis configuration missing (check variable names and deployment)');
-  const r=await fetch(url,{method:'POST',headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json'},body:JSON.stringify(args),cache:'no-store'});
+  let endpoint;
+  try {
+    endpoint = new URL(url);
+    if (endpoint.protocol !== 'https:' || !endpoint.hostname) throw new Error('invalid');
+  } catch {
+    throw Error('Redis REST URL invalid; expected an https:// URL without a variable name or extra text');
+  }
+  const r=await fetch(endpoint.toString(),{method:'POST',headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json'},body:JSON.stringify(args),cache:'no-store'});
   if(!r.ok)throw Error(`Redis HTTP error: ${r.status}`);
   const data=await r.json();if(data.error)throw Error('Redis returned command error');return data.result;
 }
