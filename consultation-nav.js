@@ -135,6 +135,7 @@
       ${practical.length?`<dl class="consult-practical">${practical.map(([label,value])=>`<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>`:''}
       <div class="resource-actions">${call}<a class="resource-official" href="${esc(url)}" target="_blank" rel="noopener">公式情報を見る ↗</a></div>
       ${r.note?`<p class="resource-note">${esc(r.note)}</p>`:''}
+      ${r.id==='isahaya-houkatsu'?'<p><a class="consult-detail-link" href="houkatsu-finder.html">お住まいの町名から担当センターを探す →</a></p>':''}
     </article>`;
   }
 
