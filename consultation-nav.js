@@ -137,7 +137,8 @@
     const cat=state.categoryId;
     const issue=currentIssue();
     const group=groupFor(cat);
-    const issueList=group?data.issues.filter(i=>group.members.includes(i.categoryId)):[];
+    const issueList=group ? data.issues.filter(i => group.members.some(member => String(i.categoryId || '').trim() === member)) : [];
+    if(group && issueList.length === 0) console.error('[consultation-nav] No matching issues for group:', cat, 'data category ids:', [...new Set(data.issues.map(i=>i.categoryId))]);
     const resources=issue?resourcesFor(issue):[];
     const steps=issue?nextSteps(issue):[];
     mount.innerHTML=`
@@ -149,7 +150,7 @@
       </div>
       ${cat?`<div class="consult-step">
         <p class="consult-step-label"><span>2</span> 今の悩みに近いものを選んでください</p>
-        <div class="consult-issue-grid">${issueList.map(i=>`<button type="button" class="consult-issue ${state.issueId===i.id?'is-active':''}" data-issue="${esc(i.id)}">${esc(i.label)}</button>`).join('')}</div>
+        <div class="consult-issue-grid">${issueList.length ? issueList.map(i=>`<button type="button" class="consult-issue ${state.issueId===i.id?'is-active':''}" data-issue="${esc(i.id)}">${esc(i.label)}</button>`).join('') : '<p class="consult-empty">相談内容を表示できません。ページを更新してください。</p>'}</div>
         ${group&&group.members.length===1&&categoryDetailPages[cat]?`<a class="consult-detail-link" href="${esc(categoryDetailPages[cat].url)}">${esc(categoryDetailPages[cat].label)} →</a>`:''}
       </div>`:''}
       ${issue?`<div class="consult-step consult-results" data-consult-print-area>
