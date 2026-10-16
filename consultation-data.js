@@ -2337,7 +2337,7 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "officialUrl": "https://www.mhlw.go.jp/mamorouyokokoro/",
       "sourceTrust": "government",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "mhlw-support-search",
@@ -2368,7 +2368,7 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "officialUrl": "https://shienjoho.go.jp/",
       "sourceTrust": "government",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "cao-notalone",
@@ -2432,7 +2432,7 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "officialUrl": "https://www.mext.go.jp/a_menu/shotou/seitoshidou/06112210.htm",
       "sourceTrust": "government",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "gender-dv",
@@ -2530,7 +2530,7 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "officialUrl": "https://kokoro.mhlw.go.jp/",
       "sourceTrust": "government",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "mhlw-seikatsu-konkyu",
@@ -2626,7 +2626,8 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "officialUrl": "https://www.moj.go.jp/JINKEN/jinken20.html",
       "sourceTrust": "government",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16",
+      "consultationHours": "平日8:30〜17:15"
     },
     {
       "id": "lifelink-yorisoi-chat",
@@ -2662,7 +2663,7 @@ window.MACHI_CONSULTATION_DATA = {
       "officialUrl": "https://yorisoi-chat.jp/",
       "sourceTrust": "officially-listed",
       "availability": "月・金 6:00〜22:30、その他の曜日 8:00〜22:30（受付は22:00まで）",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "tms-kokoro-hotchat",
@@ -2696,7 +2697,7 @@ window.MACHI_CONSULTATION_DATA = {
       "officialUrl": "https://www.npo-tms.or.jp/public/kokoro_hotchat/",
       "sourceTrust": "officially-listed",
       "availability": "毎日 7:00〜23:50（受付は23:00まで）",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "anata-no-ibasho",
@@ -2728,9 +2729,9 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "officialUrl": "https://talkme.jp/",
       "sourceTrust": "officially-listed",
-      "availability": "24時間365日",
+      "availability": "24時間365日・匿名チャット",
       "audience": "年齢・性別を問わず誰でも（匿名）",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "houterasu",
