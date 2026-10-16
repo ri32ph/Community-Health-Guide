@@ -517,3 +517,27 @@ footer a{color:#fff}
  body.print-consultation-only .consult-related>.consult-resource-grid{display:grid!important}
  body.print-consultation-only .consult-related>summary{display:none!important}
 }
+
+/* A4 consultation summary: legible contact details and predictable page breaks */
+@media print{
+ body.print-consultation-only #local{padding:0!important;margin:0!important;background:#fff!important}
+ body.print-consultation-only #local>.wrap,
+ body.print-consultation-only [data-consultation-nav]{display:block!important;max-width:none!important;width:100%!important;margin:0!important;padding:0!important}
+ body.print-consultation-only .consult-resource-grid,
+ body.print-consultation-only .consult-tool-grid{display:block!important}
+ body.print-consultation-only .consult-resource,
+ body.print-consultation-only .next-step-box,
+ body.print-consultation-only .community-types,
+ body.print-consultation-only .consult-tool-card{break-inside:avoid-page!important;page-break-inside:avoid!important;margin:0 0 4mm!important;padding:3mm!important;border:1px solid #aaa!important;background:#fff!important}
+ body.print-consultation-only .consult-result-heading{font-size:13pt!important;margin:6mm 0 3mm!important;break-after:avoid!important}
+ body.print-consultation-only .consult-resource h4{font-size:12pt!important;line-height:1.4!important}
+ body.print-consultation-only .resource-phone{font-size:12pt!important;line-height:1.4!important;font-weight:700!important;white-space:normal!important}
+ body.print-consultation-only .resource-meta,
+ body.print-consultation-only .consult-hour-item,
+ body.print-consultation-only .consult-practical{font-size:10pt!important;line-height:1.5!important;color:#111!important}
+ body.print-consultation-only .resource-top{margin-bottom:2mm!important}
+ body.print-consultation-only .consult-related{padding:3mm!important;margin:6mm 0!important;break-inside:auto!important}
+ body.print-consultation-only .consult-related>.consult-resource-grid{display:block!important}
+ body.print-consultation-only .consult-channel-tabs,
+ body.print-consultation-only .consult-print-result{display:none!important}
+}
