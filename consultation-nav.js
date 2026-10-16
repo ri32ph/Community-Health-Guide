@@ -259,6 +259,16 @@
       if(r&&window.openCallConfirm)window.openCallConfirm(r);
     }
   });
-  window.addEventListener('afterprint',()=>document.body.classList.remove('print-consultation-only'));
+  let printOpenedDetails=[];
+  window.addEventListener('beforeprint',()=>{
+    if(!document.body.classList.contains('print-consultation-only'))return;
+    printOpenedDetails=[...mount.querySelectorAll('.consult-related:not([open])')];
+    printOpenedDetails.forEach(el=>{el.open=true;});
+  });
+  window.addEventListener('afterprint',()=>{
+    printOpenedDetails.forEach(el=>{el.open=false;});
+    printOpenedDetails=[];
+    document.body.classList.remove('print-consultation-only');
+  });
   render();
 })();
