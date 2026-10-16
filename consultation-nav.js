@@ -108,7 +108,8 @@
     const isDial=r.type==='dial';
     const number=r.number||'';
     const call=isDial?`<button class="resource-call" type="button" data-dial-id="${esc(r.id)}">${esc(number)} に電話する</button>`:'';
-    const phone=(!isDial&&r.phone)?`<p class="resource-phone">電話：${esc(r.phone)}</p>`:'';
+    const phone=(!isDial&&r.phone)?`<p class="resource-phone">電話：<strong>${esc(r.phone)}</strong></p>`:'';
+    const localCall=(!isDial&&r.phone&&(r.channels||[]).includes('phone'))?`<button class="resource-call" type="button" data-local-call="${esc(r.id)}">電話する（確認画面へ）</button>`:'';
     const hours=[
       r.receptionHours?['来庁受付',r.receptionHours]:null,
       r.telephoneHours?['電話対応',r.telephoneHours]:null,
@@ -133,7 +134,7 @@
       <p>${esc(r.description||'')}</p>${phone}
       ${meta?`<p class="resource-meta">${meta}</p>`:''}
       ${practical.length?`<dl class="consult-practical">${practical.map(([label,value])=>`<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>`:''}
-      <div class="resource-actions">${call}<a class="resource-official" href="${esc(url)}" target="_blank" rel="noopener">公式情報を見る ↗</a></div>
+      <div class="resource-actions">${call}${localCall}<a class="resource-official" href="${esc(url)}" target="_blank" rel="noopener">公式情報を見る ↗</a></div>
       ${r.note?`<p class="resource-note">${esc(r.note)}</p>`:''}
       ${r.id==='isahaya-houkatsu'?'<p><a class="consult-detail-link" href="houkatsu-finder.html">お住まいの町名から担当センターを探す →</a></p>':''}
     </article>`;
@@ -228,6 +229,21 @@
     if(issue){state.issueId=issue.dataset.issue;state.channel='all';render();mount.querySelector('.consult-results')?.scrollIntoView({behavior:'smooth',block:'nearest'});return;}
     const channel=e.target.closest('[data-channel]');
     if(channel){state.channel=channel.dataset.channel;render();return;}
+    const localCall=e.target.closest('[data-local-call]');
+    if(localCall){
+      const resource=allResources().find(r=>r.id===localCall.dataset.localCall);
+      if(resource&&resource.phone&&window.openCallConfirm){
+        const number=resource.phone;
+        window.openCallConfirm({
+          number,
+          tel:number.replace(/[^0-9+#]/g,''),
+          confirmTitle:resource.name+'に電話しますか？',
+          confirmMessage:'電話番号：'+number+'。受付時間と相談内容を確認してからおかけください。',
+          urgency:'normal'
+        });
+      }
+      return;
+    }
     const dial=e.target.closest('[data-dial-id]');
     if(dial){
       const r=data.quickDials.find(x=>x.id===dial.dataset.dialId);
