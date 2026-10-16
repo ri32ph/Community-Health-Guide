@@ -2255,7 +2255,7 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "長崎県",
       "description": "性暴力被害の相談、医療・法律・カウンセリング等への支援。",
       "phone": "#8891",
-      "officialUrl": "https://www.pref.nagasaki.jp/bunrui/anzen-anshin/anzen-anshinmachidukuri/anshin-anzenmachidukurijigyo/hanzaihigaisya/support-kentorikumi/body.html",
+      "officialUrl": "https://www.pref.nagasaki.jp/sodan-detail/sodan-317.html",
       "type": "local",
       "channels": [
         "phone",
@@ -2271,8 +2271,9 @@ window.MACHI_CONSULTATION_DATA = {
         "性犯罪"
       ],
       "availability": "月〜金曜日 9:00〜17:00（祝日・年末年始を除く）。時間外はコールセンターが対応。",
-      "note": "電話は#8891。LINEでも相談受付あり。LINEでの相談への対応は業務時間内に電話で行われます。",
-      "verifiedAt": null
+      "note": "長崎県の性暴力被害者支援窓口。#8891からつながります。",
+      "verifiedAt": "2026-10-16",
+      "consultationHours": "月〜金 9:00〜17:00（時間外はコールセンターが対応）"
     },
     {
       "id": "nagasaki-police",
@@ -2300,8 +2301,9 @@ window.MACHI_CONSULTATION_DATA = {
         "暴力",
         "詐欺"
       ],
-      "note": "緊急の事件・事故は110。#9110または095-823-9110で相談でき、執務時間外は当直員が応対します。通話料は利用者負担です。",
-      "verifiedAt": null
+      "note": "緊急の事件・事故は110へ。#9110の通話料は自己負担。短縮番号が利用できない場合は095-823-9110。",
+      "verifiedAt": "2026-10-16",
+      "availability": "24時間対応（長崎県警察の#9110）"
     }
   ],
   "publicResources": [
@@ -2401,7 +2403,8 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "officialUrl": "https://www.notalone-cao.go.jp/support/",
       "sourceTrust": "government",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16",
+      "note": "悩みや状況に応じた相談窓口・支援制度をチャットボットで探せます。"
     },
     {
       "id": "mext-child-sos",
@@ -2465,8 +2468,8 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "officialUrl": "https://www.gender.go.jp/policy/no_violence/dv_navi/index.html",
       "sourceTrust": "government",
-      "note": "チャットは10言語の外国語相談にも対応。受付時間などは公式ページで確認してください。",
-      "verifiedAt": null
+      "note": "DV相談ナビ#8008は各窓口の受付時間内に対応。DV相談プラスの電話相談は24時間対応。両者は受付時間が異なります。",
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "gender-sexual-violence",
@@ -2497,8 +2500,8 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "officialUrl": "https://www.gender.go.jp/policy/no_violence/seibouryoku/consult.html",
       "sourceTrust": "government",
-      "note": "電話相談#8891のほか、チャット相談Cure timeなどの案内は内閣府の公式情報を確認してください。",
-      "verifiedAt": null
+      "note": "全国共通番号#8891。一部のIP電話等からは利用できないため、公式ページの代替番号を確認してください。",
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "mhlw-kokoro-no-mimi",
@@ -2561,7 +2564,8 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "officialUrl": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000059425.html",
       "sourceTrust": "government",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16",
+      "note": "生活・住まい・仕事・家計などの困りごとに対応する制度。具体的な相談はお住まいの地域の自立相談支援機関へ。"
     },
     {
       "id": "caa-188",
@@ -2593,7 +2597,8 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "officialUrl": "https://www.caa.go.jp/policies/policy/local_cooperation/local_consumer_administration/hotline/",
       "sourceTrust": "government",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16",
+      "note": "消費生活相談窓口につながる全国共通番号。通話料がかかります。一部のIP電話・電話リレーサービス等からは直接地域窓口に電話してください。"
     },
     {
       "id": "moj-human-rights",
@@ -2756,7 +2761,10 @@ window.MACHI_CONSULTATION_DATA = {
       "url": "https://www.houterasu.or.jp/",
       "verifiedBy": "法務省所管・日本司法支援センター",
       "sourceUrl": "https://www.houterasu.or.jp/",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16",
+      "phone": "0570-078374",
+      "telephoneHours": "平日9:00〜21:00、土曜9:00〜17:00",
+      "note": "法制度・相談窓口の案内は無料（通話料等は別途）。収入等の要件を満たす方には無料法律相談・費用立替制度があります。IP電話等からは03-6745-5600。"
     }
   ],
   "quickDials": [
@@ -2781,7 +2789,7 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "availability": "24時間",
       "urgency": "emergency",
-      "officialUrl": "https://www.fdma.go.jp/",
+      "officialUrl": "https://www.fdma.go.jp/mission/enrichment/kyukyumusen_kinkyutuhou/119.html",
       "confirmBeforeCall": true,
       "confirmTitle": "119へ発信します",
       "confirmMessage": "救急車・消防が必要な緊急時の番号です。本当に119へ電話しますか？",
@@ -2791,7 +2799,7 @@ window.MACHI_CONSULTATION_DATA = {
         "phone"
       ],
       "sourceTrust": "government",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "emergency-police-110",
@@ -2815,7 +2823,7 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "availability": "24時間",
       "urgency": "emergency",
-      "officialUrl": "https://www.npa.go.jp/",
+      "officialUrl": "https://www.npa.go.jp/goiken_index.html",
       "confirmBeforeCall": true,
       "confirmTitle": "110へ発信します",
       "confirmMessage": "事件・事故など、すぐに警察官の対応が必要な場合の番号です。本当に110へ電話しますか？",
@@ -2825,7 +2833,7 @@ window.MACHI_CONSULTATION_DATA = {
         "phone"
       ],
       "sourceTrust": "government",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "nagasaki-7119",
@@ -3202,8 +3210,9 @@ window.MACHI_CONSULTATION_DATA = {
         "phone"
       ],
       "sourceTrust": "government",
-      "note": "長崎県内では095-823-9110でも相談できます。執務時間外は当直員が応対します。通話料がかかります。緊急の事件・事故は110。",
-      "verifiedAt": "2026-10-16"
+      "note": "緊急の事件・事故は110へ。#9110の通話料は自己負担。短縮番号が利用できない場合は095-823-9110。",
+      "verifiedAt": "2026-10-16",
+      "availability": "24時間対応（長崎県警察）"
     }
   ],
   "accessibilityResources": [
@@ -3243,8 +3252,8 @@ window.MACHI_CONSULTATION_DATA = {
       "sourceTrust": "government",
       "officialUrl": "https://www.nftrs.or.jp/",
       "availability": "24時間365日",
-      "note": "利用登録や利用方法、緊急通報への対応は公式サイトで確認してください。",
-      "verifiedAt": null
+      "note": "聴覚・発話に困難のある方と電話の相手を手話・文字と音声でつなぐサービス。利用登録・料金体系は公式サイトで確認してください。",
+      "verifiedAt": "2026-10-16"
     }
   ],
   "civicResources": [
