@@ -463,3 +463,10 @@ footer a{color:#fff}
 .consult-hour-item{display:inline-flex;align-items:baseline;flex-wrap:wrap;gap:5px;line-height:1.65;max-width:100%}
 .consult-hour-item strong{font-weight:800;white-space:nowrap;color:var(--teal-dark)}
 @media(max-width:760px){.consult-resource .resource-meta{flex-direction:column;align-items:stretch}.consult-hour-item{display:block}}
+
+/* Structured practical guidance in consultation results */
+.consult-practical{display:grid;gap:7px;margin:12px 0;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#f8fbf8}
+.consult-practical>div{display:grid;grid-template-columns:92px minmax(0,1fr);gap:10px;align-items:baseline}
+.consult-practical dt{font-weight:800;color:var(--teal-dark)}
+.consult-practical dd{margin:0;overflow-wrap:anywhere}
+@media(max-width:520px){.consult-practical>div{grid-template-columns:1fr;gap:1px}}
