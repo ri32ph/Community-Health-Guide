@@ -1643,7 +1643,8 @@ window.MACHI_CONSULTATION_DATA = {
         "5歳児相談",
         "発達支援教室"
       ],
-      "note": "相談内容により事前予約が必要です。来所前に0957-46-5276へお問い合わせください。"
+      "note": "相談内容により事前予約が必要です。来所前に0957-46-5276へお問い合わせください。",
+      "reservationStatus": "相談内容により事前予約が必要"
     },
     {
       "id": "isahaya-disability",
@@ -2130,7 +2131,8 @@ window.MACHI_CONSULTATION_DATA = {
         "消費者トラブル"
       ],
       "availability": "平日 8:30〜12:00、13:00〜17:00（土日祝・12月29日〜1月3日を除く）",
-      "note": "対象は諫早市在住の個人。事業者の相談は対象外です。高城会館3階。"
+      "note": "対象は諫早市在住の個人。事業者の相談は対象外です。高城会館3階。",
+      "audience": "諫早市在住の個人（事業者は対象外）"
     },
     {
       "id": "isahaya-civic",
@@ -2678,7 +2680,8 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "officialUrl": "https://talkme.jp/",
       "sourceTrust": "officially-listed",
-      "availability": "24時間365日"
+      "availability": "24時間365日",
+      "audience": "年齢・性別を問わず誰でも（匿名）"
     },
     {
       "id": "houterasu",
@@ -2840,7 +2843,8 @@ window.MACHI_CONSULTATION_DATA = {
         "phone"
       ],
       "sourceTrust": "government",
-      "note": "対象はおおむね15歳未満の子どもの保護者等。#8000がつながらない場合は095-822-3308へ。緊急時は119。"
+      "note": "対象はおおむね15歳未満の子どもの保護者等。#8000がつながらない場合は095-822-3308へ。緊急時は119。",
+      "audience": "おおむね15歳未満の子どもの保護者等"
     },
     {
       "id": "child-abuse-189",
