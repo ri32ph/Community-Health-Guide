@@ -1644,7 +1644,8 @@ window.MACHI_CONSULTATION_DATA = {
         "発達支援教室"
       ],
       "note": "相談内容により事前予約が必要です。来所前に0957-46-5276へお問い合わせください。",
-      "reservationStatus": "相談内容により事前予約が必要"
+      "reservationStatus": "相談内容により事前予約が必要",
+      "verifiedAt": null
     },
     {
       "id": "isahaya-disability",
@@ -1699,7 +1700,8 @@ window.MACHI_CONSULTATION_DATA = {
       "note": "諫早市役所の対象窓口は2026年10月1日から来庁受付が平日9:00〜16:30（2027年3月まで試行）。電話対応8:30〜17:15。障害福祉サービスの申請は本庁障害福祉課と各支所の担当窓口で受け付けます。サービスの内容や手続きは事前に確認してください。",
       "receptionHours": "平日 9:00〜16:30（2027年3月まで試行）",
       "telephoneHours": "平日 8:30〜17:15",
-      "audience": "身体・知的・精神障害のある人、障害児と保護者など"
+      "audience": "身体・知的・精神障害のある人、障害児と保護者など",
+      "verifiedAt": null
     },
     {
       "id": "isahaya-workwork",
@@ -1743,7 +1745,8 @@ window.MACHI_CONSULTATION_DATA = {
         "若者就労"
       ],
       "audience": "働きたいが不安がある人、就労支援サービスを探している人など",
-      "note": "WORK・WORKナビ自体は独立した相談窓口ではありません。掲載されている相談機関を選び、各機関の連絡方法・利用条件を確認してください。"
+      "note": "WORK・WORKナビ自体は独立した相談窓口ではありません。掲載されている相談機関を選び、各機関の連絡方法・利用条件を確認してください。",
+      "verifiedAt": null
     },
     {
       "id": "isahaya-houkatsu",
@@ -1811,7 +1814,8 @@ window.MACHI_CONSULTATION_DATA = {
         "判断能力"
       ],
       "audience": "諫早市内の高齢者とその家族など",
-      "note": "諫早市内には中央部0957-27-0730、北部0957-25-7030、西部0957-43-3330、南部0957-35-2887、東部0957-32-6556の5センターがあります。担当する町名は公式ページで確認してください。予約の要否は利用前に各センターへ確認してください。"
+      "note": "諫早市内には中央部0957-27-0730、北部0957-25-7030、西部0957-43-3330、南部0957-35-2887、東部0957-32-6556の5センターがあります。担当する町名は公式ページで確認してください。予約の要否は利用前に各センターへ確認してください。",
+      "verifiedAt": null
     },
     {
       "id": "isahaya-kurashi",
@@ -1874,7 +1878,8 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "availability": "月〜金曜 8:30〜17:00（祝日・年末年始を除く）",
       "note": "生活費・仕事・家賃・家計など、生活全般の困りごとを相談できます。所在地：諫早市東小路町11-1 塩塚ビル102。",
-      "audience": "仕事・家賃・生活費など、生活全般に困っている人"
+      "audience": "仕事・家賃・生活費など、生活全般に困っている人",
+      "verifiedAt": null
     },
     {
       "id": "isahaya-women",
@@ -1923,7 +1928,8 @@ window.MACHI_CONSULTATION_DATA = {
       "note": "DV・デートDV、結婚・離婚などの相談。相談は無料で秘密は守られます。",
       "audience": "DV・デートDV、結婚・離婚などに悩む女性",
       "reservationStatus": "電話相談は予約不要。面接相談は事前に電話予約",
-      "consultationHours": "平日・第2土曜・第4日曜 9:00〜16:00（年末年始除く）"
+      "consultationHours": "平日・第2土曜・第4日曜 9:00〜16:00（年末年始除く）",
+      "verifiedAt": null
     },
     {
       "id": "isahaya-mental",
@@ -1979,7 +1985,8 @@ window.MACHI_CONSULTATION_DATA = {
         "受診相談"
       ],
       "audience": "こころの悩み・不安を抱える本人と家族など",
-      "consultationHours": "平日8:30〜17:00（祝日・年末年始除く）"
+      "consultationHours": "平日8:30〜17:00（祝日・年末年始除く）",
+      "verifiedAt": null
     },
     {
       "id": "nagasaki-mental",
@@ -1998,7 +2005,8 @@ window.MACHI_CONSULTATION_DATA = {
         "こころ"
       ],
       "availability": "ひきこもり相談：月〜金曜 9:00〜17:45（祝日・年末年始を除く）",
-      "note": "095-846-5115はひきこもり地域支援センター（精神保健福祉課）の電話。諫早市内では県央保健所（0957-26-3306）でもひきこもり相談を受け付けています。こころの健康相談の受付条件は別途ご確認ください。"
+      "note": "095-846-5115はひきこもり地域支援センター（精神保健福祉課）の電話。諫早市内では県央保健所（0957-26-3306）でもひきこもり相談を受け付けています。こころの健康相談の受付条件は別途ご確認ください。",
+      "verifiedAt": null
     },
     {
       "id": "isahaya-health",
@@ -2035,7 +2043,8 @@ window.MACHI_CONSULTATION_DATA = {
         "女性の健康",
         "禁煙"
       ],
-      "audience": "おおむね40歳以上の人"
+      "audience": "おおむね40歳以上の人",
+      "verifiedAt": null
     },
     {
       "id": "isahaya-health-promotion",
@@ -2081,7 +2090,8 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "note": "諫早市役所の対象窓口。来庁受付と電話対応の時間は異なります。個別相談・予約の実施日時は公式ページで確認してください。",
       "receptionHours": "平日 9:00〜16:30（2027年3月まで試行）",
-      "telephoneHours": "平日 8:30〜17:15"
+      "telephoneHours": "平日 8:30〜17:15",
+      "verifiedAt": null
     },
     {
       "id": "isahaya-housing",
@@ -2110,7 +2120,8 @@ window.MACHI_CONSULTATION_DATA = {
         "建築住宅課",
         "住宅改修",
         "住まい"
-      ]
+      ],
+      "verifiedAt": null
     },
     {
       "id": "isahaya-consumer",
@@ -2143,7 +2154,8 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "availability": "平日 8:30〜12:00、13:00〜17:00（土日祝・12月29日〜1月3日を除く）",
       "note": "対象は諫早市在住の個人。事業者の相談は対象外です。高城会館3階。",
-      "audience": "諫早市在住の個人（事業者は対象外）"
+      "audience": "諫早市在住の個人（事業者は対象外）",
+      "verifiedAt": null
     },
     {
       "id": "isahaya-civic",
@@ -2209,7 +2221,8 @@ window.MACHI_CONSULTATION_DATA = {
       "note": "相談の種類によって受付・予約方法が異なります。公式ページで日程を確認してください。",
       "audience": "諫早市民",
       "reservationStatus": "一般相談は予約不要。法律相談・交通事故相談は事前予約が必要",
-      "consultationHours": "一般相談：平日8:30〜17:00（祝日・年末年始除く）。専門相談は日程が異なる"
+      "consultationHours": "一般相談：平日8:30〜17:00（祝日・年末年始除く）。専門相談は日程が異なる",
+      "verifiedAt": null
     },
     {
       "id": "nagasaki-support-center",
@@ -2227,7 +2240,8 @@ window.MACHI_CONSULTATION_DATA = {
       "categories": [
         "子ども・子育て",
         "家族・パートナー"
-      ]
+      ],
+      "verifiedAt": null
     },
     {
       "id": "nagasaki-sexual-violence",
@@ -2251,7 +2265,8 @@ window.MACHI_CONSULTATION_DATA = {
         "性犯罪"
       ],
       "availability": "月〜金曜日 9:00〜17:00（祝日・年末年始を除く）。時間外はコールセンターが対応。",
-      "note": "電話は#8891。LINEでも相談受付あり。LINEでの相談への対応は業務時間内に電話で行われます。"
+      "note": "電話は#8891。LINEでも相談受付あり。LINEでの相談への対応は業務時間内に電話で行われます。",
+      "verifiedAt": null
     },
     {
       "id": "nagasaki-police",
@@ -2279,7 +2294,8 @@ window.MACHI_CONSULTATION_DATA = {
         "暴力",
         "詐欺"
       ],
-      "note": "緊急の事件・事故は110。#9110または095-823-9110で相談でき、執務時間外は当直員が応対します。通話料は利用者負担です。"
+      "note": "緊急の事件・事故は110。#9110または095-823-9110で相談でき、執務時間外は当直員が応対します。通話料は利用者負担です。",
+      "verifiedAt": null
     }
   ],
   "publicResources": [
@@ -2314,7 +2330,8 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "area": "全国",
       "officialUrl": "https://www.mhlw.go.jp/mamorouyokokoro/",
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "verifiedAt": null
     },
     {
       "id": "mhlw-support-search",
@@ -2344,7 +2361,8 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "area": "全国",
       "officialUrl": "https://shienjoho.go.jp/",
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "verifiedAt": null
     },
     {
       "id": "cao-notalone",
@@ -2376,7 +2394,8 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "area": "全国",
       "officialUrl": "https://www.notalone-cao.go.jp/support/",
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "verifiedAt": null
     },
     {
       "id": "mext-child-sos",
@@ -2406,7 +2425,8 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "area": "全国",
       "officialUrl": "https://www.mext.go.jp/a_menu/shotou/seitoshidou/06112210.htm",
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "verifiedAt": null
     },
     {
       "id": "gender-dv",
@@ -2439,7 +2459,8 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "officialUrl": "https://www.gender.go.jp/policy/no_violence/dv_navi/index.html",
       "sourceTrust": "government",
-      "note": "チャットは10言語の外国語相談にも対応。受付時間などは公式ページで確認してください。"
+      "note": "チャットは10言語の外国語相談にも対応。受付時間などは公式ページで確認してください。",
+      "verifiedAt": null
     },
     {
       "id": "gender-sexual-violence",
@@ -2470,7 +2491,8 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "officialUrl": "https://www.gender.go.jp/policy/no_violence/seibouryoku/consult.html",
       "sourceTrust": "government",
-      "note": "電話相談#8891のほか、チャット相談Cure timeなどの案内は内閣府の公式情報を確認してください。"
+      "note": "電話相談#8891のほか、チャット相談Cure timeなどの案内は内閣府の公式情報を確認してください。",
+      "verifiedAt": null
     },
     {
       "id": "mhlw-kokoro-no-mimi",
@@ -2501,7 +2523,8 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "area": "全国",
       "officialUrl": "https://kokoro.mhlw.go.jp/",
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "verifiedAt": null
     },
     {
       "id": "mhlw-seikatsu-konkyu",
@@ -2531,7 +2554,8 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "area": "全国",
       "officialUrl": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000059425.html",
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "verifiedAt": null
     },
     {
       "id": "caa-188",
@@ -2562,7 +2586,8 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "area": "全国",
       "officialUrl": "https://www.caa.go.jp/policies/policy/local_cooperation/local_consumer_administration/hotline/",
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "verifiedAt": null
     },
     {
       "id": "moj-human-rights",
@@ -2594,7 +2619,8 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "area": "全国",
       "officialUrl": "https://www.moj.go.jp/JINKEN/jinken20.html",
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "verifiedAt": null
     },
     {
       "id": "lifelink-yorisoi-chat",
@@ -2629,7 +2655,8 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "officialUrl": "https://yorisoi-chat.jp/",
       "sourceTrust": "officially-listed",
-      "availability": "月・金 6:00〜22:30、その他の曜日 8:00〜22:30（受付は22:00まで）"
+      "availability": "月・金 6:00〜22:30、その他の曜日 8:00〜22:30（受付は22:00まで）",
+      "verifiedAt": null
     },
     {
       "id": "tms-kokoro-hotchat",
@@ -2662,7 +2689,8 @@ window.MACHI_CONSULTATION_DATA = {
       "area": "全国",
       "officialUrl": "https://www.npo-tms.or.jp/public/kokoro_hotchat/",
       "sourceTrust": "officially-listed",
-      "availability": "毎日 7:00〜23:50（受付は23:00まで）"
+      "availability": "毎日 7:00〜23:50（受付は23:00まで）",
+      "verifiedAt": null
     },
     {
       "id": "anata-no-ibasho",
@@ -2695,7 +2723,8 @@ window.MACHI_CONSULTATION_DATA = {
       "officialUrl": "https://talkme.jp/",
       "sourceTrust": "officially-listed",
       "availability": "24時間365日",
-      "audience": "年齢・性別を問わず誰でも（匿名）"
+      "audience": "年齢・性別を問わず誰でも（匿名）",
+      "verifiedAt": null
     },
     {
       "id": "houterasu",
@@ -2719,7 +2748,8 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "url": "https://www.houterasu.or.jp/",
       "verifiedBy": "法務省所管・日本司法支援センター",
-      "sourceUrl": "https://www.houterasu.or.jp/"
+      "sourceUrl": "https://www.houterasu.or.jp/",
+      "verifiedAt": null
     }
   ],
   "quickDials": [
@@ -2753,7 +2783,8 @@ window.MACHI_CONSULTATION_DATA = {
       "channels": [
         "phone"
       ],
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "verifiedAt": null
     },
     {
       "id": "emergency-police-110",
@@ -2786,7 +2817,8 @@ window.MACHI_CONSULTATION_DATA = {
       "channels": [
         "phone"
       ],
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "verifiedAt": null
     },
     {
       "id": "nagasaki-7119",
@@ -2821,7 +2853,8 @@ window.MACHI_CONSULTATION_DATA = {
       "channels": [
         "phone"
       ],
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "verifiedAt": null
     },
     {
       "id": "nagasaki-8000",
@@ -2858,7 +2891,8 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "sourceTrust": "government",
       "note": "対象はおおむね15歳未満の子どもの保護者等。#8000がつながらない場合は095-822-3308へ。緊急時は119。",
-      "audience": "おおむね15歳未満の子どもの保護者等"
+      "audience": "おおむね15歳未満の子どもの保護者等",
+      "verifiedAt": null
     },
     {
       "id": "child-abuse-189",
@@ -2893,7 +2927,8 @@ window.MACHI_CONSULTATION_DATA = {
         "phone"
       ],
       "sourceTrust": "government",
-      "note": "虐待かもしれないと思った段階で相談・通告できます。匿名での相談も可能です。一部のIP電話等では利用できません。生命に差し迫った危険がある場合は110・119。"
+      "note": "虐待かもしれないと思った段階で相談・通告できます。匿名での相談も可能です。一部のIP電話等では利用できません。生命に差し迫った危険がある場合は110・119。",
+      "verifiedAt": null
     },
     {
       "id": "child-consultation-189783",
@@ -2924,7 +2959,8 @@ window.MACHI_CONSULTATION_DATA = {
         "phone"
       ],
       "sourceTrust": "government",
-      "note": "育児や子どもの福祉に関する相談用。虐待の通告・相談は189を利用してください。一部のIP電話等では利用できません。"
+      "note": "育児や子どもの福祉に関する相談用。虐待の通告・相談は189を利用してください。一部のIP電話等では利用できません。",
+      "verifiedAt": null
     },
     {
       "id": "child-sos-24h",
@@ -2956,7 +2992,8 @@ window.MACHI_CONSULTATION_DATA = {
       "channels": [
         "phone"
       ],
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "verifiedAt": null
     },
     {
       "id": "consumer-188",
@@ -2989,7 +3026,8 @@ window.MACHI_CONSULTATION_DATA = {
         "phone"
       ],
       "sourceTrust": "government",
-      "note": "局番なし188で最寄りの消費生活相談窓口に案内されます。諫早市の相談窓口は0957-22-3113（平日）です。"
+      "note": "局番なし188で最寄りの消費生活相談窓口に案内されます。諫早市の相談窓口は0957-22-3113（平日）です。",
+      "verifiedAt": null
     },
     {
       "id": "dv-8008",
@@ -3023,7 +3061,8 @@ window.MACHI_CONSULTATION_DATA = {
         "phone"
       ],
       "sourceTrust": "government",
-      "note": "相談できるのは接続先機関の受付時間内。通話料がかかり、一部の回線では利用できません。電話での相談が難しい場合はDV相談プラスのチャット相談も確認してください。"
+      "note": "相談できるのは接続先機関の受付時間内。通話料がかかり、一部の回線では利用できません。電話での相談が難しい場合はDV相談プラスのチャット相談も確認してください。",
+      "verifiedAt": null
     },
     {
       "id": "women-support-8778",
@@ -3058,7 +3097,8 @@ window.MACHI_CONSULTATION_DATA = {
         "phone"
       ],
       "sourceTrust": "government",
-      "note": "通話料は利用者負担です。回線によって#8778が利用できない場合は、都道府県の女性相談支援センターへ直接お問い合わせください。"
+      "note": "通話料は利用者負担です。回線によって#8778が利用できない場合は、都道府県の女性相談支援センターへ直接お問い合わせください。",
+      "verifiedAt": null
     },
     {
       "id": "sexual-violence-8891",
@@ -3090,7 +3130,8 @@ window.MACHI_CONSULTATION_DATA = {
         "phone"
       ],
       "sourceTrust": "government",
-      "note": "通話料無料。一部のIP電話等では利用できません。NTTひかり電話では0120-8891-77を利用できます。"
+      "note": "通話料無料。一部のIP電話等では利用できません。NTTひかり電話では0120-8891-77を利用できます。",
+      "verifiedAt": null
     },
     {
       "id": "police-sexual-crime-8103",
@@ -3121,7 +3162,8 @@ window.MACHI_CONSULTATION_DATA = {
       "channels": [
         "phone"
       ],
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "verifiedAt": null
     },
     {
       "id": "police-9110",
@@ -3153,7 +3195,8 @@ window.MACHI_CONSULTATION_DATA = {
         "phone"
       ],
       "sourceTrust": "government",
-      "note": "長崎県内では095-823-9110でも相談できます。執務時間外は当直員が応対します。通話料がかかります。緊急の事件・事故は110。"
+      "note": "長崎県内では095-823-9110でも相談できます。執務時間外は当直員が応対します。通話料がかかります。緊急の事件・事故は110。",
+      "verifiedAt": null
     }
   ],
   "accessibilityResources": [
@@ -3193,7 +3236,8 @@ window.MACHI_CONSULTATION_DATA = {
       "sourceTrust": "government",
       "officialUrl": "https://www.nftrs.or.jp/",
       "availability": "24時間365日",
-      "note": "利用登録や利用方法、緊急通報への対応は公式サイトで確認してください。"
+      "note": "利用登録や利用方法、緊急通報への対応は公式サイトで確認してください。",
+      "verifiedAt": null
     }
   ],
   "civicResources": [
