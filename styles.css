@@ -479,3 +479,21 @@ footer a{color:#fff}
 .consult-related-hint{color:var(--muted);font-size:.9rem;margin:0 0 15px}
 .consult-related>.consult-resource-grid{margin-top:10px}
 @media print{.consult-related{display:block!important}.consult-related>.consult-resource-grid{display:grid!important}}
+
+/* Mobile-first consultation result actions */
+.consult-resource{min-width:0;overflow-wrap:anywhere}
+.consult-resource .resource-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:stretch}
+.consult-resource .resource-actions .resource-call,.consult-resource .resource-actions .resource-official{display:flex;align-items:center;justify-content:center;min-width:0;min-height:50px;padding:11px 13px;border-radius:12px;text-align:center;line-height:1.5;text-decoration:none}
+.consult-resource .resource-actions .resource-official{border:2px solid var(--teal);background:#fff;color:var(--teal-dark);font-size:.88rem}
+.consult-resource .resource-actions .resource-official:hover{background:#f0f8f6;text-decoration:underline}
+.consult-resource .resource-actions .resource-call:only-child,.consult-resource .resource-actions .resource-official:only-child{grid-column:1/-1}
+.consult-resource .resource-phone{font-size:1rem;overflow-wrap:anywhere}
+@media(max-width:760px){
+ .consult-resource-grid{grid-template-columns:minmax(0,1fr);gap:14px}
+ .consult-resource{padding:18px}
+ .consult-resource h4{font-size:1.08rem}
+ .consult-resource .resource-actions{grid-template-columns:minmax(0,1fr)}
+ .consult-resource .resource-actions .resource-call,.consult-resource .resource-actions .resource-official{width:100%;min-height:54px}
+}
+@media(max-width:380px){.consult-resource{padding:15px}.consult-resource .resource-actions{gap:9px}}
+@media(prefers-reduced-motion:reduce){.consult-resource .resource-actions *{transition:none}}
