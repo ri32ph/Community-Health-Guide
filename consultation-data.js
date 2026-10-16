@@ -1815,7 +1815,7 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "audience": "諫早市内の高齢者とその家族など",
       "note": "諫早市内には中央部0957-27-0730、北部0957-25-7030、西部0957-43-3330、南部0957-35-2887、東部0957-32-6556の5センターがあります。担当する町名は公式ページで確認してください。予約の要否は利用前に各センターへ確認してください。",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "isahaya-kurashi",
@@ -2006,8 +2006,10 @@ window.MACHI_CONSULTATION_DATA = {
         "こころ"
       ],
       "availability": "ひきこもり相談：月〜金曜 9:00〜17:45（祝日・年末年始を除く）",
-      "note": "095-846-5115はひきこもり地域支援センター（精神保健福祉課）の電話。諫早市内では県央保健所（0957-26-3306）でもひきこもり相談を受け付けています。こころの健康相談の受付条件は別途ご確認ください。",
-      "verifiedAt": null
+      "note": "県央保健所（諫早市栄田町26-49、0957-26-3306）でもひきこもり相談を受け付けています。",
+      "verifiedAt": "2026-10-16",
+      "consultationHours": "ひきこもり相談：平日9:00〜17:45（祝日・年末年始を除く）",
+      "reservationStatus": "ひきこもりの来所相談は予約が必要"
     },
     {
       "id": "isahaya-health",
@@ -2093,7 +2095,7 @@ window.MACHI_CONSULTATION_DATA = {
       "note": "諫早市役所の対象窓口。来庁受付と電話対応の時間は異なります。個別相談・予約の実施日時は公式ページで確認してください。",
       "receptionHours": "平日 9:00〜16:30（2027年3月まで試行）",
       "telephoneHours": "平日 8:30〜17:15",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "isahaya-housing",
@@ -2123,7 +2125,7 @@ window.MACHI_CONSULTATION_DATA = {
         "住宅改修",
         "住まい"
       ],
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "isahaya-consumer",
@@ -2155,9 +2157,10 @@ window.MACHI_CONSULTATION_DATA = {
         "消費者トラブル"
       ],
       "availability": "平日 8:30〜12:00、13:00〜17:00（土日祝・12月29日〜1月3日を除く）",
-      "note": "対象は諫早市在住の個人。事業者の相談は対象外です。高城会館3階。",
+      "note": "高城会館3階（高城町5-25）。電話でも相談できます。",
       "audience": "諫早市在住の個人（事業者は対象外）",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16",
+      "consultationHours": "平日8:30〜12:00、13:00〜17:00（土日祝・年末年始を除く）"
     },
     {
       "id": "isahaya-civic",
@@ -2220,11 +2223,12 @@ window.MACHI_CONSULTATION_DATA = {
         "財産管理",
         "財産分与"
       ],
-      "note": "相談の種類によって受付・予約方法が異なります。公式ページで日程を確認してください。",
+      "note": "高城会館3階（高城町5-25）。専門相談は相談日が限定されます。",
       "audience": "諫早市民",
-      "reservationStatus": "一般相談は予約不要。法律相談・交通事故相談は事前予約が必要",
-      "consultationHours": "一般相談：平日8:30〜17:00（祝日・年末年始除く）。専門相談は日程が異なる",
-      "verifiedAt": null
+      "reservationStatus": "一般相談は予約不要。法律相談・交通事故相談などは予約が必要",
+      "consultationHours": "一般相談：平日8:30〜17:00（土日祝・年末年始を除く）",
+      "verifiedAt": "2026-10-16",
+      "phone": "0957-22-3113"
     },
     {
       "id": "nagasaki-support-center",
@@ -2243,7 +2247,7 @@ window.MACHI_CONSULTATION_DATA = {
         "子ども・子育て",
         "家族・パートナー"
       ],
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "nagasaki-sexual-violence",
