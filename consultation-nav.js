@@ -102,7 +102,7 @@
   function channelBadges(r){
     return (r.channels||[]).map(c=>`<span class="method-badge">${esc(channelLabels[c]||c)}</span>`).join('');
   }
-  function resourceCard(r){
+  function resourceCard(r, preferred=false){
     const url=r.officialUrl||r.url||'#';
     const operator=r.operator||r.organization||r.area||'';
     const isDial=r.type==='dial';
@@ -111,7 +111,7 @@
     const phone=(!isDial&&r.phone)?`<p class="resource-phone">電話：${esc(r.phone)}</p>`:'';
     const meta=[r.availability,r.fee].filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join('');
     return `<article class="consult-resource ${r.type==='dial'&&r.urgency==='emergency'?'is-emergency':''}">
-      <div class="resource-top">${sourceBadge(r)}${channelBadges(r)}</div>
+      <div class="resource-top">${preferred?'<span class="source-badge preferred-contact">この相談の優先窓口</span>':'<span class="source-badge related-contact">関連する相談先</span>'}${sourceBadge(r)}${channelBadges(r)}</div>
       <h4>${isDial?`<span class="resource-number">${esc(number)}</span>`:''}${esc(r.name)}</h4>
       ${operator?`<p class="resource-operator">${esc(operator)}</p>`:''}
       <p>${esc(r.description||'')}</p>${phone}
@@ -180,7 +180,7 @@
         <div class="consult-channel-tabs" role="group" aria-label="相談方法で絞り込む">
           ${Object.entries(channelLabels).map(([id,label])=>`<button type="button" class="channel-tab ${state.channel===id?'is-active':''}" aria-pressed="${state.channel===id}" data-channel="${esc(id)}">${esc(label)}</button>`).join('')}
         </div>
-        <div class="consult-resource-grid">${resources.length?resources.map(resourceCard).join(''):'<p class="consult-empty">この方法で表示できる相談先は現在登録していません。別の相談方法を選んでください。</p>'}</div>
+        <div class="consult-resource-grid">${resources.length?resources.map(r=>resourceCard(r,(issue.firstContactIds||[]).includes(r.id))).join(''):'<p class="consult-empty">この方法で表示できる相談先は現在登録していません。別の相談方法を選んでください。</p>'}</div>
       </div>`:''}
       <div class="consult-fallback"><strong>どれを選べばよいか分からない</strong><p>困りごとがいくつも重なっている場合や、相談先が分からない場合は、諫早市の一般相談から専門機関につないでもらうことができます。</p><a href="https://www.city.isahaya.nagasaki.jp/soshiki/41/8335.html" target="_blank" rel="noopener">諫早市の一般相談を見る ↗</a></div>`;
   }
