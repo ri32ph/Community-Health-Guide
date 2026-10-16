@@ -2883,7 +2883,7 @@ window.MACHI_CONSULTATION_DATA = {
         "休日"
       ],
       "area": "長崎県",
-      "availability": "月〜土曜 18:00〜翌8:00／日曜・祝日・年末年始（12/29〜1/3）8:00〜翌8:00",
+      "availability": "平日・土曜18:00〜翌8:00／日曜・祝日・年末年始8:00〜翌8:00",
       "fee": "相談料無料・通話料は利用者負担",
       "urgency": "priority",
       "officialUrl": "https://www.pref.nagasaki.jp/bunrui/hukushi-hoken/hoken-iryo/iryokankeigaiyo/kensaku-iryo/body.html",
@@ -2896,9 +2896,9 @@ window.MACHI_CONSULTATION_DATA = {
         "phone"
       ],
       "sourceTrust": "government",
-      "note": "対象はおおむね15歳未満の子どもの保護者等。#8000がつながらない場合は095-822-3308へ。緊急時は119。",
-      "audience": "おおむね15歳未満の子どもの保護者等",
-      "verifiedAt": null
+      "note": "短縮番号が使えない場合は095-822-3308。相談は無料ですが通話料がかかります。",
+      "audience": "おおむね15歳未満の子どもの保護者など",
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "child-abuse-189",
@@ -2987,7 +2987,7 @@ window.MACHI_CONSULTATION_DATA = {
         "SOS"
       ],
       "area": "全国",
-      "availability": "24時間",
+      "availability": "24時間・365日",
       "fee": "フリーダイヤル",
       "urgency": "priority",
       "officialUrl": "https://www.mext.go.jp/a_menu/h30gouu7/1407291.htm",
@@ -2999,7 +2999,7 @@ window.MACHI_CONSULTATION_DATA = {
         "phone"
       ],
       "sourceTrust": "government",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "consumer-188",
@@ -3103,8 +3103,8 @@ window.MACHI_CONSULTATION_DATA = {
         "phone"
       ],
       "sourceTrust": "government",
-      "note": "通話料は利用者負担です。回線によって#8778が利用できない場合は、都道府県の女性相談支援センターへ直接お問い合わせください。",
-      "verifiedAt": null
+      "note": "通話料は自己負担です。回線の種類・地域によって利用できない場合があるため、つながらないときは都道府県の女性相談支援センターに直接相談してください。",
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "sexual-violence-8891",
@@ -3169,7 +3169,7 @@ window.MACHI_CONSULTATION_DATA = {
         "phone"
       ],
       "sourceTrust": "government",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     },
     {
       "id": "police-9110",
@@ -3202,7 +3202,7 @@ window.MACHI_CONSULTATION_DATA = {
       ],
       "sourceTrust": "government",
       "note": "長崎県内では095-823-9110でも相談できます。執務時間外は当直員が応対します。通話料がかかります。緊急の事件・事故は110。",
-      "verifiedAt": null
+      "verifiedAt": "2026-10-16"
     }
   ],
   "accessibilityResources": [
