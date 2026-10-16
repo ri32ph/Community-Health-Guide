@@ -109,7 +109,16 @@
     const number=r.number||'';
     const call=isDial?`<button class="resource-call" type="button" data-dial-id="${esc(r.id)}">${esc(number)} に電話する</button>`:'';
     const phone=(!isDial&&r.phone)?`<p class="resource-phone">電話：${esc(r.phone)}</p>`:'';
-    const meta=[r.availability,r.fee].filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join('');
+    const hours=[
+      r.receptionHours?['来庁受付',r.receptionHours]:null,
+      r.telephoneHours?['電話対応',r.telephoneHours]:null,
+      r.consultationHours?['専門相談',r.consultationHours]:null
+    ].filter(Boolean);
+    if(r.availability){
+      const kind=r.type==='dial'?'電話受付':(r.channels||[]).includes('chat')&&!(r.channels||[]).includes('in-person')?'チャット・SNSの受付':'相談・サービスの受付';
+      hours.push([kind,r.availability]);
+    }
+    const meta=hours.map(([label,value])=>`<span class="consult-hour-item"><strong>${esc(label)}</strong> ${esc(value)}</span>`).join('')+(r.fee?`<span class="consult-hour-item"><strong>費用</strong> ${esc(r.fee)}</span>`:'');
     return `<article class="consult-resource ${r.type==='dial'&&r.urgency==='emergency'?'is-emergency':''}">
       <div class="resource-top">${preferred?'<span class="source-badge preferred-contact">この相談の優先窓口</span>':'<span class="source-badge related-contact">関連する相談先</span>'}${sourceBadge(r)}${channelBadges(r)}</div>
       <h4>${isDial?`<span class="resource-number">${esc(number)}</span>`:''}${esc(r.name)}</h4>
