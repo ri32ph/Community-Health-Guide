@@ -541,3 +541,11 @@ footer a{color:#fff}
  body.print-consultation-only .consult-channel-tabs,
  body.print-consultation-only .consult-print-result{display:none!important}
 }
+
+/* Provenance for downloadable consultation summaries */
+.consult-print-source,.consult-print-official{display:none}
+@media print{
+ body.print-consultation-only .consult-print-source{display:block!important;font-size:9pt!important;line-height:1.5!important;margin:0 0 5mm!important;padding:0 0 3mm!important;border-bottom:1px solid #ccc;color:#333!important}
+ body.print-consultation-only .consult-print-source p{margin:1mm 0!important;overflow-wrap:anywhere}
+ body.print-consultation-only .consult-print-official{display:block!important;font-size:8.5pt!important;line-height:1.4!important;margin:2mm 0 0!important;overflow-wrap:anywhere;color:#333!important}
+}
