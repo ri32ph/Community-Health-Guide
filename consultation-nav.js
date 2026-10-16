@@ -139,7 +139,7 @@
     </article>`;
   }
 
-  function nextSteps(issue){return specialNextSteps[issue.id]||defaultNextSteps[issue.categoryId]||[];}
+  function nextSteps(issue){return (specialNextSteps[issue.id]||defaultNextSteps[issue.categoryId]||[]).slice(0,3);}
   function toolsFor(issue){const cat=categoryLabel(issue.categoryId);const aliases=resourceCategoryAliases[issue.categoryId]||[cat];return publicTools.filter(t=>t.categories.some(category=>aliases.includes(category)));}
   function toolCards(issue){
     const tools=toolsFor(issue);
@@ -195,7 +195,7 @@
         ${['health-where-to-go','health-night-holiday'].includes(issue.id)?'<p class="resource-note">#7119に接続できない場合は 095-801-1217。生命の危険がある場合は119へ。</p>':''}
         <p class="consult-step-label"><span>3</span> 相談方法を選べます</p>
         <div class="consult-channel-tabs" role="group" aria-label="相談方法で絞り込む">
-          ${Object.entries(channelLabels).map(([id,label])=>`<button type="button" class="channel-tab ${state.channel===id?'is-active':''}" aria-pressed="${state.channel===id}" data-channel="${esc(id)}">${esc(label)}</button>`).join('')}
+          ${Object.entries(channelLabels).filter(([id])=>id==='all'||resources.some(r=>id==='all'||(r.channels||[]).includes(id))).map(([id,label])=>`<button type="button" class="channel-tab ${state.channel===id?'is-active':''}" aria-pressed="${state.channel===id}" data-channel="${esc(id)}">${esc(label)}</button>`).join('')}
         </div>
         ${resources.length?(() => {
           const direct=new Set(issue.firstContactIds||[]);
