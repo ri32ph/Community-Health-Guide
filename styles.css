@@ -417,3 +417,9 @@ footer a{color:#fff}
 .consult-issue-heading{margin:0 0 10px;padding-left:12px;border-left:4px solid var(--teal);font-size:1rem;color:var(--teal-dark)}
 .consult-issue-section .consult-issue-grid{margin:0}
 @media(max-width:760px){.consult-issue-sections{gap:20px}}
+
+/* Compact professional gateway on the citizen-focused homepage */
+.professional-landing{background:#f3f8f5}
+.professional-entry-link{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 22px;border-radius:12px;background:var(--teal-dark);color:#fff;font-weight:800;text-decoration:none}
+.professional-entry-link:hover{background:var(--teal);text-decoration:underline}
+@media(max-width:760px){.professional-landing .section-head{display:block}.professional-entry-link{width:100%;text-align:center}}
