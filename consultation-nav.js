@@ -126,6 +126,8 @@
       r.audience?['相談できる人',r.audience]:null,
       r.reservationStatus?['予約',r.reservationStatus]:null
     ].filter(Boolean);
+    const verifiedDate=(typeof r.verifiedAt==='string'&&/^\\d{4}-\\d{2}-\\d{2}$/.test(r.verifiedAt)&&!Number.isNaN(Date.parse(r.verifiedAt)))?r.verifiedAt:null;
+    const verificationText=verifiedDate?'情報最終確認：'+verifiedDate.replace(/-/g,'/'):'情報最終確認：未登録';
     const meta=hours.map(([label,value])=>`<span class="consult-hour-item"><strong>${esc(label)}</strong> ${esc(value)}</span>`).join('')+(r.fee?`<span class="consult-hour-item"><strong>費用</strong> ${esc(r.fee)}</span>`:'');
     return `<article class="consult-resource ${r.type==='dial'&&r.urgency==='emergency'?'is-emergency':''}">
       <div class="resource-top">${preferred?'<span class="source-badge preferred-contact">この相談の優先窓口</span>':'<span class="source-badge related-contact">関連する相談先</span>'}${sourceBadge(r)}${channelBadges(r)}</div>
@@ -135,7 +137,7 @@
       ${meta?`<p class="resource-meta">${meta}</p>`:''}
       ${practical.length?`<dl class="consult-practical">${practical.map(([label,value])=>`<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>`:''}
       <div class="resource-actions">${call}${localCall}<a class="resource-official" href="${esc(url)}" target="_blank" rel="noopener">公式情報を見る ↗</a></div>
-      ${url!=='#'?`<p class="consult-print-official">公式情報：${esc(url)}</p>`:''}\n      ${r.note?`<p class="resource-note">${esc(r.note)}</p>`:''}
+      <p class="consult-verified" title="各窓口の公開情報を最後に照合した日">${esc(verificationText)}</p>\n      ${url!=='#'?`<p class="consult-print-official">公式情報：${esc(url)}</p>`:''}\n      ${r.note?`<p class="resource-note">${esc(r.note)}</p>`:''}
       ${r.id==='isahaya-houkatsu'?'<p><a class="consult-detail-link" href="houkatsu-finder.html">お住まいの町名から担当センターを探す →</a></p>':''}
     </article>`;
   }
