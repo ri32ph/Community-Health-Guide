@@ -2770,7 +2770,7 @@ window.MACHI_CONSULTATION_DATA = {
       "availability": "24時間365日",
       "fee": "相談料無料・通話料は利用者負担",
       "urgency": "priority",
-      "officialUrl": "https://www.pref.nagasaki.jp/doc/page-677772.html",
+      "officialUrl": "https://www.pref.nagasaki.jp/doc/page-741854.html",
       "confirmBeforeCall": true,
       "confirmTitle": "#7119 に電話しますか？",
       "confirmMessage": "救急車を呼ぶべきか、今すぐ受診すべきか迷ったときの相談窓口です。",
@@ -2976,6 +2976,27 @@ window.MACHI_CONSULTATION_DATA = {
       "channels": [
         "phone"
       ],
+      "sourceTrust": "government"
+    },
+    {
+      "id": "women-support-8778",
+      "number": "#8778",
+      "tel": "#8778",
+      "reading": "はなそう なやみ",
+      "name": "女性相談支援センター全国共通短縮ダイヤル",
+      "organization": "厚生労働省・都道府県",
+      "description": "さまざまな困難を抱える女性の相談を、発信地域の女性相談支援センターにつなぐ全国共通番号。",
+      "categories": ["家族・パートナー", "お金・生活", "住まい"],
+      "keywords": ["女性", "困難", "DV", "生活", "住まい", "支援"],
+      "area": "全国",
+      "urgency": "priority",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_40477.html",
+      "confirmBeforeCall": true,
+      "confirmTitle": "#8778 に電話しますか？",
+      "confirmMessage": "さまざまな困難を抱える女性の相談を、発信地域の女性相談支援センターにつなぐ全国共通番号です。",
+      "emergencyAlternative": "今すぐ危険が迫っている場合は110を利用してください。",
+      "type": "dial",
+      "channels": ["phone"],
       "sourceTrust": "government"
     },
     {
