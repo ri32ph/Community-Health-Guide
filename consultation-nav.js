@@ -4,6 +4,19 @@
   if(!data||!mount)return;
 
   const state={categoryId:null,issueId:null,channel:'all'};
+  // Eight visible groups; underlying issue IDs and their contact mappings stay unchanged.
+  const displayGroups=[
+    {id:'health',label:'医療・薬・健康',icon:'医',members:['health']},
+    {id:'mental',label:'こころ',icon:'心',members:['mental']},
+    {id:'child',label:'子ども・子育て',icon:'子',members:['child']},
+    {id:'elderly',label:'高齢者・介護・看取り',icon:'介',members:['elderly','endoflife']},
+    {id:'disability',label:'障害・発達',icon:'支',members:['disability']},
+    {id:'work',label:'仕事',icon:'働',members:['work']},
+    {id:'money',label:'暮らし・お金・住まい',icon:'￥',members:['money','housing']},
+    {id:'safety',label:'家族・安全・法律',icon:'守',members:['family','legal','crime']}
+  ];
+  const groupFor=id=>displayGroups.find(g=>g.id===id);
+
   const channelLabels={all:'すべて', 'in-person':'地域の窓口',phone:'電話',web:'インターネット',sns:'SNS',chat:'チャット','sign-language':'手話','text-relay':'文字・電話リレー'};
   const categoryLabel=id=>data.categories.find(c=>c.id===id)?.label||'';
   const currentIssue=()=>data.issues.find(i=>i.id===state.issueId);
@@ -123,20 +136,21 @@
   function render(){
     const cat=state.categoryId;
     const issue=currentIssue();
-    const issueList=cat?data.issues.filter(i=>i.categoryId===cat):[];
+    const group=groupFor(cat);
+    const issueList=group?data.issues.filter(i=>group.members.includes(i.categoryId)):[];
     const resources=issue?resourcesFor(issue):[];
     const steps=issue?nextSteps(issue):[];
     mount.innerHTML=`
       <div class="consult-step">
         <p class="consult-step-label"><span>1</span> 目的別に探す</p>
         <div class="consult-category-grid">
-          ${data.categories.map(c=>`<button type="button" class="consult-category ${cat===c.id?'is-active':''}" data-category="${esc(c.id)}"><span class="category-mark">${esc(c.icon)}</span><span>${esc(c.label)}</span></button>`).join('')}
+          ${displayGroups.map(c=>`<button type="button" class="consult-category ${cat===c.id?'is-active':''}" data-category="${esc(c.id)}"><span class="category-mark">${esc(c.icon)}</span><span>${esc(c.label)}</span></button>`).join('')}
         </div>
       </div>
       ${cat?`<div class="consult-step">
         <p class="consult-step-label"><span>2</span> 今の悩みに近いものを選んでください</p>
         <div class="consult-issue-grid">${issueList.map(i=>`<button type="button" class="consult-issue ${state.issueId===i.id?'is-active':''}" data-issue="${esc(i.id)}">${esc(i.label)}</button>`).join('')}</div>
-        ${categoryDetailPages[cat]?`<a class="consult-detail-link" href="${esc(categoryDetailPages[cat].url)}">${esc(categoryDetailPages[cat].label)} →</a>`:''}
+        ${group&&group.members.length===1&&categoryDetailPages[cat]?`<a class="consult-detail-link" href="${esc(categoryDetailPages[cat].url)}">${esc(categoryDetailPages[cat].label)} →</a>`:''}
       </div>`:''}
       ${issue?`<div class="consult-step consult-results" data-consult-print-area>
         <div class="consult-print-head" aria-hidden="true"><strong>まちの健康・医療案内｜相談先ナビ</strong><span>${esc(issue.label)}</span></div>
