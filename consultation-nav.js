@@ -200,7 +200,14 @@
         <div class="consult-channel-tabs" role="group" aria-label="相談方法で絞り込む">
           ${Object.entries(channelLabels).map(([id,label])=>`<button type="button" class="channel-tab ${state.channel===id?'is-active':''}" aria-pressed="${state.channel===id}" data-channel="${esc(id)}">${esc(label)}</button>`).join('')}
         </div>
-        <div class="consult-resource-grid">${resources.length?resources.map(r=>resourceCard(r,(issue.firstContactIds||[]).includes(r.id))).join(''):'<p class="consult-empty">この方法で表示できる相談先は現在登録していません。別の相談方法を選んでください。</p>'}</div>
+        ${resources.length?(() => {
+          const direct=new Set(issue.firstContactIds||[]);
+          const priority=resources.filter(r=>direct.has(r.id));
+          const related=resources.filter(r=>!direct.has(r.id));
+          return `
+            ${priority.length?`<h3 class="consult-result-heading">まず相談する窓口</h3><div class="consult-resource-grid">${priority.map(r=>resourceCard(r,true)).join('')}</div>`:''}
+            ${related.length?`<details class="consult-related" ${priority.length?'':'open'}><summary>その他の相談先を見る（${related.length}件）</summary><p class="consult-related-hint">相談方法を変えると表示される窓口も変わります。必要な相談先だけ確認してください。</p><div class="consult-resource-grid">${related.map(r=>resourceCard(r,false)).join('')}</div></details>`:''}`;
+        })():'<p class="consult-empty">この方法で表示できる相談先は現在登録していません。別の相談方法を選んでください。</p>'}
       </div>`:''}
       <div class="consult-fallback"><strong>どれを選べばよいか分からない</strong><p>困りごとがいくつも重なっている場合や、相談先が分からない場合は、諫早市の一般相談から専門機関につないでもらうことができます。</p><a href="https://www.city.isahaya.nagasaki.jp/soshiki/41/8335.html" target="_blank" rel="noopener">諫早市の一般相談を見る ↗</a></div>`;
   }
