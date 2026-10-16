@@ -81,7 +81,7 @@
       if(direct.has(r.id))return true;
       const aliases=resourceCategoryAliases[issue.categoryId]||[cat];
       if(!(r.categories||[]).some(category=>aliases.includes(category)))return false;
-      if(r.type==='dial') return overlap(issue,r)>0 || issue.urgency==='urgent';
+      if(r.type==='dial') return overlap(issue,r)>0; // Never show unrelated emergency numbers solely because an issue is urgent.
       return true;
     }).map(r=>{
       let score=0;
