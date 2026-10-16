@@ -135,7 +135,7 @@
       ${meta?`<p class="resource-meta">${meta}</p>`:''}
       ${practical.length?`<dl class="consult-practical">${practical.map(([label,value])=>`<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>`:''}
       <div class="resource-actions">${call}${localCall}<a class="resource-official" href="${esc(url)}" target="_blank" rel="noopener">公式情報を見る ↗</a></div>
-      ${r.note?`<p class="resource-note">${esc(r.note)}</p>`:''}
+      ${url!=='#'?`<p class="consult-print-official">公式情報：${esc(url)}</p>`:''}\n      ${r.note?`<p class="resource-note">${esc(r.note)}</p>`:''}
       ${r.id==='isahaya-houkatsu'?'<p><a class="consult-detail-link" href="houkatsu-finder.html">お住まいの町名から担当センターを探す →</a></p>':''}
     </article>`;
   }
@@ -190,7 +190,7 @@
         ${group&&group.members.length===1&&categoryDetailPages[cat]?`<a class="consult-detail-link" href="${esc(categoryDetailPages[cat].url)}">${esc(categoryDetailPages[cat].label)} →</a>`:''}
       </div>`:''}
       ${issue?`<div class="consult-step consult-results" data-consult-print-area>
-        <div class="consult-print-head" aria-hidden="true"><strong>まちの健康・医療案内｜相談先ナビ</strong><span>${esc(issue.label)}</span></div>
+        <div class="consult-print-head"><strong>まちの健康・医療案内｜相談先ナビ</strong><span>${esc(issue.label)}</span></div><div class="consult-print-source"><p>PDF出力日：<span data-print-date></span>（情報の最終確認日ではありません）</p><p>掲載情報は変更されることがあります。連絡前に各窓口の公式情報を確認してください。</p><p>案内ページ：https://machicare.vercel.app/index.html#local</p></div>
         <div class="selected-concern"><span>選択中</span><strong>${esc(issue.label)}</strong></div>
         <button type="button" class="consult-print-result" data-print-consultation aria-label="この相談結果を印刷またはPDFに保存">この相談結果を印刷・PDF保存</button>
         ${issueDetailPages[issue.id]?`<a class="consult-detail-link" href="${esc(issueDetailPages[issue.id].url)}">${esc(issueDetailPages[issue.id].label)} →</a>`:''}
@@ -232,6 +232,9 @@
     if(channel){state.channel=channel.dataset.channel;render();return;}
     const print=e.target.closest('[data-print-consultation]');
     if(print){
+      const today=new Date();
+      const dateLabel=new Intl.DateTimeFormat('ja-JP',{year:'numeric',month:'long',day:'numeric'}).format(today);
+      mount.querySelectorAll('[data-print-date]').forEach(el=>{el.textContent=dateLabel;});
       document.body.classList.add('print-consultation-only');
       try{window.print();}finally{
         // Keep print rules active until the system print dialog has finished.
