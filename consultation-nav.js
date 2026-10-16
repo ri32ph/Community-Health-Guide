@@ -173,6 +173,8 @@
         <div class="consult-print-head" aria-hidden="true"><strong>まちの健康・医療案内｜相談先ナビ</strong><span>${esc(issue.label)}</span></div>
         <div class="selected-concern"><span>選択中</span><strong>${esc(issue.label)}</strong></div>
         ${issueDetailPages[issue.id]?`<a class="consult-detail-link" href="${esc(issueDetailPages[issue.id].url)}">${esc(issueDetailPages[issue.id].label)} →</a>`:''}
+        ${issue.id==='pregnancy-emergency-contraception'?'<div class="next-step-box"><strong>販売・調剤できる薬局を確認する</strong><p>緊急避妊薬は取り扱う薬局・対応可能な薬剤師が限られます。来店前に在庫と対応状況を電話で確認してください。</p><a class="consult-detail-link" href="https://www.mhlw.go.jp/stf/kinnkyuuhininnyaku.html" target="_blank" rel="noopener">厚生労働省：緊急避妊薬の販売可能薬局一覧を見る ↗</a></div>':''}
+        ${['health-where-to-go','health-night-holiday'].includes(issue.id)?'<p class="resource-note">#7119に接続できない場合は 095-801-1217。生命の危険がある場合は119へ。</p>':''}
         ${steps.length?`<div class="next-step-box"><div class="consult-subhead"><strong>相談したあとにできること</strong><span>全部を一度にする必要はありません。できそうなものからで大丈夫です。</span></div><ul>${steps.map(x=>`<li><label><input type="checkbox"> <span>${esc(x)}</span></label></li>`).join('')}</ul></div>`:''}
         ${(issue.communityResourceTypes||[]).length?`<div class="community-types"><strong>地域で利用できる支援の例</strong><div>${issue.communityResourceTypes.map(x=>`<span>${esc(x)}</span>`).join('')}</div><p class="community-search-help"><b>もう少し詳しく探したいときは</b><br>下の言葉を参考に、<strong>「諫早市 ＋ キーワード」</strong>で検索してみてください。地域で利用できる支援やサービスが見つかることがあります。</p></div>`:''}
         ${toolCards(issue)}
