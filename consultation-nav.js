@@ -4,18 +4,14 @@
   if(!data||!mount)return;
 
   const state={categoryId:null,issueId:null,channel:'all'};
-  // Eight visible groups; underlying issue IDs and their contact mappings stay unchanged.
-  const displayGroups=[
-    {id:'health',label:'医療・薬・健康',icon:'医',members:['health']},
-    {id:'mental',label:'こころ',icon:'心',members:['mental']},
-    {id:'child',label:'子ども・子育て',icon:'子',members:['child']},
-    {id:'elderly',label:'高齢者・介護・看取り',icon:'介',members:['elderly','endoflife']},
-    {id:'disability',label:'障害・発達',icon:'支',members:['disability']},
-    {id:'work',label:'仕事',icon:'働',members:['work']},
-    {id:'money',label:'暮らし・お金・住まい',icon:'￥',members:['money','housing']},
-    {id:'safety',label:'家族・安全・法律',icon:'守',members:['family','legal','crime']}
-  ];
-  const groupFor=id=>displayGroups.find(g=>g.id===id);
+  // The preceding consultation-topics.js already defines the eight visible
+  // categories and their issues. Reuse its canonical IDs rather than
+  // maintaining a second, incompatible grouping.
+  const displayGroups = data.categories.map(category => ({
+    ...category,
+    members: [category.id]
+  }));
+  const groupFor = id => displayGroups.find(group => group.id === id);
 
   const channelLabels={all:'すべて', 'in-person':'地域の窓口',phone:'電話',web:'インターネット',sns:'SNS',chat:'チャット','sign-language':'手話','text-relay':'文字・電話リレー'};
   const categoryLabel=id=>data.categories.find(c=>c.id===id)?.label||'';
@@ -137,12 +133,7 @@
     const cat=state.categoryId;
     const issue=currentIssue();
     const group=groupFor(cat);
-    const issueList=group ? data.issues.filter(i => {
-      const category=String(i.categoryId ?? '').trim();
-      const issueId=String(i.id ?? '').trim();
-      // Preserve legacy issue IDs and support older data payloads without categoryId.
-      return group.members.includes(category) || (!category && group.members.some(member => issueId.startsWith(member+'-')));
-    }) : [];
+    const issueList = group ? data.issues.filter(i => i.categoryId === group.id) : [];
     if(group && issueList.length === 0) console.error('[consultation-nav] No matching issues for group:', cat, 'data category ids:', [...new Set(data.issues.map(i=>i.categoryId))]);
     const resources=issue?resourcesFor(issue):[];
     const steps=issue?nextSteps(issue):[];
