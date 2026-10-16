@@ -1863,7 +1863,9 @@ window.MACHI_CONSULTATION_DATA = {
         "住まい",
         "就労支援",
         "食支援"
-      ]
+      ],
+      "availability": "月〜金曜 8:30〜17:00（祝日・年末年始を除く）",
+      "note": "生活費・仕事・家賃・家計など、生活全般の困りごとを相談できます。所在地：諫早市東小路町11-1 塩塚ビル102。"
     },
     {
       "id": "isahaya-women",
@@ -1907,7 +1909,9 @@ window.MACHI_CONSULTATION_DATA = {
         "デートDV",
         "パートナー",
         "財産分与"
-      ]
+      ],
+      "availability": "平日・第2土曜・第4日曜 9:00〜16:00（年末年始を除く）",
+      "note": "DV・デートDV、結婚・離婚などの相談。相談は無料で秘密は守られます。"
     },
     {
       "id": "isahaya-mental",
@@ -2116,7 +2120,9 @@ window.MACHI_CONSULTATION_DATA = {
         "悪質商法",
         "消費生活",
         "消費者トラブル"
-      ]
+      ],
+      "availability": "平日 8:30〜12:00、13:00〜17:00（土日祝・12月29日〜1月3日を除く）",
+      "note": "対象は諫早市在住の個人。事業者の相談は対象外です。高城会館3階。"
     },
     {
       "id": "isahaya-civic",
@@ -2178,7 +2184,8 @@ window.MACHI_CONSULTATION_DATA = {
         "成年後見",
         "財産管理",
         "財産分与"
-      ]
+      ],
+      "note": "相談の種類によって受付・予約方法が異なります。公式ページで日程を確認してください。"
     },
     {
       "id": "nagasaki-support-center",
@@ -2947,7 +2954,8 @@ window.MACHI_CONSULTATION_DATA = {
       "channels": [
         "phone"
       ],
-      "sourceTrust": "government"
+      "sourceTrust": "government",
+      "note": "局番なし188で最寄りの消費生活相談窓口に案内されます。諫早市の相談窓口は0957-22-3113（平日）です。"
     },
     {
       "id": "dv-8008",
