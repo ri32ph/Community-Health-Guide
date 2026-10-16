@@ -72,11 +72,11 @@
     return (issue.keywords||[]).reduce((n,k)=>n+(hay.includes(String(k).toLowerCase())?1:0),0);
   }
   function allResources(){return [...data.contacts,...data.quickDials,...data.publicResources,...data.accessibilityResources];}
-  function resourcesFor(issue){
+  function resourcesFor(issue,channel=state.channel){
     const cat=categoryLabel(issue.categoryId);
     const direct=new Set(issue.firstContactIds||[]);
     return allResources().filter(r=>{
-      const methodOk=state.channel==='all'||(r.channels||[]).includes(state.channel);
+      const methodOk=channel==='all'||(r.channels||[]).includes(channel);
       if(!methodOk)return false;
       if(direct.has(r.id))return true;
       const aliases=resourceCategoryAliases[issue.categoryId]||[cat];
@@ -174,6 +174,7 @@
     const issueList = group ? data.issues.filter(i => i.categoryId === group.id) : [];
     if(group && issueList.length === 0) console.error('[consultation-nav] No matching issues for group:', cat, 'data category ids:', [...new Set(data.issues.map(i=>i.categoryId))]);
     const resources=issue?resourcesFor(issue):[];
+    const allMethodResources=issue?resourcesFor(issue,'all'):[];
     const steps=issue?nextSteps(issue):[];
     mount.innerHTML=`
       <div class="consult-step">
@@ -195,7 +196,7 @@
         ${['health-where-to-go','health-night-holiday'].includes(issue.id)?'<p class="resource-note">#7119に接続できない場合は 095-801-1217。生命の危険がある場合は119へ。</p>':''}
         <p class="consult-step-label"><span>3</span> 相談方法を選べます</p>
         <div class="consult-channel-tabs" role="group" aria-label="相談方法で絞り込む">
-          ${Object.entries(channelLabels).filter(([id])=>id==='all'||resources.some(r=>id==='all'||(r.channels||[]).includes(id))).map(([id,label])=>`<button type="button" class="channel-tab ${state.channel===id?'is-active':''}" aria-pressed="${state.channel===id}" data-channel="${esc(id)}">${esc(label)}</button>`).join('')}
+          ${Object.entries(channelLabels).filter(([id])=>id==='all'||allMethodResources.some(r=>(r.channels||[]).includes(id))).map(([id,label])=>`<button type="button" class="channel-tab ${state.channel===id?'is-active':''}" aria-pressed="${state.channel===id}" data-channel="${esc(id)}">${esc(label)}</button>`).join('')}
         </div>
         ${resources.length?(() => {
           const direct=new Set(issue.firstContactIds||[]);
