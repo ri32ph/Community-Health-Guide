@@ -1869,7 +1869,8 @@ window.MACHI_CONSULTATION_DATA = {
         "食支援"
       ],
       "availability": "月〜金曜 8:30〜17:00（祝日・年末年始を除く）",
-      "note": "生活費・仕事・家賃・家計など、生活全般の困りごとを相談できます。所在地：諫早市東小路町11-1 塩塚ビル102。"
+      "note": "生活費・仕事・家賃・家計など、生活全般の困りごとを相談できます。所在地：諫早市東小路町11-1 塩塚ビル102。",
+      "audience": "仕事・家賃・生活費など、生活全般に困っている人"
     },
     {
       "id": "isahaya-women",
@@ -1915,7 +1916,10 @@ window.MACHI_CONSULTATION_DATA = {
         "財産分与"
       ],
       "availability": "平日・第2土曜・第4日曜 9:00〜16:00（年末年始を除く）",
-      "note": "DV・デートDV、結婚・離婚などの相談。相談は無料で秘密は守られます。"
+      "note": "DV・デートDV、結婚・離婚などの相談。相談は無料で秘密は守られます。",
+      "audience": "DV・デートDV、結婚・離婚などに悩む女性",
+      "reservationStatus": "電話相談は予約不要。面接相談は事前に電話予約",
+      "consultationHours": "平日・第2土曜・第4日曜 9:00〜16:00（年末年始除く）"
     },
     {
       "id": "isahaya-mental",
@@ -1969,7 +1973,9 @@ window.MACHI_CONSULTATION_DATA = {
         "遺族",
         "精神保健",
         "受診相談"
-      ]
+      ],
+      "audience": "こころの悩み・不安を抱える本人と家族など",
+      "consultationHours": "平日8:30〜17:00（祝日・年末年始除く）"
     },
     {
       "id": "nagasaki-mental",
@@ -2024,7 +2030,8 @@ window.MACHI_CONSULTATION_DATA = {
         "骨粗しょう症",
         "女性の健康",
         "禁煙"
-      ]
+      ],
+      "audience": "おおむね40歳以上の人"
     },
     {
       "id": "isahaya-health-promotion",
@@ -2195,7 +2202,10 @@ window.MACHI_CONSULTATION_DATA = {
         "財産管理",
         "財産分与"
       ],
-      "note": "相談の種類によって受付・予約方法が異なります。公式ページで日程を確認してください。"
+      "note": "相談の種類によって受付・予約方法が異なります。公式ページで日程を確認してください。",
+      "audience": "諫早市民",
+      "reservationStatus": "一般相談は予約不要。法律相談・交通事故相談は事前予約が必要",
+      "consultationHours": "一般相談：平日8:30〜17:00（祝日・年末年始除く）。専門相談は日程が異なる"
     },
     {
       "id": "nagasaki-support-center",
