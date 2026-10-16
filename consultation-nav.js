@@ -193,9 +193,6 @@
         ${issueDetailPages[issue.id]?`<a class="consult-detail-link" href="${esc(issueDetailPages[issue.id].url)}">${esc(issueDetailPages[issue.id].label)} →</a>`:''}
         ${issue.id==='pregnancy-emergency-contraception'?'<div class="next-step-box"><strong>販売・調剤できる薬局を確認する</strong><p>緊急避妊薬は取り扱う薬局・対応可能な薬剤師が限られます。来店前に在庫と対応状況を電話で確認してください。</p><a class="consult-detail-link" href="https://www.mhlw.go.jp/stf/kinnkyuuhininnyaku.html" target="_blank" rel="noopener">厚生労働省：緊急避妊薬の販売可能薬局一覧を見る ↗</a></div>':''}
         ${['health-where-to-go','health-night-holiday'].includes(issue.id)?'<p class="resource-note">#7119に接続できない場合は 095-801-1217。生命の危険がある場合は119へ。</p>':''}
-        ${steps.length?`<div class="next-step-box"><div class="consult-subhead"><strong>相談したあとにできること</strong><span>全部を一度にする必要はありません。できそうなものからで大丈夫です。</span></div><ul>${steps.map(x=>`<li><label><input type="checkbox"> <span>${esc(x)}</span></label></li>`).join('')}</ul></div>`:''}
-        ${(issue.communityResourceTypes||[]).length?`<div class="community-types"><strong>地域で利用できる支援の例</strong><div>${issue.communityResourceTypes.map(x=>`<span>${esc(x)}</span>`).join('')}</div><p class="community-search-help"><b>もう少し詳しく探したいときは</b><br>下の言葉を参考に、<strong>「諫早市 ＋ キーワード」</strong>で検索してみてください。地域で利用できる支援やサービスが見つかることがあります。</p></div>`:''}
-        ${toolCards(issue)}
         <p class="consult-step-label"><span>3</span> 相談方法を選べます</p>
         <div class="consult-channel-tabs" role="group" aria-label="相談方法で絞り込む">
           ${Object.entries(channelLabels).map(([id,label])=>`<button type="button" class="channel-tab ${state.channel===id?'is-active':''}" aria-pressed="${state.channel===id}" data-channel="${esc(id)}">${esc(label)}</button>`).join('')}
@@ -206,8 +203,19 @@
           const related=resources.filter(r=>!direct.has(r.id));
           return `
             ${priority.length?`<h3 class="consult-result-heading">まず相談する窓口</h3><div class="consult-resource-grid">${priority.map(r=>resourceCard(r,true)).join('')}</div>`:''}
-            ${related.length?`<details class="consult-related" ${priority.length?'':'open'}><summary>その他の相談先を見る（${related.length}件）</summary><p class="consult-related-hint">相談方法を変えると表示される窓口も変わります。必要な相談先だけ確認してください。</p><div class="consult-resource-grid">${related.map(r=>resourceCard(r,false)).join('')}</div></details>`:''}`;
+            ${!priority.length&&related.length?'<p class="consult-related-hint">この相談で個別に指定された優先窓口はありません。以下の関連窓口から相談先を探せます。</p>':''}
+          `;
         })():'<p class="consult-empty">この方法で表示できる相談先は現在登録していません。別の相談方法を選んでください。</p>'}
+        ${steps.length?`<div class="next-step-box"><div class="consult-subhead"><strong>次にできること</strong><span>全部を一度にする必要はありません。できそうなものからで大丈夫です。</span></div><ul>${steps.map(x=>`<li><label><input type="checkbox"> <span>${esc(x)}</span></label></li>`).join('')}</ul></div>`:''}
+        ${(issue.communityResourceTypes||[]).length?`<div class="community-types"><strong>地域で利用できる支援の例</strong><div>${issue.communityResourceTypes.map(x=>`<span>${esc(x)}</span>`).join('')}</div><p class="community-search-help"><b>もう少し詳しく探したいときは</b><br>下の言葉を参考に、<strong>「諫早市 ＋ キーワード」</strong>で検索してみてください。地域で利用できる支援やサービスが見つかることがあります。</p></div>`:''}
+        ${toolCards(issue)}
+
+        ${resources.length?(() => {
+          const direct=new Set(issue.firstContactIds||[]);
+          const priority=resources.filter(r=>direct.has(r.id));
+          const related=resources.filter(r=>!direct.has(r.id));
+          return related.length?`<details class="consult-related" ${priority.length?'':'open'}><summary>その他の相談先を見る（${related.length}件）</summary><p class="consult-related-hint">相談方法を変えると表示される窓口も変わります。</p><div class="consult-resource-grid">${related.map(r=>resourceCard(r,false)).join('')}</div></details>`:'';
+        })():''}
       </div>`:''}
       <div class="consult-fallback"><strong>どれを選べばよいか分からない</strong><p>困りごとがいくつも重なっている場合や、相談先が分からない場合は、諫早市の一般相談から専門機関につないでもらうことができます。</p><a href="https://www.city.isahaya.nagasaki.jp/soshiki/41/8335.html" target="_blank" rel="noopener">諫早市の一般相談を見る ↗</a></div>`;
   }
