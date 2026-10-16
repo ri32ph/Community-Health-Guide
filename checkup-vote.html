@@ -9,7 +9,7 @@
 </main><script>
 'use strict';
 const labels=['誕生日や年齢の節目','家族や友人が病気になったとき','体重・血圧などが気になったとき','健診の案内が届いたとき','健康イベントに参加したとき','家族や周囲の人に勧められたとき','特にきっかけはない'];
-const key='machicare-cep-vote-v1';const idKey='machicare-cep-vote-device-v1';
+const key='machicare-cep-vote-v2';const idKey='machicare-cep-vote-device-v2';
 let selected=null;let mine=null;const opts=document.getElementById('options');const submit=document.getElementById('submit');
 labels.forEach((label,i)=>{const row=document.createElement('label');row.className='option';const input=document.createElement('input');input.type='radio';input.name='choice';input.value=String(i);input.addEventListener('change',()=>{selected=i;submit.disabled=false});row.append(input,document.createTextNode(label));opts.append(row)});
 function token(){let id=localStorage.getItem(idKey);if(!id){id=crypto.randomUUID();localStorage.setItem(idKey,id)}return id}
