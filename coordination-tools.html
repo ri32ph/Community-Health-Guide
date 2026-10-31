@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>手帳・カード・連携ツール｜まちの健康・医療案内</title><link rel="stylesheet" href="styles.css"><style>
+.tool-intro{padding:52px 0;background:#eaf3e8}.tool-intro p{max-width:760px}.tool-filter{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.tool-filter input,.tool-filter select{font:inherit;padding:12px;border:2px solid #cbded9;border-radius:12px;background:white;max-width:100%;flex:1;min-width:180px}.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:25px 0 60px}.tool-card{background:white;border:1px solid #cbded9;border-radius:16px;padding:22px}.tool-card h2{font-size:1.25rem}.tool-card a{font-weight:700}.tool-card small{color:#536966}.tool-note{padding:18px;border-left:5px solid #0c716b;background:#fff}.tool-card[hidden]{display:none}
+</style></head><body><a class="skip" href="#main">本文へ移動</a><header><div class="wrap nav"><a class="brand" href="index.html"><small>諫早市にお住まいの皆さんへ</small>まちの健康・医療案内</a><nav class="main-nav" aria-label="主な案内"><a href="index.html">トップ</a><a href="medicine.html">薬</a><a href="elderly-care.html">高齢者・介護</a></nav><div class="tools"><button class="tool" data-text-size type="button">文字を大きく</button><button class="tool" data-print-page type="button">印刷・PDF</button></div></div></header>
+<main id="main"><section class="tool-intro"><div class="wrap"><div class="eyebrow">暮らしをつなぐ情報共有</div><h1>手帳・カード・連携ツールを探す</h1><p>診察、薬局、介護、救急などで役立つ手帳やカードを紹介する。使う人、伝える情報、入手先を確認できる。</p></div></section><section class="section"><div class="wrap"><h2>目的から探す</h2><div class="tool-filter"><input id="search" type="search" aria-label="ツール名で検索" placeholder="名前・キーワードで検索"><select id="category" aria-label="分野で絞り込む"><option value="">すべての分野</option><option>薬・医療情報</option><option>疾病管理</option><option>支援・緊急時</option><option>医療・介護連携</option></select></div><p id="count" aria-live="polite"></p><div id="tools" class="tool-grid"></div><p class="tool-note">手帳やカードは診療情報のすべてを保証するものではない。緊急時には必要に応じて医療機関へ直接確認する。地域独自の様式は発行自治体・団体を確認する。</p><p><a href="index.html">トップページへ戻る</a></p></div></section></main><footer><div class="wrap"><p>まちの健康・医療案内｜掲載内容は個別の診断・治療に代わるものではない。</p></div></footer><script src="site.js"></script><script>
+const items=[
+["お薬手帳","薬・医療情報","薬の名前、用法、併用薬などを医療機関・薬局で共有する。","https://www.mhlw.go.jp/"],
+["ペースメーカー手帳","薬・医療情報","植込み機器の情報や点検記録を伝える。","https://www.jadia.or.jp/"],
+["心不全手帳","疾病管理","体重、血圧、症状や治療経過を記録する。","https://www.jhfs.or.jp/"],
+["JADEC連携手帳","疾病管理","糖尿病の検査値や合併症の情報を共有する。","https://www.nittokyo.or.jp/"],
+["オレンジ手帳","医療・介護連携","認知症のある人の生活・医療・介護情報を共有する。地域によって様式が異なる。","https://www.nisseikyo.or.jp/"],
+["CKD手帳・CKDシール","疾病管理","腎機能などの情報を医療機関・薬局で共有する。","https://jsn.or.jp/"],
+["ヘルプマーク","支援・緊急時","外見から分かりにくい援助・配慮の必要性を知らせる。","https://www.fukushi.metro.tokyo.lg.jp/shougai/shougai_shisaku/helpmark"],
+["ヘルプカード","支援・緊急時","必要な支援や緊急連絡先を周囲に伝える。","https://www.fukushi.metro.tokyo.lg.jp/"],
+["母子健康手帳","疾病管理","妊娠・出産・子どもの健康と予防接種などを記録する。","https://www.cfa.go.jp/"],
+["血圧手帳","疾病管理","家庭血圧・脈拍・測定時刻を記録する。","https://www.jpnsh.jp/"],
+["喘息アクションプラン","疾病管理","症状悪化時の対応を医療者と共有する。","https://www.jsaweb.jp/"],
+["ワルファリン手帳","薬・医療情報","PT-INRや服用量を記録する。","https://www.pmda.go.jp/"],
+["ICD・CRT-D患者カード","薬・医療情報","植込み型除細動器などの機器情報を伝える。","https://www.jadia.or.jp/"],
+["脳卒中地域連携パス","医療・介護連携","急性期・回復期・生活期の治療やリハビリをつなぐ。","https://www.jsa-web.org/"],
+["がん地域連携パス","医療・介護連携","がん治療後の診療・検査計画を共有する。","https://ganjoho.jp/"],
+["認知症ケアパス","医療・介護連携","認知症の進行に応じた支援・相談先を案内する。","https://www.mhlw.go.jp/"],
+["入退院時情報連携シート","医療・介護連携","病院とケアマネジャー等で生活・介護情報を共有する。","https://www.mhlw.go.jp/"],
+["救急医療情報カード・キット","支援・緊急時","緊急連絡先や医療情報を救急時に伝える。","https://www.fdma.go.jp/"],
+["個別避難計画","支援・緊急時","避難に支援が必要な人の支援方法を事前に整理する。","https://www.bousai.go.jp/"],
+["ACP・人生会議の記録","医療・介護連携","本人の価値観や療養に関する希望を共有する。","https://www.mhlw.go.jp/"]
+];
+const grid=document.getElementById("tools"),q=document.getElementById("search"),cat=document.getElementById("category"),count=document.getElementById("count");
+function render(){const filtered=items.filter(x=>(!cat.value||x[1]===cat.value)&&x.join(" ").toLowerCase().includes(q.value.trim().toLowerCase()));grid.replaceChildren();filtered.forEach(([name,category,description,url])=>{const article=document.createElement("article");article.className="tool-card";const small=document.createElement("small");small.textContent=category;const h=document.createElement("h2");h.textContent=name;const p=document.createElement("p");p.textContent=description;const a=document.createElement("a");a.href=url;a.target="_blank";a.rel="noopener noreferrer";a.textContent="発行元・関連機関を確認";article.append(small,h,p,a);grid.append(article)});count.textContent=filtered.length+"件のツール";}q.addEventListener("input",render);cat.addEventListener("change",render);render();
+</script></body></html>
