@@ -14,20 +14,31 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 
 <style id="help-contacts-styles">
-.help-contacts-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:22px 0}
-.help-contacts-card{background:#fff;border:1px solid #cbded9;border-radius:16px;padding:20px;min-width:0;overflow-wrap:anywhere}
-.help-contacts-feature{grid-column:span 2;border:2px solid #0c716b}
-.help-contacts-card h3{font-size:1.1rem;line-height:1.5;margin:8px 0}
-.help-contacts-card p{line-height:1.75;margin:9px 0}
-.help-contacts-tag{font-size:.84rem;font-weight:800;color:#0a605b}
-.help-contacts-number{font-size:clamp(1.35rem,3vw,1.65rem);font-weight:800;color:#0b625c;letter-spacing:.015em}
+.help-contacts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px 0;align-items:start}
+.help-contacts-item{background:#fff;border:1px solid #cbded9;border-radius:14px;min-width:0;overflow:hidden}
+.help-contacts-feature{border-color:#0c716b}
+.help-contacts-item summary{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;list-style:none;min-height:70px;padding:18px 20px;color:#173936;font-weight:800;line-height:1.5}
+.help-contacts-item summary::-webkit-details-marker{display:none}
+.help-contacts-item summary::marker{content:""}
+.help-contacts-item summary:hover{background:#f0f8f4}
+.help-contacts-item summary:focus-visible{outline:3px solid #c28727;outline-offset:-5px;border-radius:12px}
+.help-contacts-item[open] summary{background:#eff8f3;border-bottom:1px solid #cbded9}
+.help-contacts-label{font-size:1rem;flex:1;min-width:0}
+.help-contacts-action{font-size:.83rem;font-weight:700;color:#0b625c;white-space:nowrap;display:inline-flex;align-items:center;gap:7px}
+.help-contacts-action::after{content:"＋";font-size:1.35rem;line-height:1;font-weight:600}
+.help-contacts-item[open] .help-contacts-action{font-size:0}
+.help-contacts-item[open] .help-contacts-action::before{content:"閉じる";font-size:.83rem}
+.help-contacts-item[open] .help-contacts-action::after{content:"−";font-size:1.35rem}
+.help-contacts-body{padding:18px 20px 20px;overflow-wrap:anywhere}
+.help-contacts-body h3{font-size:1.08rem;line-height:1.5;margin:0 0 12px}
+.help-contacts-body p{line-height:1.75;margin:9px 0}
+.help-contacts-number{font-size:clamp(1.3rem,3vw,1.55rem);font-weight:800;color:#0b625c;letter-spacing:.015em}
 .help-contacts-small,.help-contacts-source,.help-contacts-footnote{font-size:.9rem;color:#425e57}
 .help-contacts-emergency{border:2px solid #ae5d4d;background:#fff7f4;border-radius:13px;padding:14px 18px;line-height:1.7}
 .help-contacts-more{display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:20px}
 .help-contacts-more a,.help-contacts-source a{font-weight:700;text-underline-offset:3px}
-@media(max-width:900px){.help-contacts-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:620px){.help-contacts-grid{grid-template-columns:minmax(0,1fr)}.help-contacts-feature{grid-column:auto}.help-contacts-card{padding:17px}.help-contacts-more{display:grid;gap:14px}}
-@media print{.help-contacts-card{break-inside:avoid-page}.help-contacts-grid{display:block}.help-contacts-card{margin-bottom:10px}}
+@media(max-width:720px){.help-contacts-grid{grid-template-columns:1fr}.help-contacts-item summary{min-height:64px;padding:15px 16px}.help-contacts-body{padding:16px}}
+@media print{.help-contacts-grid{display:block}.help-contacts-item{break-inside:avoid-page;margin-bottom:12px}.help-contacts-item:not([open])>.help-contacts-body{display:block!important}.help-contacts-item summary{min-height:0;padding:10px 14px}.help-contacts-action{display:none}}
 </style>
 </head>
 <body class="home-page">
@@ -72,26 +83,23 @@
 
     <section class="section section-mint" id="help-contacts" aria-labelledby="help-contacts-title">
       <div class="wrap">
-        <div class="section-head"><div><div class="eyebrow">困ったときの相談先</div><h2 id="help-contacts-title">困ったとき、頼れるところ</h2></div><p>何を相談できるか、どこにつながるかをまとめています。ひとりで解決しようとせず、使いやすい窓口を探してください。</p></div>
+        <div class="section-head"><div><div class="eyebrow">困ったときの相談先</div><h2 id="help-contacts-title">困ったとき、頼れるところ</h2></div><p>困っていることを選ぶと、相談先と連絡先が表示されます。相談先が分からないときも、まずは近い項目を開いてみてください。</p></div>
         <p class="help-contacts-emergency"><strong>いま危険が迫っているとき：</strong>救急・消防は <a href="tel:119" data-confirm-call data-confirm-title="119へ電話しますか？" data-confirm-message="救急車や消防が必要な緊急時の番号です。内容を確認して発信してください。">119</a>、事件・事故など警察の緊急対応が必要なときは <a href="tel:110" data-confirm-call data-confirm-title="110へ電話しますか？" data-confirm-message="警察の緊急対応が必要なときの番号です。内容を確認して発信してください。">110</a>。</p>
         <div class="help-contacts-grid">
-          <article class="help-contacts-card help-contacts-feature">
-            <p class="help-contacts-tag">性暴力・性的な被害</p>
-            <h3>ワンストップ支援センター</h3>
+          <details class="help-contacts-item help-contacts-feature"><summary><span class="help-contacts-label">性的な被害を受けた・相談したい</span><span class="help-contacts-action" aria-hidden="true">開く</span></summary><div class="help-contacts-body"><h3>ワンストップ支援センター</h3>
             <p>被害にあったとき、医療面のケア、こころのケア、法律相談などの支援につなぐ窓口です。警察に相談するか決めていない段階でも相談できます。</p>
             <p><strong>全国共通：</strong><a class="help-contacts-number" href="tel:%238891" data-confirm-call data-confirm-title="#8891に電話しますか？" data-confirm-message="性犯罪・性暴力被害者のためのワンストップ支援センターにつながる電話番号です。">#8891</a></p>
             <p><strong>長崎県「サポートながさき」：</strong><a href="tel:0958958856" data-confirm-call data-confirm-title="サポートながさきに電話しますか？">095-895-8856</a> ／ <a href="tel:0120889177" data-confirm-call data-confirm-title="サポートながさきに電話しますか？">0120-8891-77</a></p>
             <p class="help-contacts-small">通常相談：月～金曜9:00～17:00（祝日・年末年始を除く）。時間外はコールセンターにつながります。</p>
-            <p class="help-contacts-source"><a href="https://www.pref.nagasaki.jp/sodan-detail/sodan-317.html" target="_blank" rel="noopener noreferrer">長崎県の公式案内 ↗</a>　<a href="https://www.gender.go.jp/policy/no_violence/seibouryoku/consult.html" target="_blank" rel="noopener noreferrer">内閣府の案内 ↗</a></p>
-          </article>
-          <article class="help-contacts-card"><p class="help-contacts-tag">家庭内の暴力・DV</p><h3>DV相談ナビ</h3><p class="help-contacts-number">#8008</p><p>配偶者や交際相手からの暴力について、地域の相談機関につながります。窓口により受付時間が異なります。</p><p class="help-contacts-source"><a href="https://www.gender.go.jp/policy/no_violence/dv_navi/index.html" target="_blank" rel="noopener noreferrer">公式情報を見る ↗</a></p></article>
-          <article class="help-contacts-card"><p class="help-contacts-tag">子どもの虐待が心配</p><h3>児童相談所虐待対応ダイヤル</h3><p class="help-contacts-number">189</p><p>「虐待かもしれない」と感じた段階でも相談できます。</p><p class="help-contacts-source"><a href="https://www.cfa.go.jp/policies/jidougyakutai/gyakutai-taiou-dial" target="_blank" rel="noopener noreferrer">こども家庭庁の案内 ↗</a></p></article>
-          <article class="help-contacts-card"><p class="help-contacts-tag">警察への相談・性犯罪被害</p><h3>緊急ではない警察相談</h3><p><strong class="help-contacts-number">#9110</strong>（警察相談）</p><p><strong class="help-contacts-number">#8103</strong>（性犯罪被害相談）</p><p>緊急の事件・事故は110へ。</p><p class="help-contacts-source"><a href="https://www.npa.go.jp/hanzaihigai/portal/search/kensaku/seihigai/index.html" target="_blank" rel="noopener noreferrer">警察庁の案内 ↗</a></p></article>
-          <article class="help-contacts-card"><p class="help-contacts-tag">契約・買い物などのトラブル</p><h3>消費者ホットライン</h3><p class="help-contacts-number">188</p><p>定期購入、ネット通販、契約などのトラブルについて相談先を案内します。</p><p class="help-contacts-source"><a href="https://www.caa.go.jp/policies/policy/local_cooperation/local_consumer_administration/hotline/" target="_blank" rel="noopener noreferrer">消費者庁の案内 ↗</a></p></article>
-          <article class="help-contacts-card"><p class="help-contacts-tag">暮らし・家計・住まい</p><h3>諫早くらしの相談室</h3><p class="help-contacts-number">0957-47-8150</p><p>生活費、家賃、仕事、家計などの困りごとを相談できます。</p><p class="help-contacts-source"><a href="https://www.city.isahaya.nagasaki.jp/soshiki/19/1827.html" target="_blank" rel="noopener noreferrer">諫早市の公式案内 ↗</a></p></article>
-          <article class="help-contacts-card"><p class="help-contacts-tag">救急車を呼ぶか迷う</p><h3>長崎県救急安心センター</h3><p class="help-contacts-number">#7119</p><p>急な病気やけがで、救急車や受診の判断に迷うときの電話相談。明らかな緊急時は119へ。</p><p class="help-contacts-source"><a href="https://www.pref.nagasaki.jp/doc/page-741854.html" target="_blank" rel="noopener noreferrer">長崎県の公式案内 ↗</a></p></article>
-          <article class="help-contacts-card"><p class="help-contacts-tag">こころのつらさ</p><h3>相談方法を選べる窓口</h3><p>電話だけでなく、SNS・チャットなどで相談できる窓口もあります。</p><p class="help-contacts-source"><a href="https://www.mhlw.go.jp/mamorouyokokoro/" target="_blank" rel="noopener noreferrer">厚生労働省「まもろうよ こころ」 ↗</a></p></article>
-          <article class="help-contacts-card"><p class="help-contacts-tag">介護・もの忘れ</p><h3>地域包括支援センター</h3><p>諫早市では、住んでいる町名によって担当窓口が異なります。</p><p class="help-contacts-source"><a href="houkatsu-finder.html">町名から担当窓口を探す →</a></p></article>
+            <p class="help-contacts-source"><a href="https://www.pref.nagasaki.jp/sodan-detail/sodan-317.html" target="_blank" rel="noopener noreferrer">長崎県の公式案内 ↗</a>　<a href="https://www.gender.go.jp/policy/no_violence/seibouryoku/consult.html" target="_blank" rel="noopener noreferrer">内閣府の案内 ↗</a></p></div></details>
+          <details class="help-contacts-item"><summary><span class="help-contacts-label">家庭内の暴力・DVについて相談したい</span><span class="help-contacts-action" aria-hidden="true">開く</span></summary><div class="help-contacts-body"><h3>DV相談ナビ</h3><p class="help-contacts-number">#8008</p><p>配偶者や交際相手からの暴力について、地域の相談機関につながります。窓口により受付時間が異なります。</p><p class="help-contacts-source"><a href="https://www.gender.go.jp/policy/no_violence/dv_navi/index.html" target="_blank" rel="noopener noreferrer">公式情報を見る ↗</a></p></div></details>
+          <details class="help-contacts-item"><summary><span class="help-contacts-label">子どもへの虐待が心配</span><span class="help-contacts-action" aria-hidden="true">開く</span></summary><div class="help-contacts-body"><h3>児童相談所虐待対応ダイヤル</h3><p class="help-contacts-number">189</p><p>「虐待かもしれない」と感じた段階でも相談できます。</p><p class="help-contacts-source"><a href="https://www.cfa.go.jp/policies/jidougyakutai/gyakutai-taiou-dial" target="_blank" rel="noopener noreferrer">こども家庭庁の案内 ↗</a></p></div></details>
+          <details class="help-contacts-item"><summary><span class="help-contacts-label">警察に相談したい（緊急ではない）</span><span class="help-contacts-action" aria-hidden="true">開く</span></summary><div class="help-contacts-body"><h3>緊急ではない警察相談</h3><p><strong class="help-contacts-number">#9110</strong>（警察相談）</p><p><strong class="help-contacts-number">#8103</strong>（性犯罪被害相談）</p><p>緊急の事件・事故は110へ。</p><p class="help-contacts-source"><a href="https://www.npa.go.jp/hanzaihigai/portal/search/kensaku/seihigai/index.html" target="_blank" rel="noopener noreferrer">警察庁の案内 ↗</a></p></div></details>
+          <details class="help-contacts-item"><summary><span class="help-contacts-label">契約・買い物のトラブルで困っている</span><span class="help-contacts-action" aria-hidden="true">開く</span></summary><div class="help-contacts-body"><h3>消費者ホットライン</h3><p class="help-contacts-number">188</p><p>定期購入、ネット通販、契約などのトラブルについて相談先を案内します。</p><p class="help-contacts-source"><a href="https://www.caa.go.jp/policies/policy/local_cooperation/local_consumer_administration/hotline/" target="_blank" rel="noopener noreferrer">消費者庁の案内 ↗</a></p></div></details>
+          <details class="help-contacts-item"><summary><span class="help-contacts-label">生活費・仕事・住まいのことで困っている</span><span class="help-contacts-action" aria-hidden="true">開く</span></summary><div class="help-contacts-body"><h3>諫早くらしの相談室</h3><p class="help-contacts-number">0957-47-8150</p><p>生活費、家賃、仕事、家計などの困りごとを相談できます。</p><p class="help-contacts-source"><a href="https://www.city.isahaya.nagasaki.jp/soshiki/19/1827.html" target="_blank" rel="noopener noreferrer">諫早市の公式案内 ↗</a></p></div></details>
+          <details class="help-contacts-item"><summary><span class="help-contacts-label">救急車や受診を迷っている</span><span class="help-contacts-action" aria-hidden="true">開く</span></summary><div class="help-contacts-body"><h3>長崎県救急安心センター</h3><p class="help-contacts-number">#7119</p><p>急な病気やけがで、救急車や受診の判断に迷うときの電話相談。明らかな緊急時は119へ。</p><p class="help-contacts-source"><a href="https://www.pref.nagasaki.jp/doc/page-741854.html" target="_blank" rel="noopener noreferrer">長崎県の公式案内 ↗</a></p></div></details>
+          <details class="help-contacts-item"><summary><span class="help-contacts-label">こころがつらい・誰かに話したい</span><span class="help-contacts-action" aria-hidden="true">開く</span></summary><div class="help-contacts-body"><h3>相談方法を選べる窓口</h3><p>電話だけでなく、SNS・チャットなどで相談できる窓口もあります。</p><p class="help-contacts-source"><a href="https://www.mhlw.go.jp/mamorouyokokoro/" target="_blank" rel="noopener noreferrer">厚生労働省「まもろうよ こころ」 ↗</a></p></div></details>
+          <details class="help-contacts-item"><summary><span class="help-contacts-label">介護・もの忘れについて相談したい</span><span class="help-contacts-action" aria-hidden="true">開く</span></summary><div class="help-contacts-body"><h3>地域包括支援センター</h3><p>諫早市では、住んでいる町名によって担当窓口が異なります。</p><p class="help-contacts-source"><a href="houkatsu-finder.html">町名から担当窓口を探す →</a></p></div></details>
         </div>
         <p class="help-contacts-footnote">連絡先・受付時間・制度は変更されることがあります。利用前に各機関の公式情報を確認してください。このサイトは諫早市の公式サイトではありません。</p>
         <div class="help-contacts-more"><a href="quick-dials.html">全国共通番号・短縮ダイヤルを一覧で見る →</a><a href="consultation-list.html">地域の相談先を一覧で見る →</a><a href="#local">困りごとから相談先を探す →</a></div>
