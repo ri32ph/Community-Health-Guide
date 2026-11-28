@@ -15,5 +15,14 @@
 @media print{.cancer-stages{display:none}.cancer-panel,.cancer-panel[hidden]{display:block!important;break-inside:avoid;background:#fff;color:#000;border:1px solid #888;padding:14px}.cancer-panel aside{border:0;padding:0}.cancer-links{display:block}.cancer-topics{grid-template-columns:repeat(2,1fr)}.cancer-topic,.cancer-contact{break-inside:avoid}.cancer-consultation{display:block}.cancer-guide-page .trust{background:#fff;color:#000}.cancer-guide-page .trust a{color:#000}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
-.cancer-intro-image{display:block;width:100%;max-width:560px;height:auto;margin:24px auto 28px;border-radius:20px}
-@media print{.cancer-intro-image{max-width:260px}}
+.cancer-book-image{display:block;width:100%;max-width:240px;height:auto;margin:0;justify-self:end;border-radius:14px}
+@media print{.cancer-book-image{max-width:260px}}
+
+.cancer-book-card{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:22px;align-items:center}
+.cancer-book-copy{display:flex;flex-direction:column;min-width:0;height:100%}
+.cancer-book-copy small{margin-top:auto}
+.cancer-hero-layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);align-items:center;gap:32px}
+.cancer-hero-image{display:block;width:100%;max-width:360px;height:auto;justify-self:center}
+@media(max-width:900px){#cancer-books .cancer-consultation{grid-template-columns:1fr}}
+@media(max-width:650px){.cancer-book-card,.cancer-hero-layout{grid-template-columns:1fr}.cancer-book-image{justify-self:center;max-width:280px}.cancer-hero-image{max-width:240px}.cancer-book-copy small{margin-top:0}}
+@media print{.cancer-hero-image{max-width:180px}.cancer-book-card{break-inside:avoid}}

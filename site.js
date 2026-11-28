@@ -106,12 +106,30 @@
       <nav class="footer-sitemap" aria-label="サイトマップ"><h2>サイトマップ</h2><div class="footer-link-columns">
         <div><h3>探す・確認する</h3><a href="${prefix}index.html">トップ</a><a href="${prefix}visit.html">医療機関を探す</a><a href="${prefix}pharmacy-guide.html">目的に合った薬局を探す</a><a href="${prefix}emergency.html">夜間・休日・救急</a><a href="${prefix}medicine.html">薬について</a><a href="${prefix}health.html">健康・健診</a><a href="${prefix}cancer-guide.html">がんの道しるべ</a></div>
         <div><h3>暮らしの相談</h3><a href="${prefix}child-parenting.html">子ども・子育て</a><a href="${prefix}elderly-care.html">高齢者・介護</a><a href="${prefix}money-life.html">お金・生活</a><a href="${prefix}disability-development.html">障害・発達</a><a href="${prefix}legal-assets.html">契約・法律・財産</a></div>
-        <div><h3>相談先・その他</h3><a class="footer-consult-link" href="${prefix}consultation-list.html"><img src="${prefix}assets/icons/15_community_support.png" alt="">相談先一覧</a><a href="${prefix}quick-dials.html">全国共通番号・短縮ダイヤル</a><a href="${prefix}after-loss.html">大切な方を亡くされたあと</a><a href="${prefix}index.html#local">困りごとから探す</a><a href="${prefix}articles/index.html">更新情報・記事</a></div>
+        <div><h3>相談先・その他</h3><a class="footer-consult-link" href="${prefix}consultation-list.html"><img src="${prefix}assets/icons/15_community_support.png" alt="">相談先一覧</a><a href="${prefix}consultation-list.html?area=prefecture">長崎県の窓口・案内</a><a href="${prefix}quick-dials.html">全国共通番号・短縮ダイヤル</a><a href="${prefix}after-loss.html">大切な方を亡くされたあと</a><a href="${prefix}index.html#local">困りごとから探す</a><a href="${prefix}articles/index.html">更新情報・記事</a></div>
       </div></nav>
     </div><div class="wrap site-footer-bottom"><span>© まちの健康・医療案内</span><span class="footer-meta-links"><a href="${prefix}about.html">このページについて</a><a href="${prefix}index.html#reliability">情報の信頼性について</a></span></div>`;
   }
 
-  document.addEventListener('DOMContentLoaded',()=>{renderCivicActions();renderSiteFooter();});
+  
+  function renderPrefectureLink(){
+    const page=location.pathname.split('/').pop()||'index.html';
+    const categories={
+      'health.html':'医療・薬・健康','medicine.html':'医療・薬・健康','visit.html':'医療・薬・健康','pharmacy-guide.html':'医療・薬・健康','checkup-qa.html':'医療・薬・健康','smoking-cessation.html':'医療・薬・健康','quit-smoking.html':'医療・薬・健康',
+      'child-parenting.html':'子ども・子育て','emergency-contraception.html':'妊娠・性の健康',
+      'elderly-care.html':'高齢者・介護','houkatsu-finder.html':'高齢者・介護','after-loss.html':'高齢者・介護',
+      'disability-development.html':'障害・仕事','money-life.html':'暮らし・お金','legal-assets.html':'安全・人権・法律',
+      'cancer-guide.html':'医療・薬・健康'
+    };
+    if(!categories[page])return;
+    const main=document.querySelector('main');if(!main)return;
+    const section=document.createElement('section');section.className='section section-mint';
+    const query='?area=prefecture&category='+encodeURIComponent(categories[page]);
+    section.innerHTML='<div class="wrap"><div class="eyebrow">市の窓口に加えて</div><h2>長崎県の窓口・案内も探せます</h2><p>専門的な相談や、県内に住むご家族の相談先を探すときにご利用ください。県が紹介する市町・病院などの窓口も掲載しています。</p><a class="text-link" href="consultation-list.html'+query+'">この分野の県の窓口・案内を見る →</a><p><a href="consultation-list.html?area=prefecture">県の窓口・案内をすべて見る →</a></p></div>';
+    main.appendChild(section);
+  }
+
+  document.addEventListener('DOMContentLoaded',()=>{renderCivicActions();renderSiteFooter();renderPrefectureLink();});
 
   document.addEventListener('click',event=>{
     const link=event.target.closest('a[data-confirm-call],a[href="tel:119"],a[href="tel:110"]');
