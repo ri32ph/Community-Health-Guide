@@ -2304,6 +2304,207 @@ window.MACHI_CONSULTATION_DATA = {
       "note": "緊急の事件・事故は110へ。#9110の通話料は自己負担。短縮番号が利用できない場合は095-823-9110。",
       "verifiedAt": "2026-10-16",
       "availability": "24時間対応（長崎県警察の#9110）"
+    },
+    {
+      "id": "nagasaki-medical-safety",
+      "name": "長崎県 県央地域医療安全相談センター",
+      "description": "医療機関への疑問や不安、医療に関する苦情などを、中立的な立場で相談できます。",
+      "officialUrl": "https://www.pref.nagasaki.lg.jp/bunrui/hukushi-hoken/hoken-iryo/iryosodan/iryosodan-keno/",
+      "categories": [
+        "健康・医療"
+      ],
+      "issueIds": [
+        "health-medical-safety"
+      ],
+      "phone": "0957-26-3304",
+      "area": "長崎県",
+      "type": "local",
+      "channels": [
+        "phone",
+        "web"
+      ],
+      "sourceType": "government",
+      "verifiedAt": "2026-11-28",
+      "note": "対象地域・受付時間・予約の要否は、利用前に公式情報をご確認ください。",
+      "keywords": [
+        "長崎県 県央地域医療安全相談センター",
+        "健康・医療"
+      ],
+      "audience": "諫早市・大村市・東彼杵郡"
+    },
+    {
+      "id": "nagasaki-development",
+      "name": "長崎県発達障害者支援センター しおさい",
+      "description": "発達障害に関する専門相談の窓口です。県の案内から相談方法を確認できます。",
+      "officialUrl": "https://www.pref.nagasaki.lg.jp/bunrui/hukushi-hoken/fukushi/syyogaifukushi/soudan/body.html",
+      "categories": [
+        "障害・発達",
+        "子ども・子育て"
+      ],
+      "issueIds": [
+        "child-development",
+        "child-group-life",
+        "disability-adult-development",
+        "disability-child-service"
+      ],
+      "phone": "0957-22-1802",
+      "area": "長崎県",
+      "type": "local",
+      "channels": [
+        "phone",
+        "web"
+      ],
+      "sourceType": "officially-listed",
+      "verifiedAt": "2026-11-28",
+      "note": "対象地域・受付時間・予約の要否は、利用前に公式情報をご確認ください。",
+      "keywords": [
+        "長崎県発達障害者支援センター しおさい",
+        "障害・発達",
+        "子ども・子育て"
+      ]
+    },
+    {
+      "id": "nagasaki-labor",
+      "name": "長崎県 長崎労働相談情報センター",
+      "description": "解雇、賃金の未払い、配置転換、ハラスメントなど、労働問題について相談できます。",
+      "officialUrl": "https://www.pref.nagasaki.lg.jp/bunrui/shigoto-sangyo/koyo-rodo/rodoshasien/na-rodo/",
+      "categories": [
+        "仕事"
+      ],
+      "issueIds": [
+        "work-leave",
+        "work-trouble",
+        "work-income-loss"
+      ],
+      "area": "長崎県",
+      "type": "local",
+      "channels": [
+        "web"
+      ],
+      "sourceType": "government",
+      "verifiedAt": "2026-11-28",
+      "note": "対象地域・受付時間・予約の要否は、利用前に公式情報をご確認ください。",
+      "keywords": [
+        "長崎県 長崎労働相談情報センター",
+        "仕事"
+      ]
+    },
+    {
+      "id": "nagasaki-consumer",
+      "name": "長崎県消費生活センター",
+      "description": "商品・サービスの契約や消費生活のトラブルについて相談できます。",
+      "officialUrl": "https://www.nagasaki-shouhi.jp/center/seikatu_soudan.html",
+      "categories": [
+        "契約・法律・財産",
+        "お金・生活"
+      ],
+      "issueIds": [
+        "legal-consumer",
+        "money-debt",
+        "legal-debt",
+        "crime-scam"
+      ],
+      "phone": "095-824-0999",
+      "area": "長崎県",
+      "type": "local",
+      "channels": [
+        "phone",
+        "web"
+      ],
+      "sourceType": "government",
+      "verifiedAt": "2026-11-28",
+      "note": "対象地域・受付時間・予約の要否は、利用前に公式情報をご確認ください。",
+      "keywords": [
+        "長崎県消費生活センター",
+        "契約・法律・財産",
+        "お金・生活"
+      ],
+      "audience": "長崎県在住の個人（事業者の相談は対象外）",
+      "hours": "平日 9:00〜12:00・13:00〜17:00（土日祝・年末年始除く）"
+    },
+    {
+      "id": "nagasaki-housing",
+      "name": "長崎県 県営住宅の募集・相談先案内",
+      "description": "県営住宅の募集情報と申込先を確認できます。市営住宅とは申込先が異なります。",
+      "officialUrl": "https://www.pref.nagasaki.lg.jp/bunrui/kurashi-kankyo/sumai/koeijutaku/keneijutaku-sumai/keneijutaku-boshujuuko/body.html",
+      "categories": [
+        "住まい",
+        "お金・生活"
+      ],
+      "issueIds": [
+        "housing-public",
+        "money-rent"
+      ],
+      "area": "長崎県",
+      "type": "local",
+      "channels": [
+        "web"
+      ],
+      "sourceType": "government",
+      "verifiedAt": "2026-11-28",
+      "note": "対象地域・受付時間・予約の要否は、利用前に公式情報をご確認ください。",
+      "kind": "案内ページ",
+      "keywords": [
+        "長崎県 県営住宅の募集・相談先案内",
+        "住まい",
+        "お金・生活"
+      ]
+    },
+    {
+      "id": "nagasaki-elderly-directory",
+      "name": "長崎県内の地域包括支援センター一覧",
+      "description": "県が案内する各市町の相談先一覧です。離れて暮らすご家族の介護や生活の相談先も探せます。相談窓口自体は各市町に設置されています。",
+      "officialUrl": "https://www.pref.nagasaki.lg.jp/doc/page-497767.html",
+      "categories": [
+        "高齢者・介護",
+        "これからの療養・看取り"
+      ],
+      "issueIds": [
+        "elderly-care-start",
+        "elderly-dementia",
+        "elderly-alone",
+        "elderly-caregiver",
+        "elderly-frail",
+        "endoflife-homecare",
+        "endoflife-acp"
+      ],
+      "area": "長崎県",
+      "type": "local",
+      "channels": [
+        "web"
+      ],
+      "sourceType": "government",
+      "verifiedAt": "2026-11-28",
+      "note": "対象地域・受付時間・予約の要否は、利用前に公式情報をご確認ください。",
+      "kind": "案内ページ",
+      "keywords": [
+        "長崎県内の地域包括支援センター一覧",
+        "高齢者・介護",
+        "これからの療養・看取り"
+      ]
+    },
+    {
+      "id": "nagasaki-cancer-directory",
+      "name": "長崎県内のがん相談支援センター一覧",
+      "description": "がんの治療や療養生活について相談できる県内の窓口と、サポートブックながさきを案内しています。相談窓口は各病院にあります。",
+      "officialUrl": "https://www.pref.nagasaki.lg.jp/bunrui/hukushi-hoken/hoken-iryo/riryotaisaku/gan/gansoudansien/",
+      "categories": [
+        "健康・医療"
+      ],
+      "issueIds": [],
+      "area": "長崎県",
+      "type": "local",
+      "channels": [
+        "web"
+      ],
+      "sourceType": "government",
+      "verifiedAt": "2026-11-28",
+      "note": "対象地域・受付時間・予約の要否は、利用前に公式情報をご確認ください。",
+      "kind": "案内ページ",
+      "keywords": [
+        "長崎県内のがん相談支援センター一覧",
+        "健康・医療"
+      ]
     }
   ],
   "publicResources": [

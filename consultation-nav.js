@@ -79,6 +79,7 @@
       const methodOk=channel==='all'||(r.channels||[]).includes(channel);
       if(!methodOk)return false;
       if(direct.has(r.id))return true;
+      if(r.issueIds)return r.issueIds.includes(issue.id);
       const aliases=resourceCategoryAliases[issue.categoryId]||[cat];
       if(!(r.categories||[]).some(category=>aliases.includes(category)))return false;
       if(r.type==='dial') return overlap(issue,r)>0; // Never show unrelated emergency numbers solely because an issue is urgent.
@@ -205,12 +206,13 @@
         ${resources.length?(() => {
           const direct=new Set(issue.firstContactIds||[]);
           const priority=resources.filter(r=>direct.has(r.id));
-          const related=resources.filter(r=>!direct.has(r.id));
+          const related=resources.filter(r=>!direct.has(r.id)&&r.area!=='長崎県');
           return `
             ${priority.length?`<h3 class="consult-result-heading">まず相談する窓口</h3><div class="consult-resource-grid">${priority.map(r=>resourceCard(r,true)).join('')}</div>`:''}
             ${!priority.length&&related.length?'<p class="consult-related-hint">この相談で個別に指定された優先窓口はありません。以下の関連窓口から相談先を探せます。</p>':''}
           `;
         })():'<p class="consult-empty">この方法で表示できる相談先は現在登録していません。別の相談方法を選んでください。</p>'}
+        ${resources.some(r=>r.area==='長崎県'&&!new Set(issue.firstContactIds||[]).has(r.id))?`<h3 class="consult-result-heading">長崎県の窓口・県が案内する相談先</h3><div class="consult-resource-grid">${resources.filter(r=>r.area==='長崎県'&&!new Set(issue.firstContactIds||[]).has(r.id)).map(r=>resourceCard(r,false)).join('')}</div>`:''}
         ${steps.length?`<div class="next-step-box"><div class="consult-subhead"><strong>次にできること</strong><span>全部を一度にする必要はありません。できそうなものからで大丈夫です。</span></div><ul>${steps.map(x=>`<li><label><input type="checkbox"> <span>${esc(x)}</span></label></li>`).join('')}</ul></div>`:''}
         ${(issue.communityResourceTypes||[]).length?`<div class="community-types"><strong>地域で利用できる支援の例</strong><div>${issue.communityResourceTypes.map(x=>`<span>${esc(x)}</span>`).join('')}</div><p class="community-search-help"><b>もう少し詳しく探したいときは</b><br>下の言葉を参考に、<strong>「諫早市 ＋ キーワード」</strong>で検索してみてください。地域で利用できる支援やサービスが見つかることがあります。</p></div>`:''}
         ${toolCards(issue)}
@@ -218,11 +220,11 @@
         ${resources.length?(() => {
           const direct=new Set(issue.firstContactIds||[]);
           const priority=resources.filter(r=>direct.has(r.id));
-          const related=resources.filter(r=>!direct.has(r.id));
+          const related=resources.filter(r=>!direct.has(r.id)&&r.area!=='長崎県');
           return related.length?`<details class="consult-related" ${priority.length?'':'open'}><summary>その他の相談先を見る（${related.length}件）</summary><p class="consult-related-hint">相談方法を変えると表示される窓口も変わります。</p><div class="consult-resource-grid">${related.map(r=>resourceCard(r,false)).join('')}</div></details>`:'';
         })():''}
       </div>`:''}
-      <div class="consult-fallback"><strong>どれを選べばよいか分からない</strong><p>困りごとがいくつも重なっている場合や、相談先が分からない場合は、諫早市の一般相談から専門機関につないでもらうことができます。</p><a href="https://www.city.isahaya.nagasaki.jp/soshiki/41/8335.html" target="_blank" rel="noopener">諫早市の一般相談を見る ↗</a></div>`;
+      <div class="consult-fallback"><strong>どれを選べばよいか分からない</strong><p>困りごとがいくつも重なっている場合や、相談先が分からない場合は、諫早市の一般相談から専門機関につないでもらうことができます。</p><a href="https://www.city.isahaya.nagasaki.jp/soshiki/41/8335.html" target="_blank" rel="noopener">諫早市の一般相談を見る ↗</a><p><a href="consultation-list.html?area=prefecture">長崎県の窓口・案内も探す →</a></p></div>`;
   }
 
   mount.addEventListener('click',e=>{

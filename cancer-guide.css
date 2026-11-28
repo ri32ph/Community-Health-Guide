@@ -15,5 +15,5 @@
 @media print{.cancer-stages{display:none}.cancer-panel,.cancer-panel[hidden]{display:block!important;break-inside:avoid;background:#fff;color:#000;border:1px solid #888;padding:14px}.cancer-panel aside{border:0;padding:0}.cancer-links{display:block}.cancer-topics{grid-template-columns:repeat(2,1fr)}.cancer-topic,.cancer-contact{break-inside:avoid}.cancer-consultation{display:block}.cancer-guide-page .trust{background:#fff;color:#000}.cancer-guide-page .trust a{color:#000}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
-.cancer-intro-image{display:block;width:100%;max-width:560px;height:auto;margin:24px auto 28px;border-radius:20px}
-@media print{.cancer-intro-image{max-width:260px}}
+.cancer-book-image{display:block;width:100%;max-width:320px;height:auto;margin:8px auto 20px;border-radius:20px}
+@media print{.cancer-book-image{max-width:260px}}
